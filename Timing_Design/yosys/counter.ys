@@ -60,7 +60,7 @@ clean
 stat -liberty ./lib/cmos_cells.lib
 
 #Writing the structural of the contador_synt description
-write_verilog contador_synt.v
+write_verilog ./syn/contador_synt.v
 
 
 #show schemes
