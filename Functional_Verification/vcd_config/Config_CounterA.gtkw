@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Thu Sep 17 23:09:14 2020
+[*]
+[dumpfile] "/Users/belindabrown/Desktop/Functional_Verification-master/scoreboard.vcd"
+[dumpfile_mtime] "Thu Sep 17 23:04:16 2020"
+[dumpfile_size] 47199
+[savefile] "/Users/belindabrown/Desktop/Functional_Verification-master/Config_CounterA.gtkw"
+[timestart] 0
+[size] 1280 800
+[pos] -1 -24
+*-7.041887 110 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 193
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 237
+@200
+-Scoreboard vs CounterA
+@28
+TestBench.clk
+TestBench.reset
+@200
+-
+@22
+TestBench.tb_all_vs_D[3:0]
+@28
+TestBench.tb_all_vs_enable
+TestBench.tb_all_vs_mode[1:0]
+@200
+-
+-Outputs - Scoreboard
+@24
+TestBench.scb_Q[3:0]
+@28
+TestBench.scb_load
+TestBench.scb_rco
+@200
+-
+@204
+-Outputs - CounterA
+@c00025
+TestBench.C_syn_Q[3:0]
+@28
+(0)TestBench.C_syn_Q[3:0]
+(1)TestBench.C_syn_Q[3:0]
+(2)TestBench.C_syn_Q[3:0]
+(3)TestBench.C_syn_Q[3:0]
+@1401205
+-group_end
+@28
+TestBench.C_syn_load
+TestBench.C_syn_rco
+[pattern_trace] 1
+[pattern_trace] 0
