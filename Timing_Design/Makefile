@@ -101,7 +101,7 @@ _YC = counter.ys
 
 
 scb: v_C gtkw_C
-ideal: y_C r_C v_top gtkw_top
+ideal: y_top r_top v_top gtkw_top
 delyd: y_delyd, r_delyd v_delyd gtkw_delyd
 
 
@@ -124,11 +124,11 @@ gtkw_C: v_C
 #******************************************************************************
 
 
-y_C:
+y_top:
 	yosys $(YOSYS)$(_YC)
 
-r_C:
-	sed -i 's/counter_s/contador_synt/g' $(SYN)$(S_C)
+r_top:
+	sed -i 's/counter/contador_synt/g' $(SYN)$(S_C)
 
 v_top:
 	iverilog -o $(OVVP)$(_VVP_TOP) $(TESTBENCHES)$(_TB_TOP)
