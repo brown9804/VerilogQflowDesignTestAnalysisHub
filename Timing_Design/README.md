@@ -41,13 +41,17 @@ To analyze the counter ideal behavior (no delay time):
 Including:
 
 ~~~~
-<FOLDER PATH>$ make y_C
+<FOLDER PATH>$ make y_top
 ~~~~
 
 ~~~~
-<FOLDER PATH>$ make r_C
+<FOLDER PATH>$ make r_top
 ~~~~
 
+
+~~~~
+<FOLDER PATH>$ make v_top
+~~~~
 
 ~~~~
 <FOLDER PATH>$ make gtkw_top
@@ -73,6 +77,10 @@ So:
 ~~~~
 
 
+To crean:
+~~~~
+<FOLDER PATH>$ make clean
+~~~~
 
 
 
