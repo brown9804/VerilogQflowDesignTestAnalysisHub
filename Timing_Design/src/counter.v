@@ -32,19 +32,20 @@ output reg [3:0]  Q
 
 
 reg [3:0] mem;
+wire wload, wrco;
 
 always@(posedge  clk) begin
   if ( reset == 1) begin
-     load <= 0; // label  load  mode ON/OFF
-     rco <= 0; // Ripple-Carry Out
-     Q <= 4'b00;
+     wload <= 0; // label  load  mode ON/OFF
+     wrco <= 0; // Ripple-Carry Out
+     mem <= 4'b00;
   end // end on -> reset == 1 clean data
 
 else begin // reset == 0
   if ( enable == 0) begin
-     Q <= 4'bZZ;
-     load <= 0;
-     rco <= 0;
+     mem <= 4'bZZ;
+     wload <= 0;
+     wrco <= 0;
   end // end if  enable == 0 &  reset == 0 -> Q = zzzz
   else begin // if enable == 1
   // Operation modes
@@ -57,76 +58,78 @@ else begin // reset == 0
   case(mode)
    2'b00:   begin
          mem <= mem + 3;
-         load <= 0;
+         wload <= 0;
     //////////////////////////// * ////////////////////
         if (mem == (2**4 - 1) || (mem >= 13))begin // next stage
-           rco <= 1;
+           wrco <= 1;
         end //  rco == 1
 
         else begin // same stage
            rco <= 0;
         end //  rco ==0
       end // end mode 00
- 
-   
+
+
     // MODE = 01 − > Q - 1
     2'b01:  begin
          mem <= mem - 1;
-         load <= 0;
+         wload <= 0;
     //////////////////////////// * ////////////////////
         if (mem == (2**4 - 1))begin // next stage
-           rco <= 1;
+           wrco <= 1;
         end //  rco == 1
 
         else begin // same stage
-           rco <= 0;
+           wrco <= 0;
         end //  rco ==0
        end // end mode 01
 
-    
+
   // MODE = 10 − > Q + 1
-    2'b10: begin 
-      
+    2'b10: begin
+
        mem <= mem + 1;
-       load <= 0;
+       wload <= 0;
   //////////////////////////// * ////////////////////
       if (mem == (2**4 - 1))begin // next stage
-         rco <= 1;
+         wrco <= 1;
       end //  rco == 1
 
       else begin // same stage
-         rco <= 0;
-      end //  rco ==0    
+         wrco <= 0;
+      end //  rco ==0
     end // end mode 10
-    
-     
+
+
    // MODE = 11 − > D
-    2'b11: begin 
+    2'b11: begin
        mem <=  D;
-       rco <= 0;
-       load <= 1; // charging
+       wrco <= 0;
+       wload <= 1; // charging
   //////////////////////////// * ////////////////////
       if (mem == (2**4 - 1)) begin // next stage
-         rco <= 1;
+         wrco <= 1;
       end //  rco == 1
 
       else begin // same stage
-         rco <= 0;
-      end //  rco ==0     
-    end // end mode 11 
-    
-    
+         wrco <= 0;
+      end //  rco ==0
+    end // end mode 11
+
+
      default: begin //  mode != 00,01,10,11
         mem <= mem;
      end // end default
-    endcase // end case classif == 0 or classif == 1   
-    
+    endcase // end case classif == 0 or classif == 1
+
   end // end if  enable on
 end // end else zz
 end // end  clk
 
 always @(*) begin
   Q = mem;
+  load = wload;
+  rco = wrco;
 end
 
 endmodule
