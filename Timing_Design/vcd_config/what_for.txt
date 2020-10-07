@@ -1,0 +1,9 @@
+Belinda Brown Ramírez
+October, 2020
+timna.brown@ucr.ac.cr
+
+What for?
+
+This folder contains the configuration file 
+that contains already a view implemented based 
+on labels.
