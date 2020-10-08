@@ -32,20 +32,20 @@ output reg [3:0]  Q
 
 
 reg [3:0] mem;
-wire wload, wrco;
+reg wload, wrco;
 
 always@(posedge  clk) begin
   if ( reset == 1) begin
-     wload <= 0; // label  load  mode ON/OFF
-     wrco <= 0; // Ripple-Carry Out
+     load <= 0; // label  load  mode ON/OFF
+     rco <= 0; // Ripple-Carry Out
      mem <= 4'b00;
   end // end on -> reset == 1 clean data
 
 else begin // reset == 0
   if ( enable == 0) begin
      mem <= 4'bZZ;
-     wload <= 0;
-     wrco <= 0;
+     load <= 0;
+     rco <= 0;
   end // end if  enable == 0 &  reset == 0 -> Q = zzzz
   else begin // if enable == 1
   // Operation modes
@@ -65,7 +65,7 @@ else begin // reset == 0
         end //  rco == 1
 
         else begin // same stage
-           rco <= 0;
+           wrco <= 0;
         end //  rco ==0
       end // end mode 00
 
