@@ -102,7 +102,7 @@ _YC = counter.ys
 
 scb: v_C gtkw_C
 ideal: y_top r_top v_top gtkw_top
-delyd: y_delyd, r_delyd v_delyd gtkw_delyd
+delayed: y_delayed, r_delayed v_delayed gtkw_delayed
 
 
 #******************************************************************************
@@ -146,19 +146,19 @@ gtkw_top: v_top
 #******************************************************************************
 
 
-y_delyd:
+y_delayed:
 	yosys $(YOSYS)$(_YC)
 
-r_delyd:
+r_delayed:
 	sed -i 's/counter_s/contador_synt/g' $(SYN)$(S_C)
 
-v_delyd:
+v_delayed:
 	iverilog -o $(OVVP)$(_VVP_TOP) -gspecify $(TESTBENCHES)$(_TB_TOP)
 	vvp $(OVVP)$(_VVP_TOP) > $(LOG_TXT)$(_VVP_TOP)_log.txt
 
 #target phony
-.PHONY: gtkw_delyd
-gtkw_delyd: v_delyd
+.PHONY: gtkw_delayed
+gtkw_delayed: v_delayed
 	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(_VCD_TOP)
 
 
