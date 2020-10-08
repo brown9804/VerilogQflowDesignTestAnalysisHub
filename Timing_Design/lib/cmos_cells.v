@@ -1,7 +1,7 @@
 //	Belinda Brown Ramírez
-//	October, 2020
+//	March, 2020
 //	timna.brown@ucr.ac.cr
-
+//  Modified: October, 2020
 `ifndef CMOS_CELLS
 `define CMOS_CELLS
 
@@ -105,7 +105,7 @@ module NOR(A, B, Y);
 specify
 	specparam tpd= 6.0; //datasheet MC74HC02A-D less than 6.0 ns for CL = 15 pF
 		(A*> Y) = (tpd, tpd); //tRise,tFall typ
-		// (B*> Y) = (tpd, tpd); //tRise,tFall typ
+		(B*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
 input A, B;
