@@ -1,7 +1,7 @@
 //	Belinda Brown Ramírez
 //	March, 2020
 //	timna.brown@ucr.ac.cr
-//  Modified: October, 2020
+//      Modified: October, 2020
 `ifndef CMOS_CELLS
 `define CMOS_CELLS
 
