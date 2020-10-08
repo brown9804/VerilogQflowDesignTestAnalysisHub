@@ -150,7 +150,7 @@ y_delayed:
 	yosys $(YOSYS)$(_YC)
 
 r_delayed:
-	sed -i 's/counter_s/contador_synt/g' $(SYN)$(S_C)
+	sed -i 's/counter/contador_synt/g' $(SYN)$(S_C)
 
 v_delayed:
 	iverilog -o $(OVVP)$(_VVP_TOP) -gspecify $(TESTBENCHES)$(_TB_TOP)
