@@ -15,6 +15,7 @@
 // includes verilog files
 // Can be omitted and called from the testbench
 // Cmos
+`include "./lib/cmos_cells.v"
 `include "./src/counter.v"
 
 module tb_scoreboard (
