@@ -80,10 +80,9 @@ initial begin
 
 
   fork
-    // t_loading(ITERATIONS);
     t_loading(ITERATIONS);
     checker(ITERATIONS);
-
+    t_D_plus_one(ITERATIONS);
   join
   $fdisplay(log, "time=%5d, Test Completed Loading ", $time);
   $fdisplay(log, "time=%5d, Simulation Completed", $time);
