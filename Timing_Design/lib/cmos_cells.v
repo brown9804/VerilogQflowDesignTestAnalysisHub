@@ -47,13 +47,13 @@ endmodule
 // opies its input value to its output with
 // inversor. Shape -[>o-
 module NOT(A, Y);
+input A;
+output Y;
 specify
 	specparam tpd= 1.1; //datasheet SN74AUC1GU04 // CL = 15 pF
 		(A*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
-input A;
-output Y;
 assign Y = ~A;
 endmodule
 
@@ -64,6 +64,8 @@ endmodule
 // if two of the two inputs are HIGH
 // output HIGH.
 module NAND(A, B, Y);
+input A, B;
+output Y;
 specify
 	specparam tpd= 2.3; //datasheet sn74lvc1g00 // CL = 15 pF
 	// 0.8 - 3.8 .... 1.5 range middle  so 0.8 + 1.5 = 2.3 ns
@@ -71,8 +73,6 @@ specify
 		(B*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
-input A, B;
-output Y;
 assign Y = ~(A & B);
 endmodule
 
@@ -83,6 +83,8 @@ endmodule
 // if two of the two inputs are HIGH
 // output HIGH.
 module NAND3(A, B, C,  Y);
+input A, B, C;
+output Y;
 specify
 	specparam tpd= 6.0; //datasheet 74HCT10 // CL = 15 pF
 		(A*> Y) = (tpd, tpd); //tRise,tFall typ
@@ -90,8 +92,6 @@ specify
 		(C*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
-input A, B, C;
-output Y;
 assign Y = ~(A & B & C);
 endmodule
 
@@ -102,14 +102,14 @@ endmodule
 // if one of the two inputs is HIGH
 // output HIGH.
 module NOR(A, B, Y);
+input A, B;
+output Y;
 specify
 	specparam tpd= 6.0; //datasheet MC74HC02A-D less than 6.0 ns for CL = 15 pF
 		(A*> Y) = (tpd, tpd); //tRise,tFall typ
 		(B*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
-input A, B;
-output Y;
 assign Y = ~(A | B);
 endmodule
 
@@ -120,6 +120,8 @@ endmodule
 // if one of the two inputs is HIGH
 // output HIGH.
 module NOR3(A, B, C, Y);
+input A, B, C;
+output Y;
 specify
 	specparam tpd= 2.75; //datasheet sn74lvc1g27 CL = 15 pF
 	// 1 - 4.5 ... range middle = 1.75 -> 1 + 1.75 = 2.75 ns
@@ -128,8 +130,6 @@ specify
 		(C*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
-input A, B, C;
-output Y;
 assign Y = ~(A | B | C);
 endmodule
 
@@ -138,6 +138,8 @@ endmodule
 // Flip Flop is a two-state (bi-stable) device, which serves as
 // basic memory for sequential logic operations.
 module DFF(C, D, Q);
+input C, D;
+output reg Q;
 specify
 	specparam tpd= 2.5; //datasheet SN74LVC1G79-Q1 // CL = 15 pF
 	specparam tsu = 1.3;
@@ -149,8 +151,6 @@ specify
 		$hold(posedge C, D, th);
 endspecify
 // From here is the normal cmos_cells
-input C, D;
-output reg Q;
 always @(posedge C)
 	Q <= D;
 endmodule
