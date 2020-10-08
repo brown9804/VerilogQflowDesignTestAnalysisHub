@@ -15,11 +15,11 @@ task checker;
 input integer iteration;
 
   repeat (iteration) @ (posedge clk) begin
-	  if (( Q == C_syn_Q) && ( rco == C_syn_rco) && ( load == C_syn_load)) begin
+	  if (( Q == Q_syn) && ( rco == rco_syn) && ( load == load_syn)) begin
       $fdisplay(log, "PASS");
       end
     else begin
-      $fdisplay(log, "Time=%.0f Error! DUT: C_syn_Q=%d, C_syn_rco=%b, C_syn_load=%b, scoreboard:  Q=%d,  rco=%b,  load=%b", $time, C_syn_Q, C_syn_rco, C_syn_load,  Q,  rco,  load);
+      $fdisplay(log, "Time=%.0f Error! DUT: Q_syn=%d, rco_syn=%b, load_syn=%b, scoreboard:  Q=%d,  rco=%b,  load=%b", $time, Q_syn, rco_syn, load_syn,  Q,  rco,  load);
       end
   end // repeat
 endtask
