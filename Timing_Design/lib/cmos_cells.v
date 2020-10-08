@@ -1,12 +1,10 @@
 //	Belinda Brown Ramírez
-//	March, 2020
+//	October, 2020
 //	timna.brown@ucr.ac.cr
-//      Modified October, 2020
+
 `ifndef CMOS_CELLS
 `define CMOS_CELLS
 
-
-`timescale 1ns / 1ps
 
 //  Describing the modules of the same cmos_cells.lib
 
@@ -107,7 +105,7 @@ module NOR(A, B, Y);
 specify
 	specparam tpd= 6.0; //datasheet MC74HC02A-D less than 6.0 ns for CL = 15 pF
 		(A*> Y) = (tpd, tpd); //tRise,tFall typ
-		(B*> Y) = (tpd, tpd); //tRise,tFall typ
+		// (B*> Y) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
 input A, B;
@@ -143,7 +141,7 @@ module DFF(C, D, Q);
 specify
 	specparam tpd= 2.5; //datasheet SN74LVC1G79-Q1 // CL = 15 pF
 	// 1 - 4 ns ... middle range 1.5 -> 1 + 1.5 = 2.5 ns
-		(C*> Q) = (tpd, tpd); //tRise,tFall typ
+		// (C*> Q) = (tpd, tpd); //tRise,tFall typ
 		(D*> Q) = (tpd, tpd); //tRise,tFall typ
 endspecify
 // From here is the normal cmos_cells
