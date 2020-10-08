@@ -79,9 +79,6 @@ TESTBENCHES = ./testbenches/
 _TB_C = tb_counter.v
 _TB_TOP = tb_top.v
 
-TESTERS = ./testers/
-_T_DRIVER = driver.v
-
 _VCD_C= counter.vcd
 _VCD_TOP = top.vcd
 
