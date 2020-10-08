@@ -38,9 +38,9 @@ module TestBench; // Testbench
 // It's needed /*AUTOWIRE*/ because: Creates wires for outputs that ins't declare
 
 /*AUTOWIRE*/
-wire tb_top_enable;
-wire [1:0] tb_top_mode;
-wire [3:0] tb_top_D;
+wire enable;
+wire [1:0] mode;
+wire [3:0] D;
 
 wire reset, clk;
 
@@ -48,8 +48,8 @@ wire [3:0]  Q;
 wire  rco,  load;
 
 /// A, B, C
-wire [3:0] C_syn_Q;
-wire C_syn_rco, C_syn_load;
+wire [3:0] Q_syn;
+wire rco_syn, load_syn;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
               ////////////  Scoreboard
@@ -64,33 +64,33 @@ tb_scoreboard scoreboard_top(/*AUTOINST*/
 ///////////////////////
 .clk         (clk),
 .reset       (reset),
-.tb_enable   (tb_top_enable),
-.tb_mode     (tb_top_mode), // choose from 00, 01, 10, 11
-.tb_D        (tb_top_D),
+.enable   (enable),
+.mode     (mode), // choose from 00, 01, 10, 11
+.D        (D),
 
 // inputs
-.C_syn_rco          (C_syn_rco),
-.C_syn_load         (C_syn_load),
-.C_syn_Q            (C_syn_Q)
+.rco_syn          (rco_syn),
+.load_syn         (load_syn),
+.Q_syn            (Q_syn)
 );
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
-              //////////  Counter 
+              //////////  Counter
               //////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 counter      counter_b (/*AUTOINST*/
 // outputs
-.load       (C_syn_load),
-.rco        (C_syn_rco),
-.Q          (C_syn_Q),
+.load       (load_syn),
+.rco        (rco_syn),
+.Q          (Q_syn),
   //inputs
 .clk        (clk),
 .reset      (reset),
-.enable     (tb_top_enable),
-.mode       (tb_top_mode),
-.D          (tb_top_D)
+.enable     (enable),
+.mode       (mode),
+.D          (D)
 );
 
 
