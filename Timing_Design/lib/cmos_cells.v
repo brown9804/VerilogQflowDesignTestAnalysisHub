@@ -140,9 +140,13 @@ endmodule
 module DFF(C, D, Q);
 specify
 	specparam tpd= 2.5; //datasheet SN74LVC1G79-Q1 // CL = 15 pF
+	specparam tsu = 1.3;
+	specparam th = 1;
 	// 1 - 4 ns ... middle range 1.5 -> 1 + 1.5 = 2.5 ns
-		// (C*> Q) = (tpd, tpd); //tRise,tFall typ
+		(C*> Q) = (tpd, tpd); //tRise,tFall typ
 		(D*> Q) = (tpd, tpd); //tRise,tFall typ
+		$setup(D, posedge C, tsu);
+		$hold(posedge C, D, th);
 endspecify
 // From here is the normal cmos_cells
 input C, D;
