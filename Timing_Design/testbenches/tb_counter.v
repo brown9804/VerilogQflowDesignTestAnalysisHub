@@ -20,16 +20,16 @@
 
 module tb_scoreboard (
   ///////////////////////////////////////////
-  input wire C_syn_rco, // from synthesizable counter A, B, C
-  input wire C_syn_load,
-  input wire [3:0] C_syn_Q,
+  input wire rco_syn, // from synthesizable counter A, B, C
+  input wire load_syn,
+  input wire [3:0] Q_syn,
   ///////////////////////////////////////////
   output reg clk,
   output reg reset,
 
-  output reg [1:0] tb_mode, // choose from 00, 01, 10, 11
-  output reg [3:0] tb_D,
-  output reg tb_enable,
+  output reg [1:0] mode, // choose from 00, 01, 10, 11
+  output reg [3:0] D,
+  output reg enable,
 
   output reg  load,
   output reg  rco, //  2^nbits - 1 = #
@@ -114,9 +114,9 @@ counter scoreboard_counter(/*AUTOINST*/
 . clk      (clk),
 . reset    (reset),
 
-. enable   (tb_enable),
-. mode     (tb_mode), // choose from 00, 01, 10, 11
-. D        (tb_D)
+. enable   (enable),
+. mode     (mode), // choose from 00, 01, 10, 11
+. D        (D)
 );
 
 always @(*) begin
