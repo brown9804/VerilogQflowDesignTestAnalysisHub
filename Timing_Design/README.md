@@ -59,21 +59,21 @@ Including:
 
 To analyze the counter delayed behavior:
 ~~~~
-<FOLDER PATH>$ make delyd
+<FOLDER PATH>$ make delayed
 ~~~~
 
 So:
 
 ~~~~
-<FOLDER PATH>$ make y_delyd
+<FOLDER PATH>$ make y_delayed
 ~~~~
 
 ~~~~
-<FOLDER PATH>$ make r_delyd
+<FOLDER PATH>$ make r_delayed
 ~~~~
 
 ~~~~
-<FOLDER PATH>$ make gtkw_delyd
+<FOLDER PATH>$ make gtkw_delayed
 ~~~~
 
 
