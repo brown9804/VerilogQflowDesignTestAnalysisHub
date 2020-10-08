@@ -80,9 +80,10 @@ initial begin
 
 
   fork
+    t_drv_on(ITERATIONS);
     t_loading(ITERATIONS);
     checker(ITERATIONS);
-    t_D_plus_one(ITERATIONS);
+    t_enable_verifi(ITERATIONS);
   join
   $fdisplay(log, "time=%5d, Test Completed Loading ", $time);
   $fdisplay(log, "time=%5d, Simulation Completed", $time);
@@ -93,7 +94,7 @@ end
 
 // clock logic
 initial	clk	 			<= 0;			// Initial value to avoid indeterminations
-always	#10 clk				<= ~clk;		// toggle every 10ns
+always	#2 clk				<= ~clk;		// toggle every 100ns so period 200 ns 
 
 
 
