@@ -88,6 +88,26 @@ end // repeat
 end // end begin
 endtask
 
+
+
+task t_enable_verifi;
+input integer ITERATIONS;
+begin
+mode <= 2'b11;
+repeat (ITERATIONS) begin
+  @(negedge clk) begin
+    enable <= enable + 1;
+    D <= 4'b1111;
+    @(negedge clk);
+    if (mode == 2'b11) begin
+      mode <= 2'b10;
+    end
+  end // ~ clk
+end // repeat
+end // end begin
+endtask
+
+
 // // Local Variables:
 // // verilog-library-directories:("."):
 // // verilog-auto-wire-type:\"logic\"
