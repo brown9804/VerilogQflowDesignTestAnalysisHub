@@ -93,11 +93,11 @@ contador_synt      counter_synt (/*AUTOINST*/
 .D          (D)
 );
 
-wire DFF_test;
+wire test;
 DFF DFF_test(
 .C (clk),
-.D (D),
-.Q (DFF_test)
+.D (load),
+.Q (test)
 );
 
 
