@@ -94,7 +94,7 @@ end
 
 // clock logic
 initial	clk	 			<= 0;			// Initial value to avoid indeterminations
-always	#2 clk				<= ~clk;		// toggle every 100ns so period 200 ns 
+always	#100 clk				<= ~clk;		// toggle every 100ns so period 200 ns 
 
 
 
