@@ -17,7 +17,7 @@ be carried out in order to visualize the different aspects of timing.
 
 ## How to run
 
-To analyze the soreboard behavior:
+To analyze the scoreboard behavior:
 ~~~~
 <FOLDER PATH>$ make scb 
 ~~~~
