@@ -46,7 +46,7 @@ abc -liberty ./lib/cmos_cells.lib
 clean
 
 #Writing the structural of the contador_synt description
-write_verilog ./syn/contador_synt.v
+write_verilog -noattr ./syn/contador_synt.v
 
 #show schemes
 show
