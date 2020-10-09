@@ -80,7 +80,7 @@ tb_scoreboard scoreboard_top(/*AUTOINST*/
               //////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-counter      counter_b (/*AUTOINST*/
+contador_synt      counter_synt (/*AUTOINST*/
 // outputs
 .load       (load_syn),
 .rco        (rco_syn),
@@ -93,6 +93,12 @@ counter      counter_b (/*AUTOINST*/
 .D          (D)
 );
 
+wire DFF_test;
+DFF DFF_test(
+.C (clk),
+.D (D),
+.Q (DFF_test)
+);
 
 
 
