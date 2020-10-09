@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Oct  9 06:08:55 2020
+[*]
+[dumpfile] "/Users/belindabrown/Desktop/Timing_Design/scoreboard.vcd"
+[dumpfile_mtime] "Fri Oct  9 06:05:50 2020"
+[dumpfile_size] 390639
+[savefile] "/Users/belindabrown/Desktop/Timing_Design/Timing_delayed_DFF_test.gtkw"
+[timestart] 0
+[size] 1280 800
+[pos] -1 -24
+*-24.735119 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TestBench.
+[sst_width] 193
+[signals_width] 167
+[sst_expanded] 1
+[sst_vpaned_height] 237
+@200
+-Testbench
+@28
+[color] 2
+TestBench.clk
+TestBench.reset
+@200
+-
+@28
+TestBench.enable
+@200
+-
+@28
+TestBench.mode[1:0]
+@200
+-
+@22
+TestBench.D[3:0]
+@200
+-
+@29
+[color] 7
+TestBench.load
+@28
+TestBench.load_syn
+@200
+-
+@28
+TestBench.rco
+TestBench.rco_syn
+@200
+-
+@22
+TestBench.Q[3:0]
+TestBench.Q_syn[3:0]
+@200
+-
+@28
+[color] 5
+TestBench.test
+@200
+-DFF delayed test
+@28
+[color] 2
+TestBench.DFF_test.C
+[color] 7
+TestBench.DFF_test.D
+@200
+-
+@28
+[color] 5
+TestBench.DFF_test.Q
+[pattern_trace] 1
+[pattern_trace] 0
