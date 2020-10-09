@@ -77,7 +77,7 @@ So:
 ~~~~
 
 
-To crean:
+To clean:
 ~~~~
 <FOLDER PATH>$ make clean
 ~~~~
