@@ -30,12 +30,30 @@ library(demo) {
     pin(Y) { direction: output;
              function: "(A*B)'"; }
   }
+  cell(NAND3) {
+    area: 42;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(C) { direction: input; }
+    pin(Y) { direction: output;
+             function: "(A & B & C)'"; }
+  }
+
   cell(NOR) {
     area: 34;
     pin(A) { direction: input; }
     pin(B) { direction: input; }
     pin(Y) { direction: output;
              function: "(A+B)'"; }
+  }
+
+  cell(NOR3) {
+    area: 42;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(C) { direction: input; }
+    pin(Y) { direction: output;
+             function: "(A+B+C)'"; }
   }
   cell(DFF) {
     area: 18;
