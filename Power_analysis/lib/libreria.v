@@ -1,4 +1,4 @@
-`include "definiciones.v"
+`include "./lib/definiciones.v"
 
 // -----------------------------------------------
 // Modulos de compuertas
