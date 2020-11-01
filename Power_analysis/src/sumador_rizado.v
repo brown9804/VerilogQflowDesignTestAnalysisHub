@@ -63,8 +63,8 @@ module sumador_completo (     // all 1 bit
     // Outputs
     .a     ( w3),
     //Inputs
-    .c     (a),
-    .b     (b)
+    .c     (b),
+    .b     (a)
   );
 
   /////////
@@ -74,8 +74,8 @@ module sumador_completo (     // all 1 bit
     // Outputs
     .a     ( w4),
     //Inputs
-    .c     (ci),
-    .b     (w0)
+    .c     (w0),
+    .b     (ci)
   );
 
   /////////
