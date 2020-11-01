@@ -117,12 +117,12 @@ module SUM_RIZADO(
   parameter
     PwrC = 0;
   // for 8 bits 
-  wire ws0, ws1, ws2, ws3, ws4, ws5, ws6, ws7;
+  wire [7:0] ws_8bit;
   wire [7:0] carry_8bit;
   
   sumador_completo sumador_completo0(
     //outputs
-    .s      (ws0),
+    .s      (ws_8bit[0]),
     .co     (carry_8bit[0]),
     //inputs
     .a      (a[0]),
@@ -132,7 +132,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo1(
     //outputs
-    .s      (ws1),
+    .s      (ws_8bit[1]),
     .co     (carry_8bit[1]),
     //inputs
     .a      (a[1]),
@@ -142,7 +142,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo2(
     //outputs
-    .s      (ws2),
+    .s      (ws_8bit[2]),
     .co     (carry_8bit[2]),
     //inputs
     .a      (a[2]),
@@ -152,7 +152,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo3(
     //outputs
-    .s      (ws3),
+    .s      (ws_8bit[3]),
     .co     (carry_8bit[3]),
     //inputs
     .a      (a[3]),
@@ -163,7 +163,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo4(
     //outputs
-    .s      (ws4),
+    .s      (ws_8bit[4]),
     .co     (carry_8bit[4]),
     //inputs
     .a      (a[4]),
@@ -174,7 +174,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo5(
     //outputs
-    .s      (ws5),
+    .s      (ws_8bit[5]),
     .co     (carry_8bit[5]),
     //inputs
     .a      (a[5]),
@@ -185,7 +185,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo6(
     //outputs
-    .s      (ws6),
+    .s      (ws_8bit[6]),
     .co     (carry_8bit[6]),
     //inputs
     .a      (a[6]),
@@ -195,7 +195,7 @@ module SUM_RIZADO(
 
   sumador_completo sumador_completo7(
     //outputs
-    .s      (ws7),
+    .s      (ws_8bit[7]),
     .co     (carry_8bit[7]),
     //inputs
     .a      (a[7]),
@@ -204,8 +204,9 @@ module SUM_RIZADO(
   );
 
   always@(*) begin
-    co = carry_8bit[7];
-    s = {ws0,ws1,ws2,ws3,ws4,ws5,ws6,ws7};
+    s = ws_8bit[7:0];
+    co = carry_8bit[7:0];
+
   end
 
 
