@@ -1,6 +1,6 @@
 `include "./lib/libreria.v"
 `include "./src/sumador_logico.v"
-//`include "./src/sumador_rizado.v"
+`include "./src/sumador_rizado.v"
 `include "./src/sumador_look.v"
 
 // -----------------------------------------------
@@ -62,13 +62,13 @@ module BancoPruebas;
   // Sumador lookahead usa contador 2 de la memoria
   // ---------------------------------------------------------------
 
-  //SUM_RIZADO #(0)  sumadorRizado (oprA, oprB, 1'b0, Suma, carry_rizado);
+  SUM_RIZADO #(0)  sumadorRizado (oprA, oprB, 1'b0, Suma, carry_rizado);
   SUM8_LOGICO #(1)  sumadorLogico (oprA, oprB, 1'b0, Suma_logico, carry_logico);
   SUM8_LOOKAHEAD #(2) sumadorLookahead (oprA, oprB, 1'b0, Suma_look, carry_look);
 
   initial
     begin
-      $dumpfile ("Sumadores.vcd");
+      $dumpfile ("1and8-full-adder.vcd");
       $dumpvars;
 
       // Borrar memoria de transiciones
