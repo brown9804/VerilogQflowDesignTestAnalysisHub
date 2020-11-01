@@ -9,9 +9,103 @@
 // scale time unit (value of one) / precision
 `timescale 	1ns				/ 1ps
 
+// /////// BEGIN One-bit full adder two XOR
+// // -----------------------------------------------
+// // One-bit full adder two XOR
+// // -----------------------------------------------
+// // Inputs: a, b, ci
+// // Outputs: co, s
 
+// module sumador_completo (     // all 1 bit 
+//   input wire a, 
+//   input wire b, 
+//   input wire ci, 
+//   output reg s, 
+//   output reg co
+// );
+//   parameter
+//     PwrC = 0;
+//   // For outputs connections 
+//     wire w0,w1,w2,w3,w4,w5;
+//   /////////
+//   /// w0
+//   ////////
+//   xor2_p xorw0(
+//     // Outputs
+//     .a     ( w0),
+//     //Inputs
+//     .c     (a),
+//     .b     (b)
+//   );
+
+//   /////////
+//   /// w1
+//   ////////
+//   and2_p andw1(
+//     // Outputs
+//     .a     ( w1),
+//     //Inputs
+//     .c     (ci),
+//     .b     (a)
+//   );
+
+//   /////////
+//   /// w2
+//   ////////
+//   and2_p andw2(
+//     // Outputs
+//     .a     ( w2),
+//     //Inputs
+//     .c     (ci),
+//     .b     (b)
+//   );
+
+//   /////////
+//   /// w3
+//   ////////
+//   and2_p andw3(
+//     // Outputs
+//     .a     ( w3),
+//     //Inputs
+//     .c     (b),
+//     .b     (a)
+//   );
+
+//   /////////
+//   /// w4
+//   ////////
+//   xor2_p xorw4(
+//     // Outputs
+//     .a     ( w4),
+//     //Inputs
+//     .c     (w0),
+//     .b     (ci)
+//   );
+
+//   /////////
+//   /// w5
+//   ////////
+//     or3_p orw5(
+//     // Outputs
+//     .a     ( w5),
+//     //Inputs
+//     .b     (w1),
+//     .c     (w2),
+//     .d     (w3)
+//   );
+
+//   always@(*) begin
+//    s = w4;
+//    co = w5;
+//  end
+
+// endmodule
+// /////// END One-bit full adder two XOR
+
+///// BEGIN ex3
+/////// BEGIN One-bit full adder one XOR
 // -----------------------------------------------
-// One-bit full adder
+// One-bit full adder one XOR
 // -----------------------------------------------
 // Inputs: a, b, ci
 // Outputs: co, s
@@ -26,13 +120,13 @@ module sumador_completo (     // all 1 bit
   parameter
     PwrC = 0;
   // For outputs connections 
-    wire w0,w1,w2,w3,w4,w5;
+    wire w1,w2,w3,w4,w5;
   /////////
-  /// w0
+  /// w4
   ////////
-  xor2_p xorw0(
+  xor2_p xorw4(
     // Outputs
-    .a     ( w0),
+    .a     ( w4),
     //Inputs
     .c     (a),
     .b     (b)
@@ -71,16 +165,6 @@ module sumador_completo (     // all 1 bit
     .b     (a)
   );
 
-  /////////
-  /// w4
-  ////////
-  xor2_p xorw4(
-    // Outputs
-    .a     ( w4),
-    //Inputs
-    .c     (w0),
-    .b     (ci)
-  );
 
   /////////
   /// w5
@@ -100,6 +184,8 @@ module sumador_completo (     // all 1 bit
  end
 
 endmodule
+/////// END One-bit full adder two XOR
+///// END ex3
 
 
 // -----------------------------------------------
