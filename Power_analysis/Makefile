@@ -81,7 +81,7 @@ TESTERS = ./testers/
 
 
 OVVP = ./vvp/
-_VVP_Power = tarea.vvp
+_VVP_Power = adders.vvp
 #outputs 
 _VCD_Power = 1and8-full-adder.vcd
 
