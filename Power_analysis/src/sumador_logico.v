@@ -2,6 +2,10 @@
 // Sumador de 4 bits basado en el sumador MSI 74x283
 // ----------------------------------------------
 
+// scale time unit (value of one) / precision
+`timescale 	1ns				/ 1ps
+
+
 module SUM4_logico(a, b, c0, s, c4);
   parameter
     PwrC = 0;
