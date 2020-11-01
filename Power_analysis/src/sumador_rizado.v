@@ -113,13 +113,13 @@ module SUM_RIZADO(
   parameter
     PwrC = 0;
   // for 8 bits 
-  wire wc0, wc1, wc2, wc3, wc4, wc5, wc6, wc7;
   wire ws0, ws1, ws2, ws3, ws4, ws5, ws6, ws7;
-
+  wire [7:0] carry_8bit;
+  
   sumador_completo sumador_completo0(
     //outputs
     .s      (ws0),
-    .co     (wc0),
+    .co     (carry_8bit[0]),
     //inputs
     .a      (a[0]),
     .b      (b[0]),
@@ -129,79 +129,79 @@ module SUM_RIZADO(
   sumador_completo sumador_completo1(
     //outputs
     .s      (ws1),
-    .co     (wc1),
+    .co     (carry_8bit[1]),
     //inputs
     .a      (a[1]),
     .b      (b[1]),
-    .ci     (wc0)
+    .ci     (carry_8bit[0])
   );
 
   sumador_completo sumador_completo2(
     //outputs
     .s      (ws2),
-    .co     (wc2),
+    .co     (carry_8bit[2]),
     //inputs
     .a      (a[2]),
     .b      (b[2]),
-    .ci     (wc1)
+    .ci     (carry_8bit[1])
   );
 
   sumador_completo sumador_completo3(
     //outputs
     .s      (ws3),
-    .co     (wc3),
+    .co     (carry_8bit[3]),
     //inputs
     .a      (a[3]),
     .b      (b[3]),
-    .ci     (wc2)
+    .ci     (carry_8bit[2])
   );
 
 
   sumador_completo sumador_completo4(
     //outputs
     .s      (ws4),
-    .co     (wc4),
+    .co     (carry_8bit[4]),
     //inputs
     .a      (a[4]),
     .b      (b[4]),
-    .ci     (wc3)
+    .ci     (carry_8bit[3])
   );
 
 
   sumador_completo sumador_completo5(
     //outputs
     .s      (ws5),
-    .co     (wc5),
+    .co     (carry_8bit[5]),
     //inputs
     .a      (a[5]),
     .b      (b[5]),
-    .ci     (wc4)
+    .ci     (carry_8bit[4])
   );
 
 
   sumador_completo sumador_completo6(
     //outputs
     .s      (ws6),
-    .co     (wc6),
+    .co     (carry_8bit[6]),
     //inputs
     .a      (a[6]),
     .b      (b[6]),
-    .ci     (wc5)
+    .ci     (carry_8bit[5])
   );
 
   sumador_completo sumador_completo7(
     //outputs
     .s      (ws7),
-    .co     (wc7),
+    .co     (carry_8bit[7]),
     //inputs
     .a      (a[7]),
     .b      (b[7]),
-    .ci     (wc6)
+    .ci     (carry_8bit[6])
   );
 
   always@(*) begin
+    co = carry_8bit[7];
     s = {ws0,ws1,ws2,ws3,ws4,ws5,ws6,ws7};
-    co = wc7;
   end
 
 
