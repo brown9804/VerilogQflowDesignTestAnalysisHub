@@ -90,6 +90,12 @@ xor2_p xorw5(
   .c     (w2),
   .d     (w3)
 );
+  
+always@(*) begin
+  s = w5;
+  co = w6;
+end
+  
 endmodule
 
 
