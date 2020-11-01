@@ -7,18 +7,34 @@
 // scale time unit (value of one) / precision
 `timescale 	1ns				/ 1ps
 
+// // BEGIN ORIGINAL 
+// `define d_inv  1
+// `define d_and2 2
+// `define d_and3 3
+// `define d_and4 4
+// `define d_and5 5
+// `define d_or2  2
+// `define d_or3  3
+// `define d_or4  4
+// `define d_or5  5
+// `define d_xor2 2
+// `define d_xor3 4
+// // END ORIGINAL 
 
+
+///// BEGIN EX 2
 `define d_inv  1
-`define d_and2 2
-`define d_and3 3
-`define d_and4 4
-`define d_and5 5
-`define d_or2  2
-`define d_or3  3
-`define d_or4  4
-`define d_or5  5
-`define d_xor2 2
-`define d_xor3 4
+`define d_and2 1
+`define d_and3 1
+`define d_and4 1
+`define d_and5 1
+`define d_or2  1
+`define d_or3  1
+`define d_or4  1
+`define d_or5  1
+`define d_xor2 1
+`define d_xor3 1
+///// END EX 2
 
 // ----------------------------------------------
 //"Ponderaciones" de potencia para las compuertas
