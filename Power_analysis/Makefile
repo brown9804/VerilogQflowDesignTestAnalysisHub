@@ -84,7 +84,7 @@ OVVP = ./vvp/
 _VVP_Power = tarea.vvp
 
 
-_VCD_Power = Sumadores.vcd
+_VCD_Power = 1and8-full-adder.vcd
 #******************************************************************************
 
 # # IVERILOG
@@ -95,8 +95,6 @@ _VCD_Power = Sumadores.vcd
 #******************************************************************************
 #### 				Power Consumption Analysis
 #******************************************************************************
-
-
 v_Power:
 	iverilog -o $(OVVP)$(_VVP_Power) $(TESTBENCHES)$(_TB_Power)
 	vvp $(OVVP)$(_VVP_Power) > $(LOG_TXT)$(_VVP_Power)_log.txt
