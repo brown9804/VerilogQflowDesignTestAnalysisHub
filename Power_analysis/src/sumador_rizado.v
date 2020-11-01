@@ -124,12 +124,13 @@ module sumador_completo (     // all 1 bit
   /////////
   /// w4
   ////////
-  xor2_p xorw4(
+  xor3_p xorw4(
     // Outputs
     .a     ( w4),
     //Inputs
-    .c     (a),
-    .b     (b)
+    .b    (a),
+    .c    (b),
+    .d    (ci)
   );
 
   /////////
