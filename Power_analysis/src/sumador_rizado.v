@@ -22,7 +22,7 @@ module sumador_completo (     // all 1 bit
   parameter
     PwrC = 0;
   // For outputs connections 
-    reg w0,w1,w2,w3,w4,w5;
+    wire w0,w1,w2,w3,w4,w5;
   /////////
   /// w0
   ////////
@@ -107,8 +107,8 @@ module SUM_RIZADO(
   parameter
     PwrC = 0;
   // for 8 bits 
-  reg wc0, wc1, wc2, wc3, wc4, wc5, wc6, wc7;
-  reg ws0, ws1, ws2, ws3, ws4, ws5, ws6, ws7;
+  wire wc0, wc1, wc2, wc3, wc4, wc5, wc6, wc7;
+  wire ws0, ws1, ws2, ws3, ws4, ws5, ws6, ws7;
 
   sumador_completo sumador_completo0(
     //outputs
@@ -194,7 +194,7 @@ module SUM_RIZADO(
   );
 
   always@(*) begin
-    s = {ws0,ws1,ws2,ws3,ws4,ws5,ws6,ws7,ws8};
+    s = {ws0,ws1,ws2,ws3,ws4,ws5,ws6,ws7};
     co = wc7;
   end
 
