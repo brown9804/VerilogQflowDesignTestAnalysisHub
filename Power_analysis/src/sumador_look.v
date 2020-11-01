@@ -1,6 +1,11 @@
 //*************************************************************************
 //Sumador de 4 bits con anticipacion de acarreo (carry look-ahead)
 
+
+// scale time unit (value of one) / precision
+`timescale 	1ns				/ 1ps
+
+
 module SUM4_lookahead(a, b, ci, s, co);
   parameter
     PwrC = 0;
