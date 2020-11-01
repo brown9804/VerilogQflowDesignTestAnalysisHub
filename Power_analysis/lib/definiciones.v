@@ -3,6 +3,11 @@
 // Retardo de compuertas
 // ---------------------
 
+
+// scale time unit (value of one) / precision
+`timescale 	1ns				/ 1ps
+
+
 `define d_inv  1
 `define d_and2 2
 `define d_and3 3
