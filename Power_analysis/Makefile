@@ -82,9 +82,15 @@ TESTERS = ./testers/
 
 OVVP = ./vvp/
 _VVP_Power = tarea.vvp
-
-
+#outputs 
 _VCD_Power = 1and8-full-adder.vcd
+
+
+VCD_CONFIG = ./vcd_config/
+_VCD_Power_CONFIG = 1and8-full-adder_config.vcd
+
+
+
 #******************************************************************************
 
 # # IVERILOG
@@ -102,7 +108,7 @@ v_Power:
 #target phony
 .PHONY: gtkPower
 gtkPower: v_Power
-	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(_VCD_Power)
+	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(_VCD_Power) $(VCD_CONFIG)$(_VCD_Power_CONFIG)
 
 
 #******************************************************************************
