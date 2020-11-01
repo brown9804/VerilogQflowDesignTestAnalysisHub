@@ -53,7 +53,7 @@ module sumador_completo (     // all 1 bit
     .a     ( w2),
     //Inputs
     .c     (ci),
-    .b     (a)
+    .b     (b)
   );
 
   /////////
@@ -63,32 +63,38 @@ module sumador_completo (     // all 1 bit
     // Outputs
     .a     ( w3),
     //Inputs
-    .c     (ci),
-    .b     (a)
-  );
-
-  /////////
-  /// w5
-  ////////
-  xor2_p xorw5(
-    // Outputs
-    .a     ( w5),
-    //Inputs
     .c     (a),
     .b     (b)
   );
 
   /////////
-  /// w6
+  /// w4
   ////////
-    or3_p orw6(
+  xor2_p xorw4(
     // Outputs
-    .a     ( w6),
+    .a     ( w4),
+    //Inputs
+    .c     (ci),
+    .b     (w0)
+  );
+
+  /////////
+  /// w5
+  ////////
+    or3_p orw5(
+    // Outputs
+    .a     ( w5),
     //Inputs
     .b     (w1),
     .c     (w2),
     .d     (w3)
   );
+
+  always@(*) begin
+   s = w4;
+   co = w5;
+ end
+
 endmodule
 
 
