@@ -16,3 +16,8 @@ the different aspects of timing
 ### 2. Functional_Verification
 Functional verification of three counters in order
 to guarantee the correct operation of the designs.
+
+### 3. Power_analysis
+
+This task consists of analyzing the power 
+consumption of three different adders.
