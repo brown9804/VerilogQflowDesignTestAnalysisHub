@@ -1,5 +1,10 @@
 `include "./lib/definiciones.v"
 
+
+// scale time unit (value of one) / precision
+`timescale 	1ns				/ 1ps
+
+
 // -----------------------------------------------
 // Modulos de compuertas
 // -----------------------------------------------
