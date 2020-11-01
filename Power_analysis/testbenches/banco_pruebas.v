@@ -1,7 +1,7 @@
-`include "libreria.v"
-`include "sumador_logico.v"
-//`include "sumador_rizado.v"
-`include "sumador_look.v"
+`include "./lib/libreria.v"
+`include "./src/sumador_logico.v"
+//`include "./src/sumador_rizado.v"
+`include "./src/sumador_look.v"
 
 // -----------------------------------------------
 // Contadores de transiciónes
