@@ -1,0 +1,123 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sun Nov  1 18:03:35 2020
+[*]
+[dumpfile] "/Users/belindabrown/Desktop/Power_analysis/1and8-full-adder.vcd"
+[dumpfile_mtime] "Sun Nov  1 17:20:16 2020"
+[dumpfile_size] 164770
+[savefile] "/Users/belindabrown/Desktop/1and8-full-adder_config.gtkw"
+[timestart] 0
+[size] 1280 800
+[pos] -1 -24
+*-18.156925 109000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[treeopen] BancoPruebas.sumadorRizado.
+[treeopen] BancoPruebas.sumadorRizado.sumador_completo0.
+[sst_width] 193
+[signals_width] 263
+[sst_expanded] 1
+[sst_vpaned_height] 237
+@200
+-Sumador Rizado 8 bits
+-Inputs
+@24
+BancoPruebas.sumadorRizado.a[7:0]
+BancoPruebas.sumadorRizado.b[7:0]
+@200
+-
+@28
+BancoPruebas.sumadorRizado.ci
+@200
+-
+-Carry
+@24
+BancoPruebas.sumadorRizado.carry_8bit[7:0]
+@200
+-
+-Output
+@28
+BancoPruebas.sumadorRizado.co
+@200
+-
+-Outputs - indv
+@28
+BancoPruebas.sumadorRizado.ws0
+BancoPruebas.sumadorRizado.ws1
+BancoPruebas.sumadorRizado.ws2
+BancoPruebas.sumadorRizado.ws3
+BancoPruebas.sumadorRizado.ws4
+BancoPruebas.sumadorRizado.ws5
+BancoPruebas.sumadorRizado.ws6
+BancoPruebas.sumadorRizado.ws7
+@200
+-
+-Output
+@24
+BancoPruebas.sumadorRizado.s[7:0]
+@200
+-
+-
+-
+-
+-
+-Sumador Completo 1 bit
+-XOR w0
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.c
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.b
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.a
+@200
+-AND w1
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw1.c
+BancoPruebas.sumadorRizado.sumador_completo0.andw1.b
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw1.a
+@200
+-AND w2
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw2.c
+BancoPruebas.sumadorRizado.sumador_completo0.andw2.b
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw2.a
+@200
+-AND w3
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw3.c
+BancoPruebas.sumadorRizado.sumador_completo0.andw3.b
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.andw3.a
+@200
+-XOR w4
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.c
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.b
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.xorw0.a
+@200
+-OR w5
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.orw5.b
+BancoPruebas.sumadorRizado.sumador_completo0.orw5.c
+BancoPruebas.sumadorRizado.sumador_completo0.orw5.d
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.sumador_completo0.orw5.a
+@200
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
