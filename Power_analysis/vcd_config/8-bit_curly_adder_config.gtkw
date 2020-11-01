@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sun Nov  1 16:51:23 2020
+[*]
+[dumpfile] "/Users/belindabrown/Desktop/Power_analysis/1and8-full-adder.vcd"
+[dumpfile_mtime] "Sun Nov  1 16:46:22 2020"
+[dumpfile_size] 160578
+[savefile] "/Users/belindabrown/Desktop/Power_analysis/vcd_config/8-bit_curly_adder_config.gtkw"
+[timestart] 5
+[size] 1280 800
+[pos] -1 -24
+*-5.777060 109 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[treeopen] BancoPruebas.sumadorRizado.
+[sst_width] 193
+[signals_width] 263
+[sst_expanded] 1
+[sst_vpaned_height] 337
+@200
+-Sumador Rizado 8 bits
+-
+-Inputs
+@24
+BancoPruebas.sumadorRizado.a[7:0]
+BancoPruebas.sumadorRizado.b[7:0]
+@200
+-
+@28
+BancoPruebas.sumadorRizado.ci
+@200
+-
+-Carry
+@24
+BancoPruebas.sumadorRizado.carry_8bit[7:0]
+@200
+-Output
+@28
+BancoPruebas.sumadorRizado.co
+@200
+-
+@201
+-Outputs - ind
+@28
+BancoPruebas.sumadorRizado.ws0
+BancoPruebas.sumadorRizado.ws1
+BancoPruebas.sumadorRizado.ws2
+BancoPruebas.sumadorRizado.ws3
+BancoPruebas.sumadorRizado.ws4
+BancoPruebas.sumadorRizado.ws5
+BancoPruebas.sumadorRizado.ws6
+BancoPruebas.sumadorRizado.ws7
+@200
+-
+-Output
+@24
+BancoPruebas.sumadorRizado.s[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
