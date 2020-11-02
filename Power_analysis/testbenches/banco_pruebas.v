@@ -83,51 +83,51 @@ module BancoPruebas;
       for (dir=0; dir<=`NumPwrCntr; dir=dir+1)
         #1 Contador = 0;
 
-      // ------------------------------------------------------
-      //Semilla inicial para el generador de numeros aleatorios
-      // ------------------------------------------------------
-      // Uncomment for [1]
-      // semilla = 10;
-      // Uncomment for [2]
-      // semilla = 20;
-      // Uncomment for [3]
-      // semilla = 50;
+    //   ////// ************** BEGIN EX1 PART 1
+    //   // // ------------------------------------------------------
+    //   // // Semilla inicial para el generador de numeros aleatorios
+    //   //  // ------------------------------------------------------
+    //   /////Uncomment for [1]
+    //   // semilla = 10;
+    //   //// Uncomment for [2]
+    //   // semilla = 20;
+    //   ///// Uncomment for [3]
+    //   semilla = 50;
 
-      // #50
-      // // Cada llamada de una suma se va a variar el contador de sumas
-      // Contador_sumas = Contador_sumas + 1;
-      // /////************** BEGIN EX1 PART 1
-      // //Primer par de operandos para los sumadores
-      // oprA = $random(semilla);
-      // oprB = $random(semilla);
+    //   #50
+    //   ///// Cada llamada de una suma se va a variar el contador de sumas
+    //   Contador_sumas = Contador_sumas + 1;
+    //  //// /////************** BEGIN EX1 PART 1
+    //   //////Primer par de operandos para los sumadores
+    //   oprA = $random(semilla);
+    //   oprB = $random(semilla);
 
-      // Código ciclico por el número de sumas deseadas.
-      //repeat (500)
-      //repeat (1000)
-      // repeat (2000)
-      // repeat (5000)
+    //  ///// Código ciclico por el número de sumas deseadas.
+    //   // repeat (500)
+    //   // repeat (1000)
+    //   // repeat (2000)
+    //   repeat (5000)
+    //     begin
+    //       #50
+	  //        $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
+	  //         Contador_sumas = Contador_sumas + 1;
+    //         oprB = $random(semilla);
+    //         oprA = $random(semilla);
+    //     end
+    //     #50 $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
+    //     //Lea y despliegue la memoria con contadores de transicion
+    //     $display ("Semilla: ", semilla);
+    //     #50 LE = 1;
 
-      //   begin
-      //     #50
-	    //      $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
-	    //       Contador_sumas = Contador_sumas + 1;
-      //       oprB = $random(semilla);
-      //       oprA = $random(semilla);
-      //   end
-      //   #50 $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
-      //   //Lea y despliegue la memoria con contadores de transicion
-      //   $display ("Semilla: ", semilla);
-      //   #50 LE = 1;
+    //     for (dir=0; dir<=`NumPwrCntr; dir=dir+1)
+    //       begin
+    //         #1 Contador = dato;
+    //         $display(,,"PwrCntr[%d]: %d", dir, Contador);
+    //       end
+    //     #1 $finish;
+    //   end
 
-      //   for (dir=0; dir<=`NumPwrCntr; dir=dir+1)
-      //     begin
-      //       #1 Contador = dato;
-      //       $display(,,"PwrCntr[%d]: %d", dir, Contador);
-      //     end
-      //   #1 $finish;
-      // end
-
-      //////// ************** END EX1 PART 1
+    //   ////// ************** END EX1 PART 1
 
     ////// ************** BEGIN EX1 PART 2
       // Código ciclico por el número de sumas deseadas.
