@@ -119,3 +119,4 @@ gtkPower: v_Power
 .PHONY: clean
 clean:
 	rm -rf $(OVVP)*.vvp *.vcd $(LOG_TXT)*_log.txt $(SYN)*syn.v $(DIAGRAMS_GENERATED)*.dot $(DIAGRAMS_GENERATED)*.ps
+
