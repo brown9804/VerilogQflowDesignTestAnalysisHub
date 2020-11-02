@@ -7,7 +7,7 @@ to analyze the power consumption of the designs.
 ###                  Instructions 
 
 ~~~~~
-<folder path>$ make 
+<folder path>$ make gtkPower
 ~~~~~
 
 
