@@ -213,3 +213,4 @@ module xor3_p(a, b, c, d);
   always @(posedge a)
     BancoPruebas.mem_trans.PwrCntr[PwrC] = BancoPruebas.mem_trans.PwrCntr[PwrC] + `Pxor3;
 endmodule
+
