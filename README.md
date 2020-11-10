@@ -23,9 +23,14 @@ consumption of three different adders.
 
 ### 4. Qflow_Analysis [Qflow]
 Aspects analyzed: 
+
 *. Frequency.
-*. Area..
-*. Number and type of gates
+
+*. Area.
+
+*. Number and type of gates.
+
 *. Path delays.
+
 *. Place and route.
 
