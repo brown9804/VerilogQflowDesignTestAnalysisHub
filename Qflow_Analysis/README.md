@@ -1,5 +1,10 @@
 # Qflow Analysis
 
+There is two folders one for the arbiter and another one for the uart. If follows the ideal setup based on the reference of http://opencircuitdesign.com/qflow/.
+
+![image](https://github.com/brown9804/Designs_Verification/blob/main/Qflow_Analysis/docs/img/ideal_setup.png)
+
+
 Aspects analyzed:
 
 *. Frequency.
@@ -37,4 +42,6 @@ Detail router
 Layout viewer
 
 
+
 ## Instructions 
+
