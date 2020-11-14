@@ -6,5 +6,5 @@ What for?
 
 
 This folder is needed because
-if where the output files will
+it is where the output files will
 be the log in txt format of the signals
