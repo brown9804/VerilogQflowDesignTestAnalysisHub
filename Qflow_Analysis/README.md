@@ -57,6 +57,7 @@ Layout viewer
 <inside magic terminal> def read ././layout/arbiter.def
 <inside magic terminal> grid 1.6um 2.0um
 <inside magic terminal> measure horizontal
+<inside magic terminal> measure vertical
 ~~~~~~
 
 ### Magic for uart
@@ -65,4 +66,5 @@ Layout viewer
 <inside magic terminal> def read ././layout/uart.def
 <inside magic terminal> grid 1.6um 2.0um
 <inside magic terminal> measure horizontal
+<inside magic terminal> measure vertical
 ~~~~~~
