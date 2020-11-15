@@ -45,3 +45,18 @@ Layout viewer
 
 ## Instructions 
 
+### Magic for arbiter 
+~~~~~~
+<inside magic terminal> lef read /usr/share/qflow/tech/osu035/osu035_stdcells.lef
+<inside magic terminal> def read ././layout/abiter.def
+<inside magic terminal> grid 1.6um 2.0um
+<inside magic terminal> measure horizontal
+~~~~~~
+
+### Magic for uart
+~~~~~~
+<inside magic terminal> lef read /usr/share/qflow/tech/osu035/osu035_stdcells.lef
+<inside magic terminal> def read ././layout/uart.def
+<inside magic terminal> grid 1.6um 2.0um
+<inside magic terminal> measure horizontal
+~~~~~~
