@@ -1,0 +1,139 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+*SPICE netlist created from BLIF module arbiter by blif2BSpice
+.subckt arbiter a_vdd a_gnd a_clk a_rst a_req3 a_req2 a_req1 a_req0 a_gnt3 a_gnt2 a_gnt1 a_gnt0
+AAOI21X1_1 [_36_ _39_ rst] _4_ d_lut_AOI21X1
+ANAND2X1_1 [req1 _21_] _40_ d_lut_NAND2X1
+AINVX1_1 [_40_] _41_ d_lut_INVX1
+ANOR2X1_1 [req3 req2] _42_ d_lut_NOR2X1
+AINVX1_2 [_42_] _43_ d_lut_INVX1
+ANOR3X1_1 [_12_ _43_ _27_] _44_ d_lut_NOR3X1
+AOAI21X1_1 [_35_ _44_ _41_] _45_ d_lut_OAI21X1
+ANOR3X1_2 [lmask0 _20_ _27_] _46_ d_lut_NOR3X1
+ANOR3X1_3 [_12_ _40_ _18_] _47_ d_lut_NOR3X1
+AAND2X2_1 [_17_ _62_] _48_ d_lut_AND2X2
+ANOR3X1_4 [_48_ _46_ _47_] _49_ d_lut_NOR3X1
+AAOI21X1_2 [_49_ _45_ rst] _3_ d_lut_AOI21X1
+AOAI21X1_2 [_35_ _44_ req0] _50_ d_lut_OAI21X1
+ANOR3X1_5 [_12_ _21_ _18_] _51_ d_lut_NOR3X1
+ANAND3X1_1 [_20_ req0 _42_] _52_ d_lut_NAND3X1
+ANOR3X1_6 [lmask0 _52_ _27_] _53_ d_lut_NOR3X1
+AAND2X2_2 [_17_ _61_] _54_ d_lut_AND2X2
+ANOR3X1_7 [_54_ _51_ _53_] _55_ d_lut_NOR3X1
+AAOI21X1_3 [_55_ _50_ rst] _2_ d_lut_AOI21X1
+AINVX1_3 [_17_] _56_ d_lut_INVX1
+AOAI21X1_3 [_22_ _43_ _56_] _57_ d_lut_OAI21X1
+AOR2X2_1 [lasmask ledge] _58_ d_lut_OR2X2
+ANOR2X1_2 [_58_ _57_] _0_ d_lut_NOR2X1
+ANAND2X1_2 [lasmask ledge] _59_ d_lut_NAND2X1
+ANAND2X1_3 [_59_ _58_] _60_ d_lut_NAND2X1
+ANOR2X1_3 [_60_ _57_] _1_ d_lut_NOR2X1
+ABUFX2_1 [_61_] gnt0 d_lut_BUFX2
+ABUFX2_2 [_62_] gnt1 d_lut_BUFX2
+ABUFX2_3 [_63_] gnt2 d_lut_BUFX2
+ABUFX2_4 [_64_] gnt3 d_lut_BUFX2
+ADFFPOSX1_1 _6_ clk NULL NULL lmask0 NULL ddflop
+ADFFPOSX1_2 _7_ clk NULL NULL lmask1 NULL ddflop
+ADFFPOSX1_3 _0_ clk NULL NULL lasmask NULL ddflop
+ADFFPOSX1_4 _1_ clk NULL NULL ledge NULL ddflop
+ADFFPOSX1_5 _2_ clk NULL NULL _61_ NULL ddflop
+ADFFPOSX1_6 _3_ clk NULL NULL _62_ NULL ddflop
+ADFFPOSX1_7 _4_ clk NULL NULL _63_ NULL ddflop
+ADFFPOSX1_8 _5_ clk NULL NULL _64_ NULL ddflop
+AINVX1_4 [rst] _8_ d_lut_INVX1
+AINVX1_5 [lmask1] _9_ d_lut_INVX1
+AOAI21X1_4 [_64_ _63_ lasmask] _10_ d_lut_OAI21X1
+AOAI21X1_5 [lasmask _9_ _10_] _11_ d_lut_OAI21X1
+AAND2X2_3 [_11_ _8_] _7_ d_lut_AND2X2
+AINVX4_1 [lmask0] _12_ d_lut_INVX4
+AOAI21X1_6 [_64_ _62_ lasmask] _13_ d_lut_OAI21X1
+AOAI21X1_7 [lasmask _12_ _13_] _14_ d_lut_OAI21X1
+AAND2X2_4 [_14_ _8_] _6_ d_lut_AND2X2
+AAOI22X1_1 [_62_ req1 _61_ req0] _15_ d_lut_AOI22X1
+AAOI22X1_2 [_64_ req3 _63_ req2] _16_ d_lut_AOI22X1
+ANAND2X1_4 [_15_ _16_] _17_ d_lut_NAND2X1
+ANAND3X1_2 [lmask1 _15_ _16_] _18_ d_lut_NAND3X1
+ANOR2X1_4 [_12_ _18_] _19_ d_lut_NOR2X1
+AINVX2_1 [req1] _20_ d_lut_INVX2
+AINVX1_6 [req0] _21_ d_lut_INVX1
+ANAND2X1_5 [_20_ _21_] _22_ d_lut_NAND2X1
+AINVX1_7 [req2] _23_ d_lut_INVX1
+ANAND2X1_6 [req3 _23_] _24_ d_lut_NAND2X1
+ANOR2X1_5 [_24_ _22_] _25_ d_lut_NOR2X1
+AAOI22X1_3 [_64_ _17_ _25_ _19_] _26_ d_lut_AOI22X1
+ANAND3X1_3 [_9_ _15_ _16_] _27_ d_lut_NAND3X1
+ANOR3X1_8 [_12_ _24_ _27_] _28_ d_lut_NOR3X1
+AINVX1_8 [req3] _29_ d_lut_INVX1
+ANOR3X1_9 [lmask0 _29_ _18_] _30_ d_lut_NOR3X1
+ANAND3X1_4 [req3 _23_ _20_] _31_ d_lut_NAND3X1
+ANOR3X1_10 [lmask0 _31_ _27_] _32_ d_lut_NOR3X1
+ANOR3X1_11 [_28_ _30_ _32_] _33_ d_lut_NOR3X1
+AAOI21X1_4 [_33_ _26_ rst] _5_ d_lut_AOI21X1
+ANOR2X1_6 [_23_ _22_] _34_ d_lut_NOR2X1
+ANOR3X1_12 [lmask0 req3 _18_] _35_ d_lut_NOR3X1
+AOAI21X1_8 [_19_ _35_ _34_] _36_ d_lut_OAI21X1
+AINVX1_9 [_27_] _37_ d_lut_INVX1
+AAOI21X1_5 [_12_ req1 _23_] _38_ d_lut_AOI21X1
+AAOI22X1_4 [_63_ _17_ _38_ _37_] _39_ d_lut_AOI22X1
+
+.model todig_3v adc_bridge(in_high=2.0 in_low=1.0 rise_delay=10n fall_delay=10n)
+.model toana_3v dac_bridge(out_high=3.0 out_low=0.0)
+
+.model ddflop d_dff(ic=0 rise_delay=1n fall_delay=1n)
+.model dzero d_pulldown(load=1p)
+.model done d_pullup(load=1p)
+
+AA2D1 [a_clk] [clk] todig_3v
+AA2D2 [a_rst] [rst] todig_3v
+AA2D3 [a_req3] [req3] todig_3v
+AA2D4 [a_req2] [req2] todig_3v
+AA2D5 [a_req1] [req1] todig_3v
+AA2D6 [a_req0] [req0] todig_3v
+AD2A1 [gnt3] [a_gnt3] toana_3v
+AD2A2 [gnt2] [a_gnt2] toana_3v
+AD2A3 [gnt1] [a_gnt1] toana_3v
+AD2A4 [gnt0] [a_gnt0] toana_3v
+
+.ends arbiter
+ 
+
+* AOI21X1 (!((A B)+C))
+.model d_lut_AOI21X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "11100000")
+* NAND2X1 (!(A B))
+.model d_lut_NAND2X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "1110")
+* INVX1 (!A)
+.model d_lut_INVX1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "10")
+* NOR2X1 (!(A+B))
+.model d_lut_NOR2X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "1000")
+* NOR3X1 (!((A+B)+C))
+.model d_lut_NOR3X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "10000000")
+* OAI21X1 (!((A+B) C))
+.model d_lut_OAI21X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "11111000")
+* AND2X2 (A B)
+.model d_lut_AND2X2 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "0001")
+* NAND3X1 (!((A B) C))
+.model d_lut_NAND3X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "11111110")
+* OR2X2 (A+B)
+.model d_lut_OR2X2 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "0111")
+* BUFX2 A
+.model d_lut_BUFX2 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "01")
+* DFFPOSX1 DS0000
+* INVX4 (!A)
+.model d_lut_INVX4 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "10")
+* AOI22X1 (!((A B)+(C D)))
+.model d_lut_AOI22X1 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "1110111011100000")
+* INVX2 (!A)
+.model d_lut_INVX2 d_lut (rise_delay=1n fall_delay=1n input_load=10f
++ table_values "10")
+.end
