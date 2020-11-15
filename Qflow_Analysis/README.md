@@ -77,8 +77,8 @@ Layout viewer
 Now inside `qflow_vars.sh` set:
 
 ~~~~
-set techdir=/usr/share/qflow/tech/osu050
-set techname=osu050
+<set> techdir=/usr/share/qflow/tech/osu050
+<set> techname=osu050
 ~~~~
 
 Run the commands inside ` qflow_exec.sh ` one by one:
