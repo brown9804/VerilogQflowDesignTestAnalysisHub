@@ -68,3 +68,18 @@ Layout viewer
 <inside magic terminal> measure horizontal
 <inside magic terminal> measure vertical
 ~~~~~~
+
+### Tech change 
+~~~~~~~
+<inside specific project> make qflow
+~~~~~~~
+
+Now inside `qflow_vars.sh` set:
+
+~~~~
+set techdir=/usr/share/qflow/tech/osu050
+set techname=osu050
+~~~~
+
+Run the commands inside ` qflow_exec.sh ` one by one:
+
