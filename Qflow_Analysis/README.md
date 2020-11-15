@@ -93,3 +93,5 @@ Run the commands inside ` qflow_exec.sh ` one by one:
 # /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
 # /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
 ~~~~~
+
+And magic using `osu050` instead of `osu035`.
