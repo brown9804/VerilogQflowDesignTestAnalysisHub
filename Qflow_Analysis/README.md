@@ -45,10 +45,16 @@ Layout viewer
 
 ## Instructions 
 
+~~~~
+<inside specific project> make qflow
+<inside specific project> make stat
+<inside specific project> magic
+~~~~
+
 ### Magic for arbiter 
 ~~~~~~
 <inside magic terminal> lef read /usr/share/qflow/tech/osu035/osu035_stdcells.lef
-<inside magic terminal> def read ././layout/abiter.def
+<inside magic terminal> def read ././layout/arbiter.def
 <inside magic terminal> grid 1.6um 2.0um
 <inside magic terminal> measure horizontal
 ~~~~~~
