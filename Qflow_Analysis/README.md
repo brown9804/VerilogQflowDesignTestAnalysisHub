@@ -83,3 +83,13 @@ Now inside `qflow_vars.sh` set:
 
 Run the commands inside ` qflow_exec.sh ` one by one:
 
+~~~~~
+/usr/lib/qflow/scripts/synthesize.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+/usr/lib/qflow/scripts/placement.sh -d /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+# /usr/lib/qflow/scripts/vesta.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+/usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+# /usr/lib/qflow/scripts/placement.sh -f -d /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+# /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Qflow_Analysis/projects/arbiter arbiter 
+~~~~~
