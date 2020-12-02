@@ -6,11 +6,11 @@ to guarantee the correct operation of the designs.
 
 ###                  Instructions 
 ~~~~~
-<folder path>$ make 
+<folder path>$ make 4b
 ~~~~~
 
 ~~~~~
-<folder path>$ make v_SCB
+<folder path>$ make 32b
 ~~~~~
 
 ### Important:
