@@ -85,9 +85,13 @@ T_4B = t_counter_4b.v
 OVVP = ./vvp/
 VVP_4B = counter_4b.vvp
 
+YOSYS = ./yosys/
+YC4B = counter_4b_y.ys
 
 #-------
 VCD_4B = counter_4b.vcd
+
+
 
 
 #******************************************************************************
@@ -100,11 +104,19 @@ all: v_4B
 #******************************************************************************
 #### 													SCOREBOARD
 #******************************************************************************
+y0:
+	yosys $(YOSYS)$(YC4B)
+
+#target phony
+.PHONY: r_4B
+r_4B: y0
+	sed -i 's/counter_b4/counter_b4_syn/g' $(SYN)$(4B_SYN)
 
 
-v_4B:
+v_4B: r_4B
 	iverilog -o $(OVVP)$(VVP_4B) $(TESTBENCHES)$(TB_4B)
 	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(VVP_4B)_log.txt
+
 
 #target phony
 .PHONY: gtkw_4b
@@ -118,4 +130,4 @@ gtkw_4b: v_4B
 
 .PHONY: clean
 clean:
-	rm -rf $(OVVP)*.vvp *.vcd $(LOG_TXT)*_log.txt $(SYN)*syn.v $(DIAGRAMS_GENERATED)*.dot $(DIAGRAMS_GENERATED)*.ps
+	rm -rf $(OVVP)*.vvp *.vcd $(LOG_TXT)*log $(SYN)*syn.v $(DIAGRAMS_GENERATED)*.dot $(DIAGRAMS_GENERATED)*.ps

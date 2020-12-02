@@ -9,30 +9,27 @@
 
 
 // The tester module is defined
-////////////// Logic
-`include "./testers/driver.v"
-`include "./testers/checker.v"
 
 
 // Verifying that the generic structural description works using the automatic
 // verifier already built. What is done using the checker and the tester
 
-module t_counter_4b(
+module t_counter_b4(
 //inputs
-input 4b_load,
-input 4b_rco, //  2^nbits - 1 = #
-input [3:0] 4b_Q,
+input b4_load,
+input b4_rco, //  2^nbits - 1 = #
+input [3:0] b4_Q,
 
-input 4b_load_syn,
-input 4b_rco_syn, //  2^nbits - 1 = #
-input [3:0] 4b_Q_syn,
+input b4_load_syn,
+input b4_rco_syn, //  2^nbits - 1 = #
+input [3:0] b4_Q_syn,
 
 //outputs
-output reg 4b_enable,
-output reg 4b_clk,
-output reg 4b_reset,
-output reg [1:0] 4b_mode, // choose from 00, 01, 10, 11
-output reg [3:0]  4b_D
+output reg b4_enable,
+output reg b4_clk,
+output reg b4_reset,
+output reg [1:0] b4_mode, // choose from 00, 01, 10, 11
+output reg [3:0]  b4_D
 );
 
 	// The stimulus must be changed, where it allows testing to give an idea of ​​the behavior of the signals.
@@ -58,7 +55,7 @@ wire wrco, wload;
 wire [3:0] wQ;
 
 
-parameter ITERATIONS = 100;
+parameter ITERATIONS = 50;
 integer log;
 
 initial begin
@@ -66,25 +63,58 @@ initial begin
   $dumpfile("counter_4b.vcd");
   $dumpvars(0);   // "dumpping" variables
 
-  log = $fopen("./log_txt/counter_4b.log");
+  log = $fopen("./log_txt/counter_b4.log");
   $fdisplay(log, "time=%5d, Simulation Start", $time);
   $fdisplay(log, "time=%5d, Starting Reset", $time);
 
-//////// task initial begin
+/////////////////////////
+////////   t_drv_initial();
+//////////////////////////
 
-  t_drv_initial();
+  repeat (ITERATIONS) begin // 1 0 1  1 0 1
+  @(negedge b4_clk);
+    b4_reset <= 1;
+    b4_enable <= 0;
+  @(negedge b4_clk);
+    b4_reset <= 0;
+    b4_enable <= 0;
+  @(negedge b4_clk);
+    b4_reset <= 0;
+    b4_enable <= 1;
+  end // end repeat
 
   $fdisplay(log, "time=%5d, Reset Completed", $time);
 
   $fdisplay(log, "time=%5d, Starting Test", $time);
 
+///////////////////////////////////
+  //   t_loading(ITERATIONS);
+  ///////////////////////////////////
+b4_mode <= 2'b11;
+repeat (ITERATIONS) begin
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
+    b4_D <= 4'b1010;
+    @(negedge b4_clk);
+    if (b4_mode == 2'b11) begin
+      b4_mode <= 2'b10;
+    end
+  end // ~ b4_clk
+end // repeat
 
-  fork
-    // t_loading(ITERATIONS);
-    t_loading(ITERATIONS);
-    checker(ITERATIONS);
+//////////////////////////////////
+  //   checker(ITERATIONS);
+//////////////////////////////////
 
-  join
+  repeat (ITERATIONS) @ (posedge b4_clk) begin
+	  if ((b4_Q == b4_Q_syn) && (b4_rco == b4_rco_syn) && (b4_load == b4_load_syn)) begin
+      $fdisplay(log, "PASS");
+      end
+    else begin
+      $fdisplay(log, "Time=%.0f Error! DUT: b4_Q_syn=%d, b4_rco_syn=%b, b4_load_syn=%b, scoreboard: b4_Q=%d, b4_rco=%b, b4_load=%b", $time, b4_Q_syn, b4_rco_syn, b4_load_syn, b4_Q, b4_rco, b4_load);
+      end
+  end // repeat
+
   $fdisplay(log, "time=%5d, Test Completed Loading ", $time);
   $fdisplay(log, "time=%5d, Simulation Completed", $time);
   $fclose(log);
@@ -107,8 +137,8 @@ end //repeat initial delays and max frequency
 
 
 // clock logic
-initial	clk	 			<= 0;			// Initial value to avoid indeterminations
-always	#10 clk				<= ~clk;		// toggle every 10ns
+initial	b4_clk	 			<= 0;			// Initial value to avoid indeterminations
+always	#10 b4_clk				<= ~b4_clk;		// toggle every 10ns
 
 endmodule
 
