@@ -45,10 +45,14 @@ wire tb_4b_clk;
 wire tb_4b_reset;
 wire [1:0] tb_4b_mode; // choose from 00, 01, 10, 11
 wire [3:0] tb_4b_D;
+
 wire tb_4b_load;
 wire tb_4b_rco; //  2^nbits - 1 = #
 wire [3:0] tb_4b_Q;
 
+wire tb_4b_load_syn;
+wire tb_4b_rco_syn; //  2^nbits - 1 = #
+wire [3:0] tb_4b_Q_syn;
 
 
 //  Use /*AUTOREGINPUT*/ for create inputs in /*AUTOINST*/ in case inputs, outputs of inout signals
@@ -63,45 +67,49 @@ wire [3:0] tb_4b_Q;
 
 counter_4b counter_4b_beh(/*AUTOINST*/
   // outputs
-.4b_Q        (),
-.4b_load     (),
-.4b_rco      (),
+.4b_Q        (tb_4b_Q),
+.4b_load     (tb_4b_load),
+.4b_rco      (tb_4b_rco),
 // inputs
-.4b_clk         (),
-.reset       (),
-.4b_enable   (),
-.4b_mode     (), // choose from 00, 01, 10, 11
-.4b_D        ()
+.4b_clk         (tb_4b_clk),
+.reset       (tb_4b_reset),
+.4b_enable   (tb_4b_enable),
+.4b_mode     (tb_4b_mode), // choose from 00, 01, 10, 11
+.4b_D        (tb_4b_D)
 );
 
 
 counter_4b_syn counter_4b_syn(/*AUTOINST*/
   // outputs
-.4b_Q        (),
-.4b_load     (),
-.4b_rco      (),
+.4b_Q        (tb_4b_Q_syn),
+.4b_load     (tb_4b_load_syn),
+.4b_rco      (tb_4b_rco_syn),
 // inputs
-.4b_clk         (),
-.reset       (),
-.4b_enable   (),
-.4b_mode     (), // choose from 00, 01, 10, 11
-.4b_D        ()
+.4b_clk         (tb_4b_clk),
+.reset       (tb_4b_reset),
+.4b_enable   (tb_4b_enable),
+.4b_mode     (tb_4b_mode), // choose from 00, 01, 10, 11
+.4b_D        (tb_4b_D)
 );
 
 
 // tester ...
 t_counter_4b t_counter_4b(/*AUTOINST*/
   // outputs
-.4b_clk         (),
-.reset       (),
-.4b_enable   (),
-.4b_mode     (), // choose from 00, 01, 10, 11
-.4b_D        (),
+.4b_clk         (tb_4b_clk),
+.reset       (tb_4b_reset),
+.4b_enable   (tb_4b_enable),
+.4b_mode     (tb_4b_mode), // choose from 00, 01, 10, 11
+.4b_D        (tb_4b_D),
 
 // inputs
-.4b_Q        (),
-.4b_load     (),
-.4b_rco      ()
+.4b_Q        (tb_4b_Q),
+.4b_load     (tb_4b_load),
+.4b_rco      (tb_4b_rco),
+
+.4b_Q_syn        (tb_4b_Q_syn),
+.4b_load_syn     (tb_4b_load_syn),
+.4b_rco_syn      (tb_4b_rco_syn)
 );
 
 

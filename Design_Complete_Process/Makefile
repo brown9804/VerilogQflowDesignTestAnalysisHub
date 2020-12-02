@@ -73,13 +73,21 @@ LIB = ./lib/
 LOG_TXT = ./log_txt/
 
 SYN = ./syn/
-
+4B_SYN = counter_4b_syn.v
 
 TESTBENCHES = ./testbenches/
+TB_4B = tb_counter_4b.v
 
 TESTERS = ./testers/
+T_4B = t_counter_4b.v
+
 
 OVVP = ./vvp/
+VVP_4B = counter_4b.vvp
+
+
+#-------
+VCD_4B = counter_4b.vcd
 
 
 #******************************************************************************
@@ -88,20 +96,20 @@ OVVP = ./vvp/
 # %.vvp: %.v
 # 	iverilog -o $@ $^
 
-all: v_all_vs
+all: v_4B
 #******************************************************************************
 #### 													SCOREBOARD
 #******************************************************************************
 
 
-v_SCB:
-	iverilog -o $(OVVP)$(_VVP_SCB) $(TESTBENCHES)$(_TB_SCB)
-	vvp $(OVVP)$(_VVP_SCB) > $(LOG_TXT)$(_VVP_SCB)_log.txt
+v_4B:
+	iverilog -o $(OVVP)$(VVP_4B) $(TESTBENCHES)$(TB_4B)
+	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(VVP_4B)_log.txt
 
 #target phony
-.PHONY: gtkw_scb
-gtkw_scb: v_SCB
-	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(_VCD_SCB)
+.PHONY: gtkw_4b
+gtkw_4b: v_4B
+	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(VCD_4B)
 
 
 #******************************************************************************
