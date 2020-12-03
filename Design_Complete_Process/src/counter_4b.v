@@ -38,6 +38,7 @@ always @(posedge b4_clk) begin
     end // end on -> reset == 1 clean data
 
   else begin // reset == 0
+
     if (b4_enable == 0) begin
       b4_Q <= 4'b0000;
       b4_load <= 0;
@@ -48,64 +49,78 @@ always @(posedge b4_clk) begin
       // MODO = 01 − > Q - 1
       // MODO = 10 − > Q + 1
       // MODO = 11 − > D
-    if (b4_mode == 2'b00) begin
-          mem <= mem + 3;
-          b4_load <= 0;
-      //////////////////////////// * ////////////////////
-          if (mem == (2**4 - 1) || (mem >= 13)) begin // next stage
-            b4_rco <= 1;
-          end // b4_rco == 1
+////////////////
+////////// CASES 
+////////////////
 
-          else begin // same stage
-            b4_rco <= 0;
-          end // b4_rco ==0
-    end // end b4_mode 00
+   case(b4_mode)
 
-    else if (b4_mode == 2'b01) begin
-          mem <= mem - 1;
-          b4_load <= 0;
-      //////////////////////////// * ////////////////////
-          if (mem == (2**4 - 1))begin // next stage
-            b4_rco <= 1;
-          end // b4_rco == 1
+    2'b00:   begin
+      mem <= mem + 3;
+      b4_load <= 0;
+      //  * //
+      if (mem == (2**4 - 1) || (mem >= 13)) begin // next stage
+        b4_rco <= 1;
+      end // b4_rco == 1
 
-          else begin // same stage
-            b4_rco <= 0;
-          end // b4_rco ==0
-    end // end b4_mode 01
+      else begin // same stage
+        b4_rco <= 0;
+      end // b4_rco ==0
+    end // end mode 0 
 
-    else if (b4_mode == 2'b10) begin
-          mem <= mem + 1;
-          b4_load <= 0;
-      //////////////////////////// * ////////////////////
-          if (mem == (2**4 - 1))begin // next stage
-            b4_rco <= 1;
-          end // b4_rco == 1
+    //////////////////////////// * ////////////////////
 
-          else begin // same stage
-            b4_rco <= 0;
-          end // b4_rco ==0
-    end // end b4_mode 10
+    2'b01: begin
+      mem <= mem - 1;
+      b4_load <= 0;
+        //  * //
+      if (mem == (2**4 - 1))begin // next stage
+        b4_rco <= 1;
+      end // b4_rco == 1
 
-    else if (b4_mode == 2'b11) begin
-          mem <= b4_D;
-          b4_rco <= 0;
-          b4_load <= 1; // charging
+      else begin // same stage
+        b4_rco <= 0;
+      end // b4_rco ==0
+    end // end mode 01
 
-      //////////////////////////// * ////////////////////
-          if (mem == (2**4 - 1)) begin // next stage
-            b4_rco <= 1;
-          end // b4_rco == 1
 
-          else begin // same stage
-            b4_rco <= 0;
-          end // b4_rco ==0
+    //////////////////////////// * ////////////////////
 
-    end // end b4_mode 11
+    2'b10: begin
+      mem <= mem + 1;
+      b4_load <= 0;
+      //  * //
+      if (mem == (2**4 - 1))begin // next stage
+        b4_rco <= 1;
+      end // b4_rco == 1
 
-    else begin // b4_mode != 00,01,10,11
-          mem <= mem;
-    end // end else b4_mode
+      else begin // same stage
+        b4_rco <= 0;
+      end // b4_rco ==0
+    end // end mode 10 
+
+    //////////////////////////// * ////////////////////
+
+    2'b11: begin 
+      mem <= b4_D;
+      b4_rco <= 0;
+      b4_load <= 1; // charging
+      //  * //
+      if (mem == (2**4 - 1)) begin // next stage
+        b4_rco <= 1;
+      end // b4_rco == 1
+
+      else begin // same stage
+        b4_rco <= 0;
+      end // b4_rco ==0
+    end // end mode 11 last mode 
+
+    //////////////////////////// * ////////////////////
+    default: begin // b4_mode != 00,01,10,11
+      mem <= mem;
+    end
+
+   endcase // end cases 
 
     end // end if b4_enable on
   end // end else zz
