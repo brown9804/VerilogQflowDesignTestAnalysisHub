@@ -15,13 +15,6 @@
 // verifier already built. What is done using the checker and the tester
 
 module t_counter_b4(
-//outputs
-output reg b4_enable,
-output reg b4_clk,
-output reg b4_reset,
-output reg [1:0] b4_mode, // choose from 00, 01, 10, 11
-output reg [3:0]  b4_D,
-
 //inputs
 input wire b4_load,
 input wire b4_rco, //  2^nbits - 1 = #
@@ -29,7 +22,14 @@ input wire [3:0] b4_Q,
 
 input wire b4_load_syn,
 input wire b4_rco_syn, //  2^nbits - 1 = #
-input wire [3:0] b4_Q_syn
+input wire [3:0] b4_Q_syn,
+
+//outputs
+output reg b4_enable,
+output reg b4_clk,
+output reg b4_reset,
+output reg [1:0] b4_mode, // choose from 00, 01, 10, 11
+output reg [3:0]  b4_D
 );
 
 	// The stimulus must be changed, where it allows testing to give an idea of ​​the behavior of the signals.
@@ -55,7 +55,7 @@ wire wrco, wload;
 wire [3:0] wQ;
 
 
-parameter ITERATIONS = 50;
+parameter ITERATIONS = 60;
 integer log;
 
 initial begin
@@ -67,10 +67,6 @@ initial begin
   $fdisplay(log, "time=%5d, Simulation Start", $time);
   $fdisplay(log, "time=%5d, Starting Reset", $time);
 
-
-/// INITIAL VALUES 
-	#4 b4_reset = 0;
-
 //// RESET MASTER 
 	// Begin test
 	repeat (6) begin
@@ -79,10 +75,8 @@ initial begin
 	end
 
 	@(posedge b4_clk) begin
-	#4 b4_reset <= 1;
+	#5 b4_reset <= 1;
 	end
-
-
 
 /////////////////////////
 ////////   t_drv_initial();
@@ -111,12 +105,39 @@ b4_mode <= 2'b11;
 repeat (ITERATIONS) begin
   @(negedge b4_clk) begin
     b4_enable <= 1;
+    b4_D <= 4'b0001; // 1
+    @(negedge b4_clk);
+    if (b4_mode == 2'b11) begin
+      b4_mode <= 2'b10;
+    end
+    else begin
+      b4_mode <= 2'b00;
+    end
+  end // ~ b4_clk
+
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
+    b4_D <= 4'b0010; // 2
+    @(negedge b4_clk);
+    if (b4_mode == 2'b10) begin
+      b4_mode <= 2'b01;
+    end
+    else begin
+      b4_mode <= 2'b10;
+    end
+  end // ~ b4_clk
+
+
+  //////// sending 
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
     b4_D <= 4'b1010; // A
     @(negedge b4_clk);
     if (b4_mode == 2'b11) begin
       b4_mode <= 2'b10;
     end
   end // ~ b4_clk
+
   //////// sending 
   @(negedge b4_clk) begin
     b4_enable <= 1;
@@ -127,7 +148,7 @@ repeat (ITERATIONS) begin
     end
   end // ~ b4_clk
 
-  //////// sending 
+  //////// sending
   @(negedge b4_clk) begin
     b4_enable <= 1;
     b4_D <= 4'b1110; // E
@@ -137,7 +158,6 @@ repeat (ITERATIONS) begin
     end
   end // ~ b4_clk
 
-  //////// sending
   @(negedge b4_clk) begin
     b4_enable <= 1;
     b4_D <= 4'b1111; // F
@@ -146,7 +166,6 @@ repeat (ITERATIONS) begin
       b4_mode <= 2'b10;
     end
   end // ~ b4_clk
-
 
 
 
@@ -191,6 +210,15 @@ end //repeat initial delays and max frequency
 // clock logic
 initial	b4_clk	 			<= 0;			// Initial value to avoid indeterminations
 always	#10 b4_clk				<= ~b4_clk;		// toggle every 10ns
+
+
+
+/// INITIAL VALUES 
+initial #900 b4_reset <= 0;
+initial b4_enable <= 0;
+initial b4_mode <= 0;// choose from 00, 01, 10, 11
+initial b4_D <= 4'b0000;
+
 
 endmodule
 

@@ -13,9 +13,6 @@
 // Count three at a time down.
 // Parallel charging.
 
-// Scoreboard it's the ideal output in order to compare if
-// the synthesizable files are working as expected.
-
 module counter_b4(
 input wire b4_enable,
 input wire b4_clk,
@@ -103,16 +100,8 @@ always @(posedge b4_clk) begin
 
     2'b11: begin 
       mem <= b4_D;
-      b4_rco <= 0;
       b4_load <= 1; // charging
-      //  * //
-      if (mem == (2**4 - 1)) begin // next stage
-        b4_rco <= 1;
-      end // b4_rco == 1
-
-      else begin // same stage
-        b4_rco <= 0;
-      end // b4_rco ==0
+      b4_rco <= 0;
     end // end mode 11 last mode 
 
     //////////////////////////// * ////////////////////
@@ -130,15 +119,19 @@ always @(*) begin
  b4_Q = mem;
 end
 
-  always @(negedge b4_clk) begin // frequency half cycle  
-//////////////////////////// * ////////////////////
-    if (mem == (2**4 - 1)) begin // next stage
-      b4_rco <= 0;
-    end // b4_rco == 0
+always @(negedge b4_clk) begin
+   case(b4_mode)
 
-    else begin // same stage
-      b4_rco <= 1;
-    end // b4_rco ==1
+   2'b11: begin 
+     b4_rco <= b4_rco - 1;
+   end // end charge mode
+
+  default: begin
+    b4_rco <= b4_rco;
+  end
+
+endcase
+
 end 
 
 endmodule

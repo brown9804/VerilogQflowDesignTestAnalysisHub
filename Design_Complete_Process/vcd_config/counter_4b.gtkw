@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Thu Dec  3 06:37:08 2020
+[*]
+[dumpfile] "/Users/belindabrown/Downloads/Designs_Verification/Design_Complete_Process/counter_4b.vcd"
+[dumpfile_mtime] "Thu Dec  3 06:34:38 2020"
+[dumpfile_size] 84357
+[savefile] "/Users/belindabrown/Downloads/Designs_Verification/Design_Complete_Process/vcd_config/Counter_4b.gtkw"
+[timestart] 54
+[size] 1280 800
+[pos] -1 -24
+*-6.754041 240 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 193
+[signals_width] 141
+[sst_expanded] 1
+[sst_vpaned_height] 237
+@28
+TestBench.clk
+TestBench.reset
+TestBench.enable
+@200
+-
+@28
+TestBench.mode[1:0]
+@200
+-
+@22
+TestBench.D[3:0]
+@200
+-
+@28
+TestBench.load
+TestBench.load_syn
+@200
+-
+@28
+TestBench.rco
+TestBench.rco_syn
+@201
+-
+@22
+TestBench.Q[3:0]
+TestBench.Q_syn[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
