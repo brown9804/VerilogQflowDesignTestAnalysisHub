@@ -100,6 +100,7 @@ always @(posedge b4_clk) begin
           else begin // same stage
             b4_rco <= 0;
           end // b4_rco ==0
+
     end // end b4_mode 11
 
     else begin // b4_mode != 00,01,10,11
@@ -113,6 +114,17 @@ end // end b4_clk
 always @(*) begin
  b4_Q = mem;
 end
+
+  always @(negedge b4_clk) begin // frequency half cycle  
+//////////////////////////// * ////////////////////
+    if (mem == (2**4 - 1)) begin // next stage
+      b4_rco <= 0;
+    end // b4_rco == 0
+
+    else begin // same stage
+      b4_rco <= 1;
+    end // b4_rco ==1
+end 
 
 endmodule
 

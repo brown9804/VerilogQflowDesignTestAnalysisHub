@@ -59,7 +59,7 @@ module DFF(C, D, Q);
 input C, D;
 output reg Q;
 always @(posedge C)
-	Q <= D;
+	Q <= #6 D;
 endmodule
 
 

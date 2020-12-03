@@ -15,21 +15,21 @@
 // verifier already built. What is done using the checker and the tester
 
 module t_counter_b4(
-//inputs
-input b4_load,
-input b4_rco, //  2^nbits - 1 = #
-input [3:0] b4_Q,
-
-input b4_load_syn,
-input b4_rco_syn, //  2^nbits - 1 = #
-input [3:0] b4_Q_syn,
-
 //outputs
 output reg b4_enable,
 output reg b4_clk,
 output reg b4_reset,
 output reg [1:0] b4_mode, // choose from 00, 01, 10, 11
-output reg [3:0]  b4_D
+output reg [3:0]  b4_D,
+
+//inputs
+input wire b4_load,
+input wire b4_rco, //  2^nbits - 1 = #
+input wire [3:0] b4_Q,
+
+input wire b4_load_syn,
+input wire b4_rco_syn, //  2^nbits - 1 = #
+input wire [3:0] b4_Q_syn
 );
 
 	// The stimulus must be changed, where it allows testing to give an idea of ​​the behavior of the signals.
@@ -67,11 +67,28 @@ initial begin
   $fdisplay(log, "time=%5d, Simulation Start", $time);
   $fdisplay(log, "time=%5d, Starting Reset", $time);
 
+
+/// INITIAL VALUES 
+	#4 b4_reset = 0;
+
+//// RESET MASTER 
+	// Begin test
+	repeat (6) begin
+	@(posedge b4_clk);
+	b4_reset <= 0;
+	end
+
+	@(posedge b4_clk) begin
+	#4 b4_reset <= 1;
+	end
+
+
+
 /////////////////////////
 ////////   t_drv_initial();
 //////////////////////////
 
-  repeat (ITERATIONS) begin // 1 0 1  1 0 1
+  repeat (2) begin // 1 0 1  1 0 1
   @(negedge b4_clk);
     b4_reset <= 1;
     b4_enable <= 0;
@@ -94,12 +111,45 @@ b4_mode <= 2'b11;
 repeat (ITERATIONS) begin
   @(negedge b4_clk) begin
     b4_enable <= 1;
-    b4_D <= 4'b1010;
+    b4_D <= 4'b1010; // A
     @(negedge b4_clk);
     if (b4_mode == 2'b11) begin
       b4_mode <= 2'b10;
     end
   end // ~ b4_clk
+  //////// sending 
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
+    b4_D <= 4'b1011; // B
+    @(negedge b4_clk);
+    if (b4_mode == 2'b11) begin
+      b4_mode <= 2'b10;
+    end
+  end // ~ b4_clk
+
+  //////// sending 
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
+    b4_D <= 4'b1110; // E
+    @(negedge b4_clk);
+    if (b4_mode == 2'b11) begin
+      b4_mode <= 2'b10;
+    end
+  end // ~ b4_clk
+
+  //////// sending
+  @(negedge b4_clk) begin
+    b4_enable <= 1;
+    b4_D <= 4'b1111; // F
+    @(negedge b4_clk);
+    if (b4_mode == 2'b11) begin
+      b4_mode <= 2'b10;
+    end
+  end // ~ b4_clk
+
+
+
+
 end // repeat
 
 //////////////////////////////////
@@ -118,7 +168,9 @@ end // repeat
   $fdisplay(log, "time=%5d, Test Completed Loading ", $time);
   $fdisplay(log, "time=%5d, Simulation Completed", $time);
   $fclose(log);
-  #200 $finish;
+
+  #40 $finish;
+
 end
 
 // For delays and max frequency

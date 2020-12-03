@@ -43,16 +43,16 @@ module TestBench; // Testbench
 wire  enable;
 wire  clk;
 wire  reset;
-wire [1:0]  mode; // choose from 00, 01, 10, 11
-wire [3:0]  D;
+wire [1:0] mode; // choose from 00, 01, 10, 11
+wire [3:0] D;
 
 wire  load;
 wire  rco; //  2^nbits - 1 = #
-wire [3:0]  Q;
+wire [3:0] Q;
 
 wire  load_syn;
 wire  rco_syn; //  2^nbits - 1 = #
-wire [3:0]  Q_syn;
+wire [3:0] Q_syn;
 
 
 //  Use /*AUTOREGINPUT*/ for create inputs in /*AUTOINST*/ in case inputs, outputs of inout signals

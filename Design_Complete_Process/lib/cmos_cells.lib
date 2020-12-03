@@ -1,12 +1,14 @@
-// Commented by
+// Commented by 
 //	Belinda Brown Ramírez
 //	Mayo, 2020
 //	timna.brown@ucr.ac.cr
+// No modifications added on December 2020
 
 // Choosing cmos_cells as a library with a commercial technology
 // available to carry out the technological mapping of the design.
 //This produces a structural description using commercially
 //available components.
+
 
 // test comment
 /* test comment */
