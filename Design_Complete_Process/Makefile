@@ -91,6 +91,7 @@ YC4B = counter_4b_y.ys
 #-------
 VCD_4B = counter_4b.vcd
 
+LOG_FILE = counter_b4_compile.log
 
 
 
@@ -115,7 +116,7 @@ r_4B: y0
 
 v_4B: r_4B
 	iverilog -o $(OVVP)$(VVP_4B) $(TESTBENCHES)$(TB_4B)
-	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(VVP_4B)_log.txt
+	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(LOG_FILE)
 
 
 #target phony
@@ -130,4 +131,4 @@ gtkw_4b: v_4B
 
 .PHONY: clean
 clean:
-	rm -rf $(OVVP)*.vvp *.vcd $(LOG_TXT)*log $(SYN)*syn.v $(DIAGRAMS_GENERATED)*.dot $(DIAGRAMS_GENERATED)*.ps
+	rm -rf $(OVVP)*.vvp *.vcd $(SYN)*syn.v $(DIAGRAMS_GENERATED)*.dot $(DIAGRAMS_GENERATED)*.ps $(LOG_TXT)*log 

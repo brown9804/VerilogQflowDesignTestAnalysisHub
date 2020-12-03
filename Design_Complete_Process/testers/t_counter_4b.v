@@ -63,7 +63,7 @@ initial begin
   $dumpfile("counter_4b.vcd");
   $dumpvars(0);   // "dumpping" variables
 
-  log = $fopen("./log_txt/counter_b4.log");
+  log = $fopen("./log_txt/counter_b4_tester.log");
   $fdisplay(log, "time=%5d, Simulation Start", $time);
   $fdisplay(log, "time=%5d, Starting Reset", $time);
 
