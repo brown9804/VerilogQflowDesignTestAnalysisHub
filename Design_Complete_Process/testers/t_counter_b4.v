@@ -4,8 +4,8 @@
 // timna.brown@ucr.ac.cr
 
 
-`ifndef T_COUNTER_4B
-`define T_COUNTER_4B
+`ifndef T_COUNTER_B4
+`define T_COUNTER_B4
 
 
 // The tester module is defined

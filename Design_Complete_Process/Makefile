@@ -73,26 +73,35 @@ LIB = ./lib/
 LOG_TXT = ./log_txt/
 
 SYN = ./syn/
-4B_SYN = counter_4b_syn.v
+4B_SYN = counter_b4_syn.v
+32B_SYN = counter_b32_syn.v
+
 
 TESTBENCHES = ./testbenches/
-TB_4B = tb_counter_4b.v
+TB_4B = tb_counter_b4.v
+TB_32B = tb_counter_b32.v
 
 TESTERS = ./testers/
-T_4B = t_counter_4b.v
+T_4B = t_counter_b4.v
+T_32B = t_counter_b32.v
 
 
 OVVP = ./vvp/
-VVP_4B = counter_4b.vvp
+VVP_4B = counter_b4.vvp
+VVP_32B = counter_b32.vvp
 
 YOSYS = ./yosys/
-YC4B = counter_4b_y.ys
+YC4B = counter_b4_y.ys
+YC32B = counter_b32_y.ys
+
+LOG_FILE4B = counter_b4_compile.log
+LOG_FILE32B = counter_b32_compile.log
+
+
 
 #-------
-VCD_4B = counter_4b.vcd
-
-LOG_FILE = counter_b4_compile.log
-
+VCD_4B = counter_b4.vcd
+VCD_32B = counter_b32.vcd
 
 
 #******************************************************************************
@@ -103,7 +112,7 @@ LOG_FILE = counter_b4_compile.log
 
 all: v_4B
 #******************************************************************************
-#### 													SCOREBOARD
+#### 					4 BITS
 #******************************************************************************
 y0:
 	yosys $(YOSYS)$(YC4B)
@@ -116,13 +125,39 @@ r_4B: y0
 
 v_4B: r_4B
 	iverilog -o $(OVVP)$(VVP_4B) $(TESTBENCHES)$(TB_4B)
-	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(LOG_FILE)
+	vvp $(OVVP)$(VVP_4B) > $(LOG_TXT)$(LOG_FILE4B)
 
 
 #target phony
-.PHONY: gtkw_4b
-gtkw_4b: v_4B
+.PHONY: gtkw_b4
+gtkw_b4: v_4B
 	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(VCD_4B)
+
+
+#******************************************************************************
+#### 				32 BITS
+#******************************************************************************
+32: v_32B
+
+y32:
+	yosys $(YOSYS)$(YC32B)
+
+#target phony
+.PHONY: r_32B
+r_32B: y32
+	sed -i 's/counter_b4/counter_b4_syn/g' $(SYN)$(32B_SYN)
+	sed -i 's/counter_b32/counter_b32_syn/g' $(SYN)$(32B_SYN)
+
+
+v_32B: r_32B
+	iverilog -o $(OVVP)$(VVP_32B) $(TESTBENCHES)$(TB_32B)
+	vvp $(OVVP)$(VVP_32B) > $(LOG_TXT)$(LOG_FILE32B)
+
+
+#target phony
+.PHONY: gtkw_b32
+gtkw_b32: v_32B
+	/Applications/gtkwave.app/Contents/Resources/bin/gtkwave $(VCD_32B)
 
 
 #******************************************************************************

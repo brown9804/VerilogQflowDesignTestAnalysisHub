@@ -1,4 +1,4 @@
-// ##--------------------------------COUNTER_4B------------------------------------
+// ##--------------------------------COUNTER_B4------------------------------------
 // ##
 // ##        Copyright (C) 2020 by
 // ##        Belinda Brown Ramírez
@@ -12,6 +12,10 @@
 // Count down.
 // Count three at a time down.
 // Parallel charging.
+
+`ifndef COUNTER_B4
+`define COUNTER_B4
+
 
 module counter_b4(
 input wire b4_enable,
@@ -141,3 +145,5 @@ endmodule
 // verilog-library-directories:("."):
 // verilog-auto-wire-type:\"logic\"
 // End:
+
+`endif

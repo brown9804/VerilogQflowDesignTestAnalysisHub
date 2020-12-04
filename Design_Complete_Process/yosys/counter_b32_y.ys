@@ -3,13 +3,10 @@
 # Belinda Brown Ramírez
 # Mayo, 2020
 # timna.brown@ucr.ac.cr
-# Modifications December, 2020
 
 
 
 # Full synthesis script
-#verilog
-
 
 
 # Perform the high-level synthesis of the multiplexer's behavioral design.
@@ -18,35 +15,51 @@
 # correspond to those of the Yosys synthesizer internal library.
 
 #Read the Behavioral desing
-read_verilog ./src/counter_4b.v
+read_verilog ./src/counter_b32.v
+read_verilog -lib ./lib/cmos_cells.v
 
 #Hierarchy module
-hierarchy -check -top counter_b4
+hierarchy -check -top counter_b32
 
 #Process to nettlist
-#This performs a series of trivial optimizations and cleanups
-#extract and optimize finite state machines
-#This performs a series of trivial optimizations and cleanups
-#memory - translate memories to basic cells
-#This performs a series of trivial optimizations and cleanups
+proc
 
-proc; opt; fsm; opt; memory; opt
+#This performs a series of trivial optimizations and cleanups
+opt
+
+#extract and optimize finite state machines
+fsm
+
+#This performs a series of trivial optimizations and cleanups
+opt
+
+#memory - translate memories to basic cells
+memory
+
+#This performs a series of trivial optimizations and cleanups
+opt
 
 #Mapping the internal cell library
+techmap
+
 #This performs a series of trivial optimizations and cleanups
-techmap; opt
+opt
 
 #Maping flip-flops to cmos_cells lib
 dfflibmap -liberty ./lib/cmos_cells.lib
 
 #Minimization / Mapping
-abc -liberty ./lib/cmos_cells.lib
+abc –liberty ./lib/cmos_cells.lib
 
 #Clean
 clean
 
-#Writing the structural of the contador_synt description
-write_verilog -noattr ./syn/counter_4b_syn.v
+#Lib status
+stat -liberty ./lib/cmos_cells.lib
+
+#Writing the structural of the counter_b32 description
+write_verilog ./syn/counter_b32_syn.v
+
 
 #show schemes
-show -format ps -prefix ./diagrams_generated/counter_4b_syn
+show -format ps -prefix ./diagrams_generated/counter32b_S

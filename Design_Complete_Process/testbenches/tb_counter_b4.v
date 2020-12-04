@@ -1,8 +1,8 @@
-`ifndef TB_COUNTER_4B
-`define TB_COUNTER_4B
+`ifndef TB_COUNTER_B4
+`define TB_COUNTER_B4
 
 
-// ##--------------------------------tb_COUNTER_4B------------------------------------
+// ##--------------------------------TB_COUNTER_B4------------------------------------
 // ##
 // ##				 Copyright (C) 2020 by
 // ##				 Belinda Brown Ramírez
@@ -19,9 +19,9 @@
 // includes verilog files
 // Can be omitted and called from the testbench
 `include "./lib/cmos_cells.v"
-`include "./src/counter_4b.v"
-`include "./syn/counter_4b_syn.v"
-`include "./testers/t_counter_4b.v"
+`include "./src/counter_b4.v"
+`include "./syn/counter_b4_syn.v"
+`include "./testers/t_counter_b4.v"
 
 module TestBench; // Testbench
 // Usually the signals in the test bench are wires.
@@ -79,7 +79,7 @@ counter_b4 counter_b4_beh(/*AUTOINST*/
 );
 
 
-counter_b4_syn counter_b4_syn(/*AUTOINST*/
+counter_b4_syn counter_b4_synt(/*AUTOINST*/
   // outputs
 .b4_Q        ( Q_syn),
 .b4_load     ( load_syn),

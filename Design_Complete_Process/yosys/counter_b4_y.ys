@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Belinda Brown Ramírez
+# Mayo, 2020
+# timna.brown@ucr.ac.cr
+# Modifications December, 2020
+
+
+
+# Full synthesis script
+#verilog
+
+
+
+# Perform the high-level synthesis of the multiplexer's behavioral design.
+# This produces a generic structural description (RTLIL) that does not depend
+# on a particular technology. The components used in this description
+# correspond to those of the Yosys synthesizer internal library.
+
+#Read the Behavioral desing
+read_verilog ./src/counter_b4.v
+
+#Hierarchy module
+hierarchy -check -top counter_b4
+
+#Process to nettlist
+#This performs a series of trivial optimizations and cleanups
+#extract and optimize finite state machines
+#This performs a series of trivial optimizations and cleanups
+#memory - translate memories to basic cells
+#This performs a series of trivial optimizations and cleanups
+
+proc; opt; fsm; opt; memory; opt
+
+#Mapping the internal cell library
+#This performs a series of trivial optimizations and cleanups
+techmap; opt
+
+#Maping flip-flops to cmos_cells lib
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+#Minimization / Mapping
+abc -liberty ./lib/cmos_cells.lib
+
+#Clean
+clean
+
+#Writing the structural of the contador_synt description
+write_verilog -noattr ./syn/counter_b4_syn.v
+
+#show schemes
+show -format ps -prefix ./diagrams_generated/counter_b4_syn
