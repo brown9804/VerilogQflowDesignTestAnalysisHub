@@ -57,7 +57,7 @@ always @(posedge b4_clk) begin
    case(b4_mode)
 
     2'b00:   begin
-      mem <= mem + 3;
+      mem <= mem + 1;
       b4_load <= 0;
       //  * //
       if (mem == (2**4 - 1) || (mem >= 13)) begin // next stage
@@ -88,7 +88,7 @@ always @(posedge b4_clk) begin
     //////////////////////////// * ////////////////////
 
     2'b10: begin
-      mem <= mem + 1;
+      mem <= mem - 3;
       b4_load <= 0;
       //  * //
       if (mem == (2**4 - 1))begin // next stage
