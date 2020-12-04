@@ -1,12 +1,12 @@
-// ##--------------------------------COUNTER_32B------------------------------------
+// ##--------------------------------COUNTER_B32------------------------------------
 // ##
 // ##        Copyright (C) 2020 by
 // ##        Belinda Brown Ramírez
 // ##        timna.brown@ucr.ac.cr
 // ##
 // ##-----------------------------------------------------------------------------
-`ifndef COUNTER_32B
-`define COUNTER_32B
+`ifndef COUNTER_B32
+`define COUNTER_B32
 
 // Counter general design
 // considering:
