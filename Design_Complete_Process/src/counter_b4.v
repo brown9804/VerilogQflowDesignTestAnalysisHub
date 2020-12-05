@@ -123,20 +123,26 @@ always @(*) begin
  b4_Q = mem;
 end
 
-always @(negedge b4_clk) begin
-   case(b4_mode)
 
-   2'b11: begin 
-     b4_rco <= b4_rco - 1;
-   end // end charge mode
+/////////////////////////
+// MODE 11
+// RCO HALF
+// Uncomment to activate
+//////////////////////////
+// always @(negedge b4_clk) begin
+//    case(b4_mode)
 
-  default: begin
-    b4_rco <= b4_rco;
-  end
+//    2'b11: begin 
+//      b4_rco <= b4_rco - 1;
+//    end // end charge mode
 
-endcase
+//   default: begin
+//     b4_rco <= b4_rco;
+//   end
 
-end 
+// endcase
+
+// end 
 
 endmodule
 
