@@ -111,12 +111,6 @@ always @(posedge b4_clk) begin
     // //  UnComment this part 
     //   //////////////////////////
       b4_rco <= 0; 
-      // /////////////////////////
-      //// MODE 11
-      //// RCO HALF
-      //// Comment this part 
-      //////////////////////////
-      // b4_rco <= 1; 
     end
     //////////////////////////// * ////////////////////
     default: begin // b4_mode != 00,01,10,11
