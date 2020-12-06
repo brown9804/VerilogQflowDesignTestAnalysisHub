@@ -103,8 +103,8 @@ For counter 32 bits:
 # /usr/lib/qflow/scripts/vesta.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
 /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
 # /usr/lib/qflow/scripts/placement.sh -f -d /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
-# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
-# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32
+# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32
 # /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
 ~~~~
 
