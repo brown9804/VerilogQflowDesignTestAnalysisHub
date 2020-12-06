@@ -7,7 +7,7 @@ Linux VM.
 #### December, 2020
 
 ### Dependencies
-1. Install Electric VSLI 9.07, two download options:
+#### 1. Install Electric VSLI 9.07, two download options:
  - By https://www.staticfreesoft.com/productsFree.html
  - Enter your console:
  
@@ -23,7 +23,7 @@ Considerations:
 - Comments with Explore/Create
 - Click on MISC and SPICE Code, control + I. Tools/Simulation/WriteSpiceDeck 
 
-2. Install Spice 
+#### 2. Install Spice 
 
 
 ### Instructions 
