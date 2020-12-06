@@ -1,6 +1,6 @@
 # Electric Design
 
-Design of NOR3, NAND3 and AOI22 using electric in a 
+Design of NOR3, NAND3 and AOI22 (AND-OR-Invert logic and AOI gates are two-level compound or complex) using electric in a 
 Linux VM.
  
 ## University of Costa Rica
