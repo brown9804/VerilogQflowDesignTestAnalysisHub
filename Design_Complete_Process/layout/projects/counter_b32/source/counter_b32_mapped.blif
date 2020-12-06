@@ -7,6 +7,79 @@
 .names $true
 1
 .names $undef
+.subckt DFFPOSX1 CLK=b32_clk D=_340_[3] Q=_0_[7]
+.subckt INVX1 A=b32_enable Y=_397_
+.subckt NOR2X1 A=b32_reset B=_397_ Y=_398_
+.subckt INVX1 A=_398_ Y=_399_
+.subckt OAI21X1 A=b32_reset B=_397_ C=_0_[8] Y=_400_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_401_
+.subckt INVX1 A=b32_mode[0] Y=_402_
+.subckt INVX1 A=b32_mode[1] Y=_403_
+.subckt OAI21X1 A=_402_ B=_403_ C=_0_[8] Y=_404_
+.subckt OAI21X1 A=b32_D[8] B=_401_ C=_404_ Y=_405_
+.subckt OAI21X1 A=_399_ B=_405_ C=_400_ Y=_396_[0]
+.subckt INVX1 A=_0_[9] Y=_406_
+.subckt INVX1 A=_401_ Y=_407_
+.subckt NOR2X1 A=_0_[8] B=_0_[9] Y=_408_
+.subckt INVX1 A=_0_[8] Y=_409_
+.subckt NOR2X1 A=_409_ B=_406_ Y=_410_
+.subckt OR2X2 A=_410_ B=_408_ Y=_411_
+.subckt NOR2X1 A=b32_mode[1] B=_402_ Y=_412_
+.subckt AOI22X1 A=b32_D[9] B=_407_ C=_412_ D=_411_ Y=_413_
+.subckt NOR2X1 A=_408_ B=_410_ Y=_414_
+.subckt AOI21X1 A=_414_ B=_402_ C=_399_ Y=_415_
+.subckt AOI22X1 A=_406_ B=_399_ C=_415_ D=_413_ Y=_396_[1]
+.subckt INVX1 A=_0_[10] Y=_416_
+.subckt NOR2X1 A=b32_mode[0] B=_403_ Y=_417_
+.subckt NAND3X1 A=_0_[8] B=_0_[9] C=_0_[10] Y=_418_
+.subckt INVX1 A=_418_ Y=_419_
+.subckt AOI21X1 A=_0_[8] B=_0_[9] C=_0_[10] Y=_420_
+.subckt OR2X2 A=_419_ B=_420_ Y=_421_
+.subckt INVX1 A=b32_D[10] Y=_422_
+.subckt OAI21X1 A=_422_ B=_401_ C=_398_ Y=_423_
+.subckt AOI21X1 A=_421_ B=_417_ C=_423_ Y=_424_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_425_
+.subckt NOR2X1 A=_420_ B=_419_ Y=_426_
+.subckt NAND2X1 A=_416_ B=_408_ Y=_427_
+.subckt OAI21X1 A=_0_[8] B=_0_[9] C=_0_[10] Y=_428_
+.subckt NAND2X1 A=_428_ B=_427_ Y=_429_
+.subckt AOI22X1 A=_429_ B=_412_ C=_425_ D=_426_ Y=_430_
+.subckt AOI22X1 A=_416_ B=_399_ C=_430_ D=_424_ Y=_396_[2]
+.subckt INVX1 A=_0_[11] Y=_431_
+.subckt NOR2X1 A=_431_ B=_418_ Y=_432_
+.subckt INVX1 A=_432_ Y=_433_
+.subckt INVX1 A=_425_ Y=_434_
+.subckt AOI21X1 A=_431_ B=_418_ C=_434_ Y=_435_
+.subckt INVX1 A=b32_D[11] Y=_436_
+.subckt OAI21X1 A=_436_ B=_401_ C=_398_ Y=_437_
+.subckt AOI21X1 A=_433_ B=_435_ C=_437_ Y=_438_
+.subckt NAND3X1 A=_416_ B=_431_ C=_408_ Y=_439_
+.subckt OR2X2 A=_0_[8] B=_0_[9] Y=_440_
+.subckt OAI21X1 A=_0_[10] B=_440_ C=_0_[11] Y=_441_
+.subckt NAND2X1 A=_439_ B=_441_ Y=_442_
+.subckt XNOR2X1 A=_420_ B=_431_ Y=_443_
+.subckt AOI22X1 A=_417_ B=_443_ C=_412_ D=_442_ Y=_444_
+.subckt AOI22X1 A=_431_ B=_399_ C=_438_ D=_444_ Y=_396_[3]
+.subckt NOR2X1 A=_409_ B=_399_ Y=_393_[0]
+.subckt NOR2X1 A=_406_ B=_399_ Y=_393_[1]
+.subckt NOR2X1 A=_416_ B=_399_ Y=_393_[2]
+.subckt NOR2X1 A=_431_ B=_399_ Y=_393_[3]
+.subckt INVX1 A=_439_ Y=_445_
+.subckt NAND2X1 A=_412_ B=_445_ Y=_446_
+.subckt AND2X2 A=_420_ B=_431_ Y=_447_
+.subckt AOI22X1 A=_425_ B=_432_ C=_417_ D=_447_ Y=_448_
+.subckt AOI21X1 A=_446_ B=_448_ C=_399_ Y=_395_
+.subckt NOR2X1 A=_401_ B=_399_ Y=_394_
+.subckt DFFPOSX1 CLK=b32_clk D=_394_ Q=counter_8b11.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_395_ Q=counter_8b11.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_393_[0] Q=_0_[8]
+.subckt DFFPOSX1 CLK=b32_clk D=_393_[1] Q=_0_[9]
+.subckt DFFPOSX1 CLK=b32_clk D=_393_[2] Q=_0_[10]
+.subckt DFFPOSX1 CLK=b32_clk D=_393_[3] Q=_0_[11]
+.subckt DFFPOSX1 CLK=b32_clk D=_396_[0] Q=_0_[8]
+.subckt DFFPOSX1 CLK=b32_clk D=_396_[1] Q=_0_[9]
+.subckt DFFPOSX1 CLK=b32_clk D=_396_[2] Q=_0_[10]
+.subckt DFFPOSX1 CLK=b32_clk D=_396_[3] Q=_0_[11]
 .subckt BUFX2 A=_0_[0] Y=b32_Q[0]
 .subckt BUFX2 A=_0_[1] Y=b32_Q[1]
 .subckt BUFX2 A=_0_[2] Y=b32_Q[2]
@@ -47,516 +120,515 @@
 .subckt BUFX2 A=counter_20b23.b4_load Y=b32_load[5]
 .subckt BUFX2 A=counter_24b27.b4_load Y=b32_load[6]
 .subckt BUFX2 A=counter_28b31.b4_load Y=b32_load[7]
-.subckt BUFX2 A=$false Y=b32_rco[0]
-.subckt BUFX2 A=$false Y=b32_rco[1]
-.subckt BUFX2 A=$false Y=b32_rco[2]
-.subckt BUFX2 A=$false Y=b32_rco[3]
-.subckt BUFX2 A=$false Y=b32_rco[4]
-.subckt BUFX2 A=$false Y=b32_rco[5]
-.subckt BUFX2 A=$false Y=b32_rco[6]
-.subckt BUFX2 A=$false Y=b32_rco[7]
-.subckt INVX1 A=b32_enable Y=_4_
-.subckt NOR2X1 A=b32_reset B=_4_ Y=_5_
-.subckt INVX1 A=_5_ Y=_6_
-.subckt OAI21X1 A=b32_reset B=_4_ C=_0_[0] Y=_7_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_8_
-.subckt INVX1 A=b32_mode[0] Y=_9_
-.subckt INVX1 A=b32_mode[1] Y=_10_
-.subckt OAI21X1 A=_9_ B=_10_ C=_0_[0] Y=_11_
-.subckt OAI21X1 A=b32_D[0] B=_8_ C=_11_ Y=_12_
-.subckt OAI21X1 A=_6_ B=_12_ C=_7_ Y=_3_[0]
-.subckt INVX1 A=_0_[1] Y=_13_
-.subckt INVX1 A=_0_[0] Y=_14_
-.subckt NOR2X1 A=_14_ B=_13_ Y=_15_
+.subckt BUFX2 A=counter_0b3.b4_rco Y=b32_rco[0]
+.subckt BUFX2 A=counter_4b7.b4_rco Y=b32_rco[1]
+.subckt BUFX2 A=counter_8b11.b4_rco Y=b32_rco[2]
+.subckt BUFX2 A=counter_12b15.b4_rco Y=b32_rco[3]
+.subckt BUFX2 A=counter_16b19.b4_rco Y=b32_rco[4]
+.subckt BUFX2 A=counter_20b23.b4_rco Y=b32_rco[5]
+.subckt BUFX2 A=counter_24b27.b4_rco Y=b32_rco[6]
+.subckt BUFX2 A=counter_28b31.b4_rco Y=b32_rco[7]
+.subckt INVX1 A=b32_enable Y=_5_
+.subckt NOR2X1 A=b32_reset B=_5_ Y=_6_
+.subckt INVX1 A=_6_ Y=_7_
+.subckt OAI21X1 A=b32_reset B=_5_ C=_0_[0] Y=_8_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_9_
+.subckt INVX1 A=b32_mode[0] Y=_10_
+.subckt INVX1 A=b32_mode[1] Y=_11_
+.subckt OAI21X1 A=_10_ B=_11_ C=_0_[0] Y=_12_
+.subckt OAI21X1 A=b32_D[0] B=_9_ C=_12_ Y=_13_
+.subckt OAI21X1 A=_7_ B=_13_ C=_8_ Y=_4_[0]
+.subckt INVX1 A=_0_[1] Y=_14_
+.subckt INVX1 A=_9_ Y=_15_
 .subckt NOR2X1 A=_0_[0] B=_0_[1] Y=_16_
-.subckt OR2X2 A=_15_ B=_16_ Y=_17_
-.subckt OR2X2 A=_17_ B=b32_mode[0] Y=_18_
-.subckt NOR2X1 A=b32_mode[1] B=_9_ Y=_19_
-.subckt INVX1 A=b32_D[1] Y=_20_
-.subckt OAI21X1 A=_20_ B=_8_ C=_5_ Y=_21_
-.subckt AOI21X1 A=_17_ B=_19_ C=_21_ Y=_22_
-.subckt AOI22X1 A=_13_ B=_6_ C=_22_ D=_18_ Y=_3_[1]
-.subckt INVX1 A=_0_[2] Y=_23_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_24_
-.subckt NAND3X1 A=_0_[0] B=_0_[1] C=_0_[2] Y=_25_
-.subckt INVX1 A=_25_ Y=_26_
-.subckt AOI21X1 A=_0_[0] B=_0_[1] C=_0_[2] Y=_27_
-.subckt NOR2X1 A=_27_ B=_26_ Y=_28_
-.subckt INVX1 A=b32_D[2] Y=_29_
-.subckt OAI21X1 A=_29_ B=_8_ C=_5_ Y=_30_
-.subckt AOI21X1 A=_28_ B=_24_ C=_30_ Y=_31_
-.subckt XNOR2X1 A=_16_ B=_23_ Y=_32_
-.subckt NAND2X1 A=b32_mode[1] B=_9_ Y=_33_
-.subckt INVX1 A=_27_ Y=_34_
-.subckt AOI21X1 A=_34_ B=_25_ C=_33_ Y=_35_
-.subckt AOI21X1 A=_32_ B=_19_ C=_35_ Y=_36_
-.subckt AOI22X1 A=_23_ B=_6_ C=_31_ D=_36_ Y=_3_[2]
-.subckt INVX1 A=_0_[3] Y=_37_
-.subckt INVX1 A=_24_ Y=_38_
-.subckt OAI22X1 A=_33_ B=_27_ C=_38_ D=_26_ Y=_39_
-.subckt INVX1 A=b32_D[3] Y=_40_
-.subckt OAI21X1 A=_40_ B=_8_ C=_5_ Y=_41_
-.subckt AOI21X1 A=_39_ B=_0_[3] C=_41_ Y=_42_
-.subckt OR2X2 A=_0_[0] B=_0_[1] Y=_43_
-.subckt OAI21X1 A=_0_[2] B=_43_ C=_0_[3] Y=_44_
-.subckt NAND3X1 A=_23_ B=_37_ C=_16_ Y=_45_
-.subckt NAND2X1 A=_45_ B=_44_ Y=_46_
-.subckt OAI22X1 A=_38_ B=_25_ C=_33_ D=_34_ Y=_47_
-.subckt AOI22X1 A=_37_ B=_47_ C=_19_ D=_46_ Y=_48_
-.subckt AOI22X1 A=_37_ B=_6_ C=_42_ D=_48_ Y=_3_[3]
-.subckt NOR2X1 A=_14_ B=_6_ Y=_1_[0]
-.subckt NOR2X1 A=_13_ B=_6_ Y=_1_[1]
-.subckt NOR2X1 A=_23_ B=_6_ Y=_1_[2]
-.subckt NOR2X1 A=_37_ B=_6_ Y=_1_[3]
-.subckt NOR2X1 A=_8_ B=_6_ Y=_2_
+.subckt INVX1 A=_0_[0] Y=_17_
+.subckt NOR2X1 A=_17_ B=_14_ Y=_18_
+.subckt OR2X2 A=_18_ B=_16_ Y=_19_
+.subckt NOR2X1 A=b32_mode[1] B=_10_ Y=_20_
+.subckt AOI22X1 A=b32_D[1] B=_15_ C=_20_ D=_19_ Y=_21_
+.subckt NOR2X1 A=_16_ B=_18_ Y=_22_
+.subckt AOI21X1 A=_22_ B=_10_ C=_7_ Y=_23_
+.subckt AOI22X1 A=_14_ B=_7_ C=_23_ D=_21_ Y=_4_[1]
+.subckt INVX1 A=_0_[2] Y=_24_
+.subckt NOR2X1 A=b32_mode[0] B=_11_ Y=_25_
+.subckt NAND3X1 A=_0_[0] B=_0_[1] C=_0_[2] Y=_26_
+.subckt INVX1 A=_26_ Y=_27_
+.subckt AOI21X1 A=_0_[0] B=_0_[1] C=_0_[2] Y=_28_
+.subckt OR2X2 A=_27_ B=_28_ Y=_29_
+.subckt INVX1 A=b32_D[2] Y=_30_
+.subckt OAI21X1 A=_30_ B=_9_ C=_6_ Y=_31_
+.subckt AOI21X1 A=_29_ B=_25_ C=_31_ Y=_32_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_33_
+.subckt NOR2X1 A=_28_ B=_27_ Y=_34_
+.subckt NAND2X1 A=_24_ B=_16_ Y=_35_
+.subckt OAI21X1 A=_0_[0] B=_0_[1] C=_0_[2] Y=_36_
+.subckt NAND2X1 A=_36_ B=_35_ Y=_37_
+.subckt AOI22X1 A=_37_ B=_20_ C=_33_ D=_34_ Y=_38_
+.subckt AOI22X1 A=_24_ B=_7_ C=_38_ D=_32_ Y=_4_[2]
+.subckt INVX1 A=_0_[3] Y=_39_
+.subckt NOR2X1 A=_39_ B=_26_ Y=_40_
+.subckt INVX1 A=_40_ Y=_41_
+.subckt INVX1 A=_33_ Y=_42_
+.subckt AOI21X1 A=_39_ B=_26_ C=_42_ Y=_43_
+.subckt INVX1 A=b32_D[3] Y=_44_
+.subckt OAI21X1 A=_44_ B=_9_ C=_6_ Y=_45_
+.subckt AOI21X1 A=_41_ B=_43_ C=_45_ Y=_46_
+.subckt NAND3X1 A=_24_ B=_39_ C=_16_ Y=_47_
+.subckt OR2X2 A=_0_[0] B=_0_[1] Y=_48_
+.subckt OAI21X1 A=_0_[2] B=_48_ C=_0_[3] Y=_49_
+.subckt NAND2X1 A=_47_ B=_49_ Y=_50_
+.subckt XNOR2X1 A=_28_ B=_39_ Y=_51_
+.subckt AOI22X1 A=_25_ B=_51_ C=_20_ D=_50_ Y=_52_
+.subckt AOI22X1 A=_39_ B=_7_ C=_46_ D=_52_ Y=_4_[3]
+.subckt NOR2X1 A=_17_ B=_7_ Y=_1_[0]
+.subckt NOR2X1 A=_14_ B=_7_ Y=_1_[1]
+.subckt NOR2X1 A=_24_ B=_7_ Y=_1_[2]
+.subckt NOR2X1 A=_39_ B=_7_ Y=_1_[3]
+.subckt INVX1 A=_47_ Y=_53_
+.subckt NAND2X1 A=_20_ B=_53_ Y=_54_
+.subckt AND2X2 A=_28_ B=_39_ Y=_55_
+.subckt AOI22X1 A=_33_ B=_40_ C=_25_ D=_55_ Y=_56_
+.subckt AOI21X1 A=_54_ B=_56_ C=_7_ Y=_3_
+.subckt NOR2X1 A=_9_ B=_7_ Y=_2_
 .subckt DFFPOSX1 CLK=b32_clk D=_2_ Q=counter_0b3.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_3_ Q=counter_0b3.b4_rco
 .subckt DFFPOSX1 CLK=b32_clk D=_1_[0] Q=_0_[0]
 .subckt DFFPOSX1 CLK=b32_clk D=_1_[1] Q=_0_[1]
 .subckt DFFPOSX1 CLK=b32_clk D=_1_[2] Q=_0_[2]
 .subckt DFFPOSX1 CLK=b32_clk D=_1_[3] Q=_0_[3]
-.subckt DFFPOSX1 CLK=b32_clk D=_3_[0] Q=_0_[0]
-.subckt DFFPOSX1 CLK=b32_clk D=_3_[1] Q=_0_[1]
-.subckt DFFPOSX1 CLK=b32_clk D=_3_[2] Q=_0_[2]
-.subckt DFFPOSX1 CLK=b32_clk D=_3_[3] Q=_0_[3]
-.subckt INVX1 A=b32_enable Y=_52_
-.subckt NOR2X1 A=b32_reset B=_52_ Y=_53_
-.subckt INVX1 A=_53_ Y=_54_
-.subckt OAI21X1 A=b32_reset B=_52_ C=_0_[12] Y=_55_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_56_
-.subckt INVX1 A=b32_mode[0] Y=_57_
-.subckt INVX1 A=b32_mode[1] Y=_58_
-.subckt OAI21X1 A=_57_ B=_58_ C=_0_[12] Y=_59_
-.subckt OAI21X1 A=b32_D[12] B=_56_ C=_59_ Y=_60_
-.subckt OAI21X1 A=_54_ B=_60_ C=_55_ Y=_51_[0]
-.subckt INVX1 A=_0_[13] Y=_61_
-.subckt INVX1 A=_0_[12] Y=_62_
-.subckt NOR2X1 A=_62_ B=_61_ Y=_63_
-.subckt NOR2X1 A=_0_[12] B=_0_[13] Y=_64_
-.subckt OR2X2 A=_63_ B=_64_ Y=_65_
-.subckt OR2X2 A=_65_ B=b32_mode[0] Y=_66_
-.subckt NOR2X1 A=b32_mode[1] B=_57_ Y=_67_
-.subckt INVX1 A=b32_D[13] Y=_68_
-.subckt OAI21X1 A=_68_ B=_56_ C=_53_ Y=_69_
-.subckt AOI21X1 A=_65_ B=_67_ C=_69_ Y=_70_
-.subckt AOI22X1 A=_61_ B=_54_ C=_70_ D=_66_ Y=_51_[1]
-.subckt INVX1 A=_0_[14] Y=_71_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_72_
-.subckt NAND3X1 A=_0_[12] B=_0_[13] C=_0_[14] Y=_73_
-.subckt INVX1 A=_73_ Y=_74_
-.subckt AOI21X1 A=_0_[12] B=_0_[13] C=_0_[14] Y=_75_
-.subckt NOR2X1 A=_75_ B=_74_ Y=_76_
-.subckt INVX1 A=b32_D[14] Y=_77_
-.subckt OAI21X1 A=_77_ B=_56_ C=_53_ Y=_78_
-.subckt AOI21X1 A=_76_ B=_72_ C=_78_ Y=_79_
-.subckt XNOR2X1 A=_64_ B=_71_ Y=_80_
-.subckt NAND2X1 A=b32_mode[1] B=_57_ Y=_81_
-.subckt INVX1 A=_75_ Y=_82_
-.subckt AOI21X1 A=_82_ B=_73_ C=_81_ Y=_83_
-.subckt AOI21X1 A=_80_ B=_67_ C=_83_ Y=_84_
-.subckt AOI22X1 A=_71_ B=_54_ C=_79_ D=_84_ Y=_51_[2]
-.subckt INVX1 A=_0_[15] Y=_85_
-.subckt INVX1 A=_72_ Y=_86_
-.subckt OAI22X1 A=_81_ B=_75_ C=_86_ D=_74_ Y=_87_
-.subckt INVX1 A=b32_D[15] Y=_88_
-.subckt OAI21X1 A=_88_ B=_56_ C=_53_ Y=_89_
-.subckt AOI21X1 A=_87_ B=_0_[15] C=_89_ Y=_90_
-.subckt OR2X2 A=_0_[12] B=_0_[13] Y=_91_
-.subckt OAI21X1 A=_0_[14] B=_91_ C=_0_[15] Y=_92_
-.subckt NAND3X1 A=_71_ B=_85_ C=_64_ Y=_93_
-.subckt NAND2X1 A=_93_ B=_92_ Y=_94_
-.subckt OAI22X1 A=_86_ B=_73_ C=_81_ D=_82_ Y=_95_
-.subckt AOI22X1 A=_85_ B=_95_ C=_67_ D=_94_ Y=_96_
-.subckt AOI22X1 A=_85_ B=_54_ C=_90_ D=_96_ Y=_51_[3]
-.subckt NOR2X1 A=_62_ B=_54_ Y=_49_[0]
-.subckt NOR2X1 A=_61_ B=_54_ Y=_49_[1]
-.subckt NOR2X1 A=_71_ B=_54_ Y=_49_[2]
-.subckt NOR2X1 A=_85_ B=_54_ Y=_49_[3]
-.subckt NOR2X1 A=_56_ B=_54_ Y=_50_
-.subckt DFFPOSX1 CLK=b32_clk D=_50_ Q=counter_12b15.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_49_[0] Q=_0_[12]
-.subckt DFFPOSX1 CLK=b32_clk D=_49_[1] Q=_0_[13]
-.subckt DFFPOSX1 CLK=b32_clk D=_49_[2] Q=_0_[14]
-.subckt DFFPOSX1 CLK=b32_clk D=_49_[3] Q=_0_[15]
-.subckt DFFPOSX1 CLK=b32_clk D=_51_[0] Q=_0_[12]
-.subckt DFFPOSX1 CLK=b32_clk D=_51_[1] Q=_0_[13]
-.subckt DFFPOSX1 CLK=b32_clk D=_51_[2] Q=_0_[14]
-.subckt DFFPOSX1 CLK=b32_clk D=_51_[3] Q=_0_[15]
-.subckt INVX1 A=b32_enable Y=_100_
-.subckt NOR2X1 A=b32_reset B=_100_ Y=_101_
-.subckt INVX1 A=_101_ Y=_102_
-.subckt OAI21X1 A=b32_reset B=_100_ C=_0_[16] Y=_103_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_104_
-.subckt INVX1 A=b32_mode[0] Y=_105_
-.subckt INVX1 A=b32_mode[1] Y=_106_
-.subckt OAI21X1 A=_105_ B=_106_ C=_0_[16] Y=_107_
-.subckt OAI21X1 A=b32_D[16] B=_104_ C=_107_ Y=_108_
-.subckt OAI21X1 A=_102_ B=_108_ C=_103_ Y=_99_[0]
-.subckt INVX1 A=_0_[17] Y=_109_
-.subckt INVX1 A=_0_[16] Y=_110_
-.subckt NOR2X1 A=_110_ B=_109_ Y=_111_
-.subckt NOR2X1 A=_0_[16] B=_0_[17] Y=_112_
-.subckt OR2X2 A=_111_ B=_112_ Y=_113_
-.subckt OR2X2 A=_113_ B=b32_mode[0] Y=_114_
-.subckt NOR2X1 A=b32_mode[1] B=_105_ Y=_115_
-.subckt INVX1 A=b32_D[17] Y=_116_
-.subckt OAI21X1 A=_116_ B=_104_ C=_101_ Y=_117_
-.subckt AOI21X1 A=_113_ B=_115_ C=_117_ Y=_118_
-.subckt AOI22X1 A=_109_ B=_102_ C=_118_ D=_114_ Y=_99_[1]
-.subckt INVX1 A=_0_[18] Y=_119_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_120_
-.subckt NAND3X1 A=_0_[16] B=_0_[17] C=_0_[18] Y=_121_
-.subckt INVX1 A=_121_ Y=_122_
-.subckt AOI21X1 A=_0_[16] B=_0_[17] C=_0_[18] Y=_123_
-.subckt NOR2X1 A=_123_ B=_122_ Y=_124_
-.subckt INVX1 A=b32_D[18] Y=_125_
-.subckt OAI21X1 A=_125_ B=_104_ C=_101_ Y=_126_
-.subckt AOI21X1 A=_124_ B=_120_ C=_126_ Y=_127_
-.subckt XNOR2X1 A=_112_ B=_119_ Y=_128_
-.subckt NAND2X1 A=b32_mode[1] B=_105_ Y=_129_
-.subckt INVX1 A=_123_ Y=_130_
-.subckt AOI21X1 A=_130_ B=_121_ C=_129_ Y=_131_
-.subckt AOI21X1 A=_128_ B=_115_ C=_131_ Y=_132_
-.subckt AOI22X1 A=_119_ B=_102_ C=_127_ D=_132_ Y=_99_[2]
-.subckt INVX1 A=_0_[19] Y=_133_
-.subckt INVX1 A=_120_ Y=_134_
-.subckt OAI22X1 A=_129_ B=_123_ C=_134_ D=_122_ Y=_135_
-.subckt INVX1 A=b32_D[19] Y=_136_
-.subckt OAI21X1 A=_136_ B=_104_ C=_101_ Y=_137_
-.subckt AOI21X1 A=_135_ B=_0_[19] C=_137_ Y=_138_
-.subckt OR2X2 A=_0_[16] B=_0_[17] Y=_139_
-.subckt OAI21X1 A=_0_[18] B=_139_ C=_0_[19] Y=_140_
-.subckt NAND3X1 A=_119_ B=_133_ C=_112_ Y=_141_
-.subckt NAND2X1 A=_141_ B=_140_ Y=_142_
-.subckt OAI22X1 A=_134_ B=_121_ C=_129_ D=_130_ Y=_143_
-.subckt AOI22X1 A=_133_ B=_143_ C=_115_ D=_142_ Y=_144_
-.subckt AOI22X1 A=_133_ B=_102_ C=_138_ D=_144_ Y=_99_[3]
-.subckt NOR2X1 A=_110_ B=_102_ Y=_97_[0]
-.subckt NOR2X1 A=_109_ B=_102_ Y=_97_[1]
-.subckt NOR2X1 A=_119_ B=_102_ Y=_97_[2]
-.subckt NOR2X1 A=_133_ B=_102_ Y=_97_[3]
-.subckt NOR2X1 A=_104_ B=_102_ Y=_98_
-.subckt DFFPOSX1 CLK=b32_clk D=_98_ Q=counter_16b19.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_97_[0] Q=_0_[16]
-.subckt DFFPOSX1 CLK=b32_clk D=_97_[1] Q=_0_[17]
-.subckt DFFPOSX1 CLK=b32_clk D=_97_[2] Q=_0_[18]
-.subckt DFFPOSX1 CLK=b32_clk D=_97_[3] Q=_0_[19]
-.subckt DFFPOSX1 CLK=b32_clk D=_99_[0] Q=_0_[16]
-.subckt DFFPOSX1 CLK=b32_clk D=_99_[1] Q=_0_[17]
-.subckt DFFPOSX1 CLK=b32_clk D=_99_[2] Q=_0_[18]
-.subckt DFFPOSX1 CLK=b32_clk D=_99_[3] Q=_0_[19]
-.subckt INVX1 A=b32_enable Y=_148_
-.subckt NOR2X1 A=b32_reset B=_148_ Y=_149_
-.subckt INVX1 A=_149_ Y=_150_
-.subckt OAI21X1 A=b32_reset B=_148_ C=_0_[20] Y=_151_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_152_
-.subckt INVX1 A=b32_mode[0] Y=_153_
-.subckt INVX1 A=b32_mode[1] Y=_154_
-.subckt OAI21X1 A=_153_ B=_154_ C=_0_[20] Y=_155_
-.subckt OAI21X1 A=b32_D[20] B=_152_ C=_155_ Y=_156_
-.subckt OAI21X1 A=_150_ B=_156_ C=_151_ Y=_147_[0]
-.subckt INVX1 A=_0_[21] Y=_157_
-.subckt INVX1 A=_0_[20] Y=_158_
-.subckt NOR2X1 A=_158_ B=_157_ Y=_159_
-.subckt NOR2X1 A=_0_[20] B=_0_[21] Y=_160_
-.subckt OR2X2 A=_159_ B=_160_ Y=_161_
-.subckt OR2X2 A=_161_ B=b32_mode[0] Y=_162_
-.subckt NOR2X1 A=b32_mode[1] B=_153_ Y=_163_
-.subckt INVX1 A=b32_D[21] Y=_164_
-.subckt OAI21X1 A=_164_ B=_152_ C=_149_ Y=_165_
-.subckt AOI21X1 A=_161_ B=_163_ C=_165_ Y=_166_
-.subckt AOI22X1 A=_157_ B=_150_ C=_166_ D=_162_ Y=_147_[1]
-.subckt INVX1 A=_0_[22] Y=_167_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_168_
-.subckt NAND3X1 A=_0_[20] B=_0_[21] C=_0_[22] Y=_169_
-.subckt INVX1 A=_169_ Y=_170_
-.subckt AOI21X1 A=_0_[20] B=_0_[21] C=_0_[22] Y=_171_
-.subckt NOR2X1 A=_171_ B=_170_ Y=_172_
-.subckt INVX1 A=b32_D[22] Y=_173_
-.subckt OAI21X1 A=_173_ B=_152_ C=_149_ Y=_174_
-.subckt AOI21X1 A=_172_ B=_168_ C=_174_ Y=_175_
-.subckt XNOR2X1 A=_160_ B=_167_ Y=_176_
-.subckt NAND2X1 A=b32_mode[1] B=_153_ Y=_177_
-.subckt INVX1 A=_171_ Y=_178_
-.subckt AOI21X1 A=_178_ B=_169_ C=_177_ Y=_179_
-.subckt AOI21X1 A=_176_ B=_163_ C=_179_ Y=_180_
-.subckt AOI22X1 A=_167_ B=_150_ C=_175_ D=_180_ Y=_147_[2]
-.subckt INVX1 A=_0_[23] Y=_181_
-.subckt INVX1 A=_168_ Y=_182_
-.subckt OAI22X1 A=_177_ B=_171_ C=_182_ D=_170_ Y=_183_
-.subckt INVX1 A=b32_D[23] Y=_184_
-.subckt OAI21X1 A=_184_ B=_152_ C=_149_ Y=_185_
-.subckt AOI21X1 A=_183_ B=_0_[23] C=_185_ Y=_186_
-.subckt OR2X2 A=_0_[20] B=_0_[21] Y=_187_
-.subckt OAI21X1 A=_0_[22] B=_187_ C=_0_[23] Y=_188_
-.subckt NAND3X1 A=_167_ B=_181_ C=_160_ Y=_189_
-.subckt NAND2X1 A=_189_ B=_188_ Y=_190_
-.subckt OAI22X1 A=_182_ B=_169_ C=_177_ D=_178_ Y=_191_
-.subckt AOI22X1 A=_181_ B=_191_ C=_163_ D=_190_ Y=_192_
-.subckt AOI22X1 A=_181_ B=_150_ C=_186_ D=_192_ Y=_147_[3]
-.subckt NOR2X1 A=_158_ B=_150_ Y=_145_[0]
-.subckt NOR2X1 A=_157_ B=_150_ Y=_145_[1]
-.subckt NOR2X1 A=_167_ B=_150_ Y=_145_[2]
-.subckt NOR2X1 A=_181_ B=_150_ Y=_145_[3]
-.subckt NOR2X1 A=_152_ B=_150_ Y=_146_
-.subckt DFFPOSX1 CLK=b32_clk D=_146_ Q=counter_20b23.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_145_[0] Q=_0_[20]
-.subckt DFFPOSX1 CLK=b32_clk D=_145_[1] Q=_0_[21]
-.subckt DFFPOSX1 CLK=b32_clk D=_145_[2] Q=_0_[22]
-.subckt DFFPOSX1 CLK=b32_clk D=_145_[3] Q=_0_[23]
-.subckt DFFPOSX1 CLK=b32_clk D=_147_[0] Q=_0_[20]
-.subckt DFFPOSX1 CLK=b32_clk D=_147_[1] Q=_0_[21]
-.subckt DFFPOSX1 CLK=b32_clk D=_147_[2] Q=_0_[22]
-.subckt DFFPOSX1 CLK=b32_clk D=_147_[3] Q=_0_[23]
-.subckt INVX1 A=b32_enable Y=_196_
-.subckt NOR2X1 A=b32_reset B=_196_ Y=_197_
-.subckt INVX1 A=_197_ Y=_198_
-.subckt OAI21X1 A=b32_reset B=_196_ C=_0_[24] Y=_199_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_200_
-.subckt INVX1 A=b32_mode[0] Y=_201_
-.subckt INVX1 A=b32_mode[1] Y=_202_
-.subckt OAI21X1 A=_201_ B=_202_ C=_0_[24] Y=_203_
-.subckt OAI21X1 A=b32_D[24] B=_200_ C=_203_ Y=_204_
-.subckt OAI21X1 A=_198_ B=_204_ C=_199_ Y=_195_[0]
-.subckt INVX1 A=_0_[25] Y=_205_
-.subckt INVX1 A=_0_[24] Y=_206_
-.subckt NOR2X1 A=_206_ B=_205_ Y=_207_
-.subckt NOR2X1 A=_0_[24] B=_0_[25] Y=_208_
-.subckt OR2X2 A=_207_ B=_208_ Y=_209_
-.subckt OR2X2 A=_209_ B=b32_mode[0] Y=_210_
-.subckt NOR2X1 A=b32_mode[1] B=_201_ Y=_211_
-.subckt INVX1 A=b32_D[25] Y=_212_
-.subckt OAI21X1 A=_212_ B=_200_ C=_197_ Y=_213_
+.subckt DFFPOSX1 CLK=b32_clk D=_4_[0] Q=_0_[0]
+.subckt DFFPOSX1 CLK=b32_clk D=_4_[1] Q=_0_[1]
+.subckt DFFPOSX1 CLK=b32_clk D=_4_[2] Q=_0_[2]
+.subckt DFFPOSX1 CLK=b32_clk D=_4_[3] Q=_0_[3]
+.subckt INVX1 A=b32_enable Y=_61_
+.subckt NOR2X1 A=b32_reset B=_61_ Y=_62_
+.subckt INVX1 A=_62_ Y=_63_
+.subckt OAI21X1 A=b32_reset B=_61_ C=_0_[12] Y=_64_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_65_
+.subckt INVX1 A=b32_mode[0] Y=_66_
+.subckt INVX1 A=b32_mode[1] Y=_67_
+.subckt OAI21X1 A=_66_ B=_67_ C=_0_[12] Y=_68_
+.subckt OAI21X1 A=b32_D[12] B=_65_ C=_68_ Y=_69_
+.subckt OAI21X1 A=_63_ B=_69_ C=_64_ Y=_60_[0]
+.subckt INVX1 A=_0_[13] Y=_70_
+.subckt INVX1 A=_65_ Y=_71_
+.subckt NOR2X1 A=_0_[12] B=_0_[13] Y=_72_
+.subckt INVX1 A=_0_[12] Y=_73_
+.subckt NOR2X1 A=_73_ B=_70_ Y=_74_
+.subckt OR2X2 A=_74_ B=_72_ Y=_75_
+.subckt NOR2X1 A=b32_mode[1] B=_66_ Y=_76_
+.subckt AOI22X1 A=b32_D[13] B=_71_ C=_76_ D=_75_ Y=_77_
+.subckt NOR2X1 A=_72_ B=_74_ Y=_78_
+.subckt AOI21X1 A=_78_ B=_66_ C=_63_ Y=_79_
+.subckt AOI22X1 A=_70_ B=_63_ C=_79_ D=_77_ Y=_60_[1]
+.subckt INVX1 A=_0_[14] Y=_80_
+.subckt NOR2X1 A=b32_mode[0] B=_67_ Y=_81_
+.subckt NAND3X1 A=_0_[12] B=_0_[13] C=_0_[14] Y=_82_
+.subckt INVX1 A=_82_ Y=_83_
+.subckt AOI21X1 A=_0_[12] B=_0_[13] C=_0_[14] Y=_84_
+.subckt OR2X2 A=_83_ B=_84_ Y=_85_
+.subckt INVX1 A=b32_D[14] Y=_86_
+.subckt OAI21X1 A=_86_ B=_65_ C=_62_ Y=_87_
+.subckt AOI21X1 A=_85_ B=_81_ C=_87_ Y=_88_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_89_
+.subckt NOR2X1 A=_84_ B=_83_ Y=_90_
+.subckt NAND2X1 A=_80_ B=_72_ Y=_91_
+.subckt OAI21X1 A=_0_[12] B=_0_[13] C=_0_[14] Y=_92_
+.subckt NAND2X1 A=_92_ B=_91_ Y=_93_
+.subckt AOI22X1 A=_93_ B=_76_ C=_89_ D=_90_ Y=_94_
+.subckt AOI22X1 A=_80_ B=_63_ C=_94_ D=_88_ Y=_60_[2]
+.subckt INVX1 A=_0_[15] Y=_95_
+.subckt NOR2X1 A=_95_ B=_82_ Y=_96_
+.subckt INVX1 A=_96_ Y=_97_
+.subckt INVX1 A=_89_ Y=_98_
+.subckt AOI21X1 A=_95_ B=_82_ C=_98_ Y=_99_
+.subckt INVX1 A=b32_D[15] Y=_100_
+.subckt OAI21X1 A=_100_ B=_65_ C=_62_ Y=_101_
+.subckt AOI21X1 A=_97_ B=_99_ C=_101_ Y=_102_
+.subckt NAND3X1 A=_80_ B=_95_ C=_72_ Y=_103_
+.subckt OR2X2 A=_0_[12] B=_0_[13] Y=_104_
+.subckt OAI21X1 A=_0_[14] B=_104_ C=_0_[15] Y=_105_
+.subckt NAND2X1 A=_103_ B=_105_ Y=_106_
+.subckt XNOR2X1 A=_84_ B=_95_ Y=_107_
+.subckt AOI22X1 A=_81_ B=_107_ C=_76_ D=_106_ Y=_108_
+.subckt AOI22X1 A=_95_ B=_63_ C=_102_ D=_108_ Y=_60_[3]
+.subckt NOR2X1 A=_73_ B=_63_ Y=_57_[0]
+.subckt NOR2X1 A=_70_ B=_63_ Y=_57_[1]
+.subckt NOR2X1 A=_80_ B=_63_ Y=_57_[2]
+.subckt NOR2X1 A=_95_ B=_63_ Y=_57_[3]
+.subckt INVX1 A=_103_ Y=_109_
+.subckt NAND2X1 A=_76_ B=_109_ Y=_110_
+.subckt AND2X2 A=_84_ B=_95_ Y=_111_
+.subckt AOI22X1 A=_89_ B=_96_ C=_81_ D=_111_ Y=_112_
+.subckt AOI21X1 A=_110_ B=_112_ C=_63_ Y=_59_
+.subckt NOR2X1 A=_65_ B=_63_ Y=_58_
+.subckt DFFPOSX1 CLK=b32_clk D=_58_ Q=counter_12b15.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_59_ Q=counter_12b15.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_57_[0] Q=_0_[12]
+.subckt DFFPOSX1 CLK=b32_clk D=_57_[1] Q=_0_[13]
+.subckt DFFPOSX1 CLK=b32_clk D=_57_[2] Q=_0_[14]
+.subckt DFFPOSX1 CLK=b32_clk D=_57_[3] Q=_0_[15]
+.subckt DFFPOSX1 CLK=b32_clk D=_60_[0] Q=_0_[12]
+.subckt DFFPOSX1 CLK=b32_clk D=_60_[1] Q=_0_[13]
+.subckt DFFPOSX1 CLK=b32_clk D=_60_[2] Q=_0_[14]
+.subckt DFFPOSX1 CLK=b32_clk D=_60_[3] Q=_0_[15]
+.subckt INVX1 A=b32_enable Y=_117_
+.subckt NOR2X1 A=b32_reset B=_117_ Y=_118_
+.subckt INVX1 A=_118_ Y=_119_
+.subckt OAI21X1 A=b32_reset B=_117_ C=_0_[16] Y=_120_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_121_
+.subckt INVX1 A=b32_mode[0] Y=_122_
+.subckt INVX1 A=b32_mode[1] Y=_123_
+.subckt OAI21X1 A=_122_ B=_123_ C=_0_[16] Y=_124_
+.subckt OAI21X1 A=b32_D[16] B=_121_ C=_124_ Y=_125_
+.subckt OAI21X1 A=_119_ B=_125_ C=_120_ Y=_116_[0]
+.subckt INVX1 A=_0_[17] Y=_126_
+.subckt INVX1 A=_121_ Y=_127_
+.subckt NOR2X1 A=_0_[16] B=_0_[17] Y=_128_
+.subckt INVX1 A=_0_[16] Y=_129_
+.subckt NOR2X1 A=_129_ B=_126_ Y=_130_
+.subckt OR2X2 A=_130_ B=_128_ Y=_131_
+.subckt NOR2X1 A=b32_mode[1] B=_122_ Y=_132_
+.subckt AOI22X1 A=b32_D[17] B=_127_ C=_132_ D=_131_ Y=_133_
+.subckt NOR2X1 A=_128_ B=_130_ Y=_134_
+.subckt AOI21X1 A=_134_ B=_122_ C=_119_ Y=_135_
+.subckt AOI22X1 A=_126_ B=_119_ C=_135_ D=_133_ Y=_116_[1]
+.subckt INVX1 A=_0_[18] Y=_136_
+.subckt NOR2X1 A=b32_mode[0] B=_123_ Y=_137_
+.subckt NAND3X1 A=_0_[16] B=_0_[17] C=_0_[18] Y=_138_
+.subckt INVX1 A=_138_ Y=_139_
+.subckt AOI21X1 A=_0_[16] B=_0_[17] C=_0_[18] Y=_140_
+.subckt OR2X2 A=_139_ B=_140_ Y=_141_
+.subckt INVX1 A=b32_D[18] Y=_142_
+.subckt OAI21X1 A=_142_ B=_121_ C=_118_ Y=_143_
+.subckt AOI21X1 A=_141_ B=_137_ C=_143_ Y=_144_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_145_
+.subckt NOR2X1 A=_140_ B=_139_ Y=_146_
+.subckt NAND2X1 A=_136_ B=_128_ Y=_147_
+.subckt OAI21X1 A=_0_[16] B=_0_[17] C=_0_[18] Y=_148_
+.subckt NAND2X1 A=_148_ B=_147_ Y=_149_
+.subckt AOI22X1 A=_149_ B=_132_ C=_145_ D=_146_ Y=_150_
+.subckt AOI22X1 A=_136_ B=_119_ C=_150_ D=_144_ Y=_116_[2]
+.subckt INVX1 A=_0_[19] Y=_151_
+.subckt NOR2X1 A=_151_ B=_138_ Y=_152_
+.subckt INVX1 A=_152_ Y=_153_
+.subckt INVX1 A=_145_ Y=_154_
+.subckt AOI21X1 A=_151_ B=_138_ C=_154_ Y=_155_
+.subckt INVX1 A=b32_D[19] Y=_156_
+.subckt OAI21X1 A=_156_ B=_121_ C=_118_ Y=_157_
+.subckt AOI21X1 A=_153_ B=_155_ C=_157_ Y=_158_
+.subckt NAND3X1 A=_136_ B=_151_ C=_128_ Y=_159_
+.subckt OR2X2 A=_0_[16] B=_0_[17] Y=_160_
+.subckt OAI21X1 A=_0_[18] B=_160_ C=_0_[19] Y=_161_
+.subckt NAND2X1 A=_159_ B=_161_ Y=_162_
+.subckt XNOR2X1 A=_140_ B=_151_ Y=_163_
+.subckt AOI22X1 A=_137_ B=_163_ C=_132_ D=_162_ Y=_164_
+.subckt AOI22X1 A=_151_ B=_119_ C=_158_ D=_164_ Y=_116_[3]
+.subckt NOR2X1 A=_129_ B=_119_ Y=_113_[0]
+.subckt NOR2X1 A=_126_ B=_119_ Y=_113_[1]
+.subckt NOR2X1 A=_136_ B=_119_ Y=_113_[2]
+.subckt NOR2X1 A=_151_ B=_119_ Y=_113_[3]
+.subckt INVX1 A=_159_ Y=_165_
+.subckt NAND2X1 A=_132_ B=_165_ Y=_166_
+.subckt AND2X2 A=_140_ B=_151_ Y=_167_
+.subckt AOI22X1 A=_145_ B=_152_ C=_137_ D=_167_ Y=_168_
+.subckt AOI21X1 A=_166_ B=_168_ C=_119_ Y=_115_
+.subckt NOR2X1 A=_121_ B=_119_ Y=_114_
+.subckt DFFPOSX1 CLK=b32_clk D=_114_ Q=counter_16b19.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_115_ Q=counter_16b19.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_113_[0] Q=_0_[16]
+.subckt DFFPOSX1 CLK=b32_clk D=_113_[1] Q=_0_[17]
+.subckt DFFPOSX1 CLK=b32_clk D=_113_[2] Q=_0_[18]
+.subckt DFFPOSX1 CLK=b32_clk D=_113_[3] Q=_0_[19]
+.subckt DFFPOSX1 CLK=b32_clk D=_116_[0] Q=_0_[16]
+.subckt DFFPOSX1 CLK=b32_clk D=_116_[1] Q=_0_[17]
+.subckt DFFPOSX1 CLK=b32_clk D=_116_[2] Q=_0_[18]
+.subckt DFFPOSX1 CLK=b32_clk D=_116_[3] Q=_0_[19]
+.subckt INVX1 A=b32_enable Y=_173_
+.subckt NOR2X1 A=b32_reset B=_173_ Y=_174_
+.subckt INVX1 A=_174_ Y=_175_
+.subckt OAI21X1 A=b32_reset B=_173_ C=_0_[20] Y=_176_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_177_
+.subckt INVX1 A=b32_mode[0] Y=_178_
+.subckt INVX1 A=b32_mode[1] Y=_179_
+.subckt OAI21X1 A=_178_ B=_179_ C=_0_[20] Y=_180_
+.subckt OAI21X1 A=b32_D[20] B=_177_ C=_180_ Y=_181_
+.subckt OAI21X1 A=_175_ B=_181_ C=_176_ Y=_172_[0]
+.subckt INVX1 A=_0_[21] Y=_182_
+.subckt INVX1 A=_177_ Y=_183_
+.subckt NOR2X1 A=_0_[20] B=_0_[21] Y=_184_
+.subckt INVX1 A=_0_[20] Y=_185_
+.subckt NOR2X1 A=_185_ B=_182_ Y=_186_
+.subckt OR2X2 A=_186_ B=_184_ Y=_187_
+.subckt NOR2X1 A=b32_mode[1] B=_178_ Y=_188_
+.subckt AOI22X1 A=b32_D[21] B=_183_ C=_188_ D=_187_ Y=_189_
+.subckt NOR2X1 A=_184_ B=_186_ Y=_190_
+.subckt AOI21X1 A=_190_ B=_178_ C=_175_ Y=_191_
+.subckt AOI22X1 A=_182_ B=_175_ C=_191_ D=_189_ Y=_172_[1]
+.subckt INVX1 A=_0_[22] Y=_192_
+.subckt NOR2X1 A=b32_mode[0] B=_179_ Y=_193_
+.subckt NAND3X1 A=_0_[20] B=_0_[21] C=_0_[22] Y=_194_
+.subckt INVX1 A=_194_ Y=_195_
+.subckt AOI21X1 A=_0_[20] B=_0_[21] C=_0_[22] Y=_196_
+.subckt OR2X2 A=_195_ B=_196_ Y=_197_
+.subckt INVX1 A=b32_D[22] Y=_198_
+.subckt OAI21X1 A=_198_ B=_177_ C=_174_ Y=_199_
+.subckt AOI21X1 A=_197_ B=_193_ C=_199_ Y=_200_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_201_
+.subckt NOR2X1 A=_196_ B=_195_ Y=_202_
+.subckt NAND2X1 A=_192_ B=_184_ Y=_203_
+.subckt OAI21X1 A=_0_[20] B=_0_[21] C=_0_[22] Y=_204_
+.subckt NAND2X1 A=_204_ B=_203_ Y=_205_
+.subckt AOI22X1 A=_205_ B=_188_ C=_201_ D=_202_ Y=_206_
+.subckt AOI22X1 A=_192_ B=_175_ C=_206_ D=_200_ Y=_172_[2]
+.subckt INVX1 A=_0_[23] Y=_207_
+.subckt NOR2X1 A=_207_ B=_194_ Y=_208_
+.subckt INVX1 A=_208_ Y=_209_
+.subckt INVX1 A=_201_ Y=_210_
+.subckt AOI21X1 A=_207_ B=_194_ C=_210_ Y=_211_
+.subckt INVX1 A=b32_D[23] Y=_212_
+.subckt OAI21X1 A=_212_ B=_177_ C=_174_ Y=_213_
 .subckt AOI21X1 A=_209_ B=_211_ C=_213_ Y=_214_
-.subckt AOI22X1 A=_205_ B=_198_ C=_214_ D=_210_ Y=_195_[1]
-.subckt INVX1 A=_0_[26] Y=_215_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_216_
-.subckt NAND3X1 A=_0_[24] B=_0_[25] C=_0_[26] Y=_217_
-.subckt INVX1 A=_217_ Y=_218_
-.subckt AOI21X1 A=_0_[24] B=_0_[25] C=_0_[26] Y=_219_
-.subckt NOR2X1 A=_219_ B=_218_ Y=_220_
-.subckt INVX1 A=b32_D[26] Y=_221_
-.subckt OAI21X1 A=_221_ B=_200_ C=_197_ Y=_222_
-.subckt AOI21X1 A=_220_ B=_216_ C=_222_ Y=_223_
-.subckt XNOR2X1 A=_208_ B=_215_ Y=_224_
-.subckt NAND2X1 A=b32_mode[1] B=_201_ Y=_225_
-.subckt INVX1 A=_219_ Y=_226_
-.subckt AOI21X1 A=_226_ B=_217_ C=_225_ Y=_227_
-.subckt AOI21X1 A=_224_ B=_211_ C=_227_ Y=_228_
-.subckt AOI22X1 A=_215_ B=_198_ C=_223_ D=_228_ Y=_195_[2]
-.subckt INVX1 A=_0_[27] Y=_229_
-.subckt INVX1 A=_216_ Y=_230_
-.subckt OAI22X1 A=_225_ B=_219_ C=_230_ D=_218_ Y=_231_
-.subckt INVX1 A=b32_D[27] Y=_232_
-.subckt OAI21X1 A=_232_ B=_200_ C=_197_ Y=_233_
-.subckt AOI21X1 A=_231_ B=_0_[27] C=_233_ Y=_234_
-.subckt OR2X2 A=_0_[24] B=_0_[25] Y=_235_
-.subckt OAI21X1 A=_0_[26] B=_235_ C=_0_[27] Y=_236_
-.subckt NAND3X1 A=_215_ B=_229_ C=_208_ Y=_237_
-.subckt NAND2X1 A=_237_ B=_236_ Y=_238_
-.subckt OAI22X1 A=_230_ B=_217_ C=_225_ D=_226_ Y=_239_
-.subckt AOI22X1 A=_229_ B=_239_ C=_211_ D=_238_ Y=_240_
-.subckt AOI22X1 A=_229_ B=_198_ C=_234_ D=_240_ Y=_195_[3]
-.subckt NOR2X1 A=_206_ B=_198_ Y=_193_[0]
-.subckt NOR2X1 A=_205_ B=_198_ Y=_193_[1]
-.subckt NOR2X1 A=_215_ B=_198_ Y=_193_[2]
-.subckt NOR2X1 A=_229_ B=_198_ Y=_193_[3]
-.subckt NOR2X1 A=_200_ B=_198_ Y=_194_
-.subckt DFFPOSX1 CLK=b32_clk D=_194_ Q=counter_24b27.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_193_[0] Q=_0_[24]
-.subckt DFFPOSX1 CLK=b32_clk D=_193_[1] Q=_0_[25]
-.subckt DFFPOSX1 CLK=b32_clk D=_193_[2] Q=_0_[26]
-.subckt DFFPOSX1 CLK=b32_clk D=_193_[3] Q=_0_[27]
-.subckt DFFPOSX1 CLK=b32_clk D=_195_[0] Q=_0_[24]
-.subckt DFFPOSX1 CLK=b32_clk D=_195_[1] Q=_0_[25]
-.subckt DFFPOSX1 CLK=b32_clk D=_195_[2] Q=_0_[26]
-.subckt DFFPOSX1 CLK=b32_clk D=_195_[3] Q=_0_[27]
-.subckt INVX1 A=b32_enable Y=_244_
-.subckt NOR2X1 A=b32_reset B=_244_ Y=_245_
-.subckt INVX1 A=_245_ Y=_246_
-.subckt OAI21X1 A=b32_reset B=_244_ C=_0_[28] Y=_247_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_248_
-.subckt INVX1 A=b32_mode[0] Y=_249_
-.subckt INVX1 A=b32_mode[1] Y=_250_
-.subckt OAI21X1 A=_249_ B=_250_ C=_0_[28] Y=_251_
-.subckt OAI21X1 A=b32_D[28] B=_248_ C=_251_ Y=_252_
-.subckt OAI21X1 A=_246_ B=_252_ C=_247_ Y=_243_[0]
-.subckt INVX1 A=_0_[29] Y=_253_
-.subckt INVX1 A=_0_[28] Y=_254_
-.subckt NOR2X1 A=_254_ B=_253_ Y=_255_
-.subckt NOR2X1 A=_0_[28] B=_0_[29] Y=_256_
-.subckt OR2X2 A=_255_ B=_256_ Y=_257_
-.subckt OR2X2 A=_257_ B=b32_mode[0] Y=_258_
-.subckt NOR2X1 A=b32_mode[1] B=_249_ Y=_259_
-.subckt INVX1 A=b32_D[29] Y=_260_
-.subckt OAI21X1 A=_260_ B=_248_ C=_245_ Y=_261_
-.subckt AOI21X1 A=_257_ B=_259_ C=_261_ Y=_262_
-.subckt AOI22X1 A=_253_ B=_246_ C=_262_ D=_258_ Y=_243_[1]
-.subckt INVX1 A=_0_[30] Y=_263_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_264_
-.subckt NAND3X1 A=_0_[28] B=_0_[29] C=_0_[30] Y=_265_
-.subckt INVX1 A=_265_ Y=_266_
-.subckt AOI21X1 A=_0_[28] B=_0_[29] C=_0_[30] Y=_267_
-.subckt NOR2X1 A=_267_ B=_266_ Y=_268_
-.subckt INVX1 A=b32_D[30] Y=_269_
-.subckt OAI21X1 A=_269_ B=_248_ C=_245_ Y=_270_
-.subckt AOI21X1 A=_268_ B=_264_ C=_270_ Y=_271_
-.subckt XNOR2X1 A=_256_ B=_263_ Y=_272_
-.subckt NAND2X1 A=b32_mode[1] B=_249_ Y=_273_
-.subckt INVX1 A=_267_ Y=_274_
-.subckt AOI21X1 A=_274_ B=_265_ C=_273_ Y=_275_
-.subckt AOI21X1 A=_272_ B=_259_ C=_275_ Y=_276_
-.subckt AOI22X1 A=_263_ B=_246_ C=_271_ D=_276_ Y=_243_[2]
-.subckt INVX1 A=_0_[31] Y=_277_
-.subckt INVX1 A=_264_ Y=_278_
-.subckt OAI22X1 A=_273_ B=_267_ C=_278_ D=_266_ Y=_279_
-.subckt INVX1 A=b32_D[31] Y=_280_
-.subckt OAI21X1 A=_280_ B=_248_ C=_245_ Y=_281_
-.subckt AOI21X1 A=_279_ B=_0_[31] C=_281_ Y=_282_
-.subckt OR2X2 A=_0_[28] B=_0_[29] Y=_283_
-.subckt OAI21X1 A=_0_[30] B=_283_ C=_0_[31] Y=_284_
-.subckt NAND3X1 A=_263_ B=_277_ C=_256_ Y=_285_
-.subckt NAND2X1 A=_285_ B=_284_ Y=_286_
-.subckt OAI22X1 A=_278_ B=_265_ C=_273_ D=_274_ Y=_287_
-.subckt AOI22X1 A=_277_ B=_287_ C=_259_ D=_286_ Y=_288_
-.subckt AOI22X1 A=_277_ B=_246_ C=_282_ D=_288_ Y=_243_[3]
-.subckt NOR2X1 A=_254_ B=_246_ Y=_241_[0]
-.subckt NOR2X1 A=_253_ B=_246_ Y=_241_[1]
-.subckt NOR2X1 A=_263_ B=_246_ Y=_241_[2]
-.subckt NOR2X1 A=_277_ B=_246_ Y=_241_[3]
-.subckt NOR2X1 A=_248_ B=_246_ Y=_242_
-.subckt DFFPOSX1 CLK=b32_clk D=_242_ Q=counter_28b31.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_241_[0] Q=_0_[28]
-.subckt DFFPOSX1 CLK=b32_clk D=_241_[1] Q=_0_[29]
-.subckt DFFPOSX1 CLK=b32_clk D=_241_[2] Q=_0_[30]
-.subckt DFFPOSX1 CLK=b32_clk D=_241_[3] Q=_0_[31]
-.subckt DFFPOSX1 CLK=b32_clk D=_243_[0] Q=_0_[28]
-.subckt DFFPOSX1 CLK=b32_clk D=_243_[1] Q=_0_[29]
-.subckt DFFPOSX1 CLK=b32_clk D=_243_[2] Q=_0_[30]
-.subckt DFFPOSX1 CLK=b32_clk D=_243_[3] Q=_0_[31]
-.subckt INVX1 A=b32_enable Y=_292_
-.subckt NOR2X1 A=b32_reset B=_292_ Y=_293_
-.subckt INVX1 A=_293_ Y=_294_
-.subckt OAI21X1 A=b32_reset B=_292_ C=_0_[4] Y=_295_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_296_
-.subckt INVX1 A=b32_mode[0] Y=_297_
-.subckt INVX1 A=b32_mode[1] Y=_298_
-.subckt OAI21X1 A=_297_ B=_298_ C=_0_[4] Y=_299_
-.subckt OAI21X1 A=b32_D[4] B=_296_ C=_299_ Y=_300_
-.subckt OAI21X1 A=_294_ B=_300_ C=_295_ Y=_291_[0]
-.subckt INVX1 A=_0_[5] Y=_301_
-.subckt INVX1 A=_0_[4] Y=_302_
-.subckt NOR2X1 A=_302_ B=_301_ Y=_303_
-.subckt NOR2X1 A=_0_[4] B=_0_[5] Y=_304_
-.subckt OR2X2 A=_303_ B=_304_ Y=_305_
-.subckt OR2X2 A=_305_ B=b32_mode[0] Y=_306_
-.subckt NOR2X1 A=b32_mode[1] B=_297_ Y=_307_
-.subckt INVX1 A=b32_D[5] Y=_308_
-.subckt OAI21X1 A=_308_ B=_296_ C=_293_ Y=_309_
-.subckt AOI21X1 A=_305_ B=_307_ C=_309_ Y=_310_
-.subckt AOI22X1 A=_301_ B=_294_ C=_310_ D=_306_ Y=_291_[1]
-.subckt INVX1 A=_0_[6] Y=_311_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_312_
-.subckt NAND3X1 A=_0_[4] B=_0_[5] C=_0_[6] Y=_313_
-.subckt INVX1 A=_313_ Y=_314_
-.subckt AOI21X1 A=_0_[4] B=_0_[5] C=_0_[6] Y=_315_
-.subckt NOR2X1 A=_315_ B=_314_ Y=_316_
-.subckt INVX1 A=b32_D[6] Y=_317_
-.subckt OAI21X1 A=_317_ B=_296_ C=_293_ Y=_318_
-.subckt AOI21X1 A=_316_ B=_312_ C=_318_ Y=_319_
-.subckt XNOR2X1 A=_304_ B=_311_ Y=_320_
-.subckt NAND2X1 A=b32_mode[1] B=_297_ Y=_321_
-.subckt INVX1 A=_315_ Y=_322_
-.subckt AOI21X1 A=_322_ B=_313_ C=_321_ Y=_323_
-.subckt AOI21X1 A=_320_ B=_307_ C=_323_ Y=_324_
-.subckt AOI22X1 A=_311_ B=_294_ C=_319_ D=_324_ Y=_291_[2]
-.subckt INVX1 A=_0_[7] Y=_325_
-.subckt INVX1 A=_312_ Y=_326_
-.subckt OAI22X1 A=_321_ B=_315_ C=_326_ D=_314_ Y=_327_
-.subckt INVX1 A=b32_D[7] Y=_328_
-.subckt OAI21X1 A=_328_ B=_296_ C=_293_ Y=_329_
-.subckt AOI21X1 A=_327_ B=_0_[7] C=_329_ Y=_330_
-.subckt OR2X2 A=_0_[4] B=_0_[5] Y=_331_
-.subckt OAI21X1 A=_0_[6] B=_331_ C=_0_[7] Y=_332_
-.subckt NAND3X1 A=_311_ B=_325_ C=_304_ Y=_333_
-.subckt NAND2X1 A=_333_ B=_332_ Y=_334_
-.subckt OAI22X1 A=_326_ B=_313_ C=_321_ D=_322_ Y=_335_
-.subckt AOI22X1 A=_325_ B=_335_ C=_307_ D=_334_ Y=_336_
-.subckt AOI22X1 A=_325_ B=_294_ C=_330_ D=_336_ Y=_291_[3]
-.subckt NOR2X1 A=_302_ B=_294_ Y=_289_[0]
-.subckt NOR2X1 A=_301_ B=_294_ Y=_289_[1]
-.subckt NOR2X1 A=_311_ B=_294_ Y=_289_[2]
-.subckt NOR2X1 A=_325_ B=_294_ Y=_289_[3]
-.subckt NOR2X1 A=_296_ B=_294_ Y=_290_
-.subckt DFFPOSX1 CLK=b32_clk D=_290_ Q=counter_4b7.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_289_[0] Q=_0_[4]
-.subckt DFFPOSX1 CLK=b32_clk D=_289_[1] Q=_0_[5]
-.subckt DFFPOSX1 CLK=b32_clk D=_289_[2] Q=_0_[6]
-.subckt DFFPOSX1 CLK=b32_clk D=_289_[3] Q=_0_[7]
-.subckt DFFPOSX1 CLK=b32_clk D=_291_[0] Q=_0_[4]
-.subckt DFFPOSX1 CLK=b32_clk D=_291_[1] Q=_0_[5]
-.subckt DFFPOSX1 CLK=b32_clk D=_291_[2] Q=_0_[6]
-.subckt DFFPOSX1 CLK=b32_clk D=_291_[3] Q=_0_[7]
-.subckt INVX1 A=b32_enable Y=_340_
-.subckt NOR2X1 A=b32_reset B=_340_ Y=_341_
-.subckt INVX1 A=_341_ Y=_342_
-.subckt OAI21X1 A=b32_reset B=_340_ C=_0_[8] Y=_343_
-.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_344_
-.subckt INVX1 A=b32_mode[0] Y=_345_
-.subckt INVX1 A=b32_mode[1] Y=_346_
-.subckt OAI21X1 A=_345_ B=_346_ C=_0_[8] Y=_347_
-.subckt OAI21X1 A=b32_D[8] B=_344_ C=_347_ Y=_348_
-.subckt OAI21X1 A=_342_ B=_348_ C=_343_ Y=_339_[0]
-.subckt INVX1 A=_0_[9] Y=_349_
-.subckt INVX1 A=_0_[8] Y=_350_
-.subckt NOR2X1 A=_350_ B=_349_ Y=_351_
-.subckt NOR2X1 A=_0_[8] B=_0_[9] Y=_352_
-.subckt OR2X2 A=_351_ B=_352_ Y=_353_
-.subckt OR2X2 A=_353_ B=b32_mode[0] Y=_354_
-.subckt NOR2X1 A=b32_mode[1] B=_345_ Y=_355_
-.subckt INVX1 A=b32_D[9] Y=_356_
-.subckt OAI21X1 A=_356_ B=_344_ C=_341_ Y=_357_
-.subckt AOI21X1 A=_353_ B=_355_ C=_357_ Y=_358_
-.subckt AOI22X1 A=_349_ B=_342_ C=_358_ D=_354_ Y=_339_[1]
-.subckt INVX1 A=_0_[10] Y=_359_
-.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_360_
-.subckt NAND3X1 A=_0_[8] B=_0_[9] C=_0_[10] Y=_361_
-.subckt INVX1 A=_361_ Y=_362_
-.subckt AOI21X1 A=_0_[8] B=_0_[9] C=_0_[10] Y=_363_
-.subckt NOR2X1 A=_363_ B=_362_ Y=_364_
-.subckt INVX1 A=b32_D[10] Y=_365_
-.subckt OAI21X1 A=_365_ B=_344_ C=_341_ Y=_366_
-.subckt AOI21X1 A=_364_ B=_360_ C=_366_ Y=_367_
-.subckt XNOR2X1 A=_352_ B=_359_ Y=_368_
-.subckt NAND2X1 A=b32_mode[1] B=_345_ Y=_369_
-.subckt INVX1 A=_363_ Y=_370_
-.subckt AOI21X1 A=_370_ B=_361_ C=_369_ Y=_371_
-.subckt AOI21X1 A=_368_ B=_355_ C=_371_ Y=_372_
-.subckt AOI22X1 A=_359_ B=_342_ C=_367_ D=_372_ Y=_339_[2]
-.subckt INVX1 A=_0_[11] Y=_373_
-.subckt INVX1 A=_360_ Y=_374_
-.subckt OAI22X1 A=_369_ B=_363_ C=_374_ D=_362_ Y=_375_
-.subckt INVX1 A=b32_D[11] Y=_376_
-.subckt OAI21X1 A=_376_ B=_344_ C=_341_ Y=_377_
-.subckt AOI21X1 A=_375_ B=_0_[11] C=_377_ Y=_378_
-.subckt OR2X2 A=_0_[8] B=_0_[9] Y=_379_
-.subckt OAI21X1 A=_0_[10] B=_379_ C=_0_[11] Y=_380_
-.subckt NAND3X1 A=_359_ B=_373_ C=_352_ Y=_381_
-.subckt NAND2X1 A=_381_ B=_380_ Y=_382_
-.subckt OAI22X1 A=_374_ B=_361_ C=_369_ D=_370_ Y=_383_
-.subckt AOI22X1 A=_373_ B=_383_ C=_355_ D=_382_ Y=_384_
-.subckt AOI22X1 A=_373_ B=_342_ C=_378_ D=_384_ Y=_339_[3]
-.subckt NOR2X1 A=_350_ B=_342_ Y=_337_[0]
-.subckt NOR2X1 A=_349_ B=_342_ Y=_337_[1]
-.subckt NOR2X1 A=_359_ B=_342_ Y=_337_[2]
-.subckt NOR2X1 A=_373_ B=_342_ Y=_337_[3]
-.subckt NOR2X1 A=_344_ B=_342_ Y=_338_
-.subckt DFFPOSX1 CLK=b32_clk D=_338_ Q=counter_8b11.b4_load
-.subckt DFFPOSX1 CLK=b32_clk D=_337_[0] Q=_0_[8]
-.subckt DFFPOSX1 CLK=b32_clk D=_337_[1] Q=_0_[9]
-.subckt DFFPOSX1 CLK=b32_clk D=_337_[2] Q=_0_[10]
-.subckt DFFPOSX1 CLK=b32_clk D=_337_[3] Q=_0_[11]
-.subckt DFFPOSX1 CLK=b32_clk D=_339_[0] Q=_0_[8]
-.subckt DFFPOSX1 CLK=b32_clk D=_339_[1] Q=_0_[9]
-.subckt DFFPOSX1 CLK=b32_clk D=_339_[2] Q=_0_[10]
-.subckt DFFPOSX1 CLK=b32_clk D=_339_[3] Q=_0_[11]
+.subckt NAND3X1 A=_192_ B=_207_ C=_184_ Y=_215_
+.subckt OR2X2 A=_0_[20] B=_0_[21] Y=_216_
+.subckt OAI21X1 A=_0_[22] B=_216_ C=_0_[23] Y=_217_
+.subckt NAND2X1 A=_215_ B=_217_ Y=_218_
+.subckt XNOR2X1 A=_196_ B=_207_ Y=_219_
+.subckt AOI22X1 A=_193_ B=_219_ C=_188_ D=_218_ Y=_220_
+.subckt AOI22X1 A=_207_ B=_175_ C=_214_ D=_220_ Y=_172_[3]
+.subckt NOR2X1 A=_185_ B=_175_ Y=_169_[0]
+.subckt NOR2X1 A=_182_ B=_175_ Y=_169_[1]
+.subckt NOR2X1 A=_192_ B=_175_ Y=_169_[2]
+.subckt NOR2X1 A=_207_ B=_175_ Y=_169_[3]
+.subckt INVX1 A=_215_ Y=_221_
+.subckt NAND2X1 A=_188_ B=_221_ Y=_222_
+.subckt AND2X2 A=_196_ B=_207_ Y=_223_
+.subckt AOI22X1 A=_201_ B=_208_ C=_193_ D=_223_ Y=_224_
+.subckt AOI21X1 A=_222_ B=_224_ C=_175_ Y=_171_
+.subckt NOR2X1 A=_177_ B=_175_ Y=_170_
+.subckt DFFPOSX1 CLK=b32_clk D=_170_ Q=counter_20b23.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_171_ Q=counter_20b23.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_169_[0] Q=_0_[20]
+.subckt DFFPOSX1 CLK=b32_clk D=_169_[1] Q=_0_[21]
+.subckt DFFPOSX1 CLK=b32_clk D=_169_[2] Q=_0_[22]
+.subckt DFFPOSX1 CLK=b32_clk D=_169_[3] Q=_0_[23]
+.subckt DFFPOSX1 CLK=b32_clk D=_172_[0] Q=_0_[20]
+.subckt DFFPOSX1 CLK=b32_clk D=_172_[1] Q=_0_[21]
+.subckt DFFPOSX1 CLK=b32_clk D=_172_[2] Q=_0_[22]
+.subckt DFFPOSX1 CLK=b32_clk D=_172_[3] Q=_0_[23]
+.subckt INVX1 A=b32_enable Y=_229_
+.subckt NOR2X1 A=b32_reset B=_229_ Y=_230_
+.subckt INVX1 A=_230_ Y=_231_
+.subckt OAI21X1 A=b32_reset B=_229_ C=_0_[24] Y=_232_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_233_
+.subckt INVX1 A=b32_mode[0] Y=_234_
+.subckt INVX1 A=b32_mode[1] Y=_235_
+.subckt OAI21X1 A=_234_ B=_235_ C=_0_[24] Y=_236_
+.subckt OAI21X1 A=b32_D[24] B=_233_ C=_236_ Y=_237_
+.subckt OAI21X1 A=_231_ B=_237_ C=_232_ Y=_228_[0]
+.subckt INVX1 A=_0_[25] Y=_238_
+.subckt INVX1 A=_233_ Y=_239_
+.subckt NOR2X1 A=_0_[24] B=_0_[25] Y=_240_
+.subckt INVX1 A=_0_[24] Y=_241_
+.subckt NOR2X1 A=_241_ B=_238_ Y=_242_
+.subckt OR2X2 A=_242_ B=_240_ Y=_243_
+.subckt NOR2X1 A=b32_mode[1] B=_234_ Y=_244_
+.subckt AOI22X1 A=b32_D[25] B=_239_ C=_244_ D=_243_ Y=_245_
+.subckt NOR2X1 A=_240_ B=_242_ Y=_246_
+.subckt AOI21X1 A=_246_ B=_234_ C=_231_ Y=_247_
+.subckt AOI22X1 A=_238_ B=_231_ C=_247_ D=_245_ Y=_228_[1]
+.subckt INVX1 A=_0_[26] Y=_248_
+.subckt NOR2X1 A=b32_mode[0] B=_235_ Y=_249_
+.subckt NAND3X1 A=_0_[24] B=_0_[25] C=_0_[26] Y=_250_
+.subckt INVX1 A=_250_ Y=_251_
+.subckt AOI21X1 A=_0_[24] B=_0_[25] C=_0_[26] Y=_252_
+.subckt OR2X2 A=_251_ B=_252_ Y=_253_
+.subckt INVX1 A=b32_D[26] Y=_254_
+.subckt OAI21X1 A=_254_ B=_233_ C=_230_ Y=_255_
+.subckt AOI21X1 A=_253_ B=_249_ C=_255_ Y=_256_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_257_
+.subckt NOR2X1 A=_252_ B=_251_ Y=_258_
+.subckt NAND2X1 A=_248_ B=_240_ Y=_259_
+.subckt OAI21X1 A=_0_[24] B=_0_[25] C=_0_[26] Y=_260_
+.subckt NAND2X1 A=_260_ B=_259_ Y=_261_
+.subckt AOI22X1 A=_261_ B=_244_ C=_257_ D=_258_ Y=_262_
+.subckt AOI22X1 A=_248_ B=_231_ C=_262_ D=_256_ Y=_228_[2]
+.subckt INVX1 A=_0_[27] Y=_263_
+.subckt NOR2X1 A=_263_ B=_250_ Y=_264_
+.subckt INVX1 A=_264_ Y=_265_
+.subckt INVX1 A=_257_ Y=_266_
+.subckt AOI21X1 A=_263_ B=_250_ C=_266_ Y=_267_
+.subckt INVX1 A=b32_D[27] Y=_268_
+.subckt OAI21X1 A=_268_ B=_233_ C=_230_ Y=_269_
+.subckt AOI21X1 A=_265_ B=_267_ C=_269_ Y=_270_
+.subckt NAND3X1 A=_248_ B=_263_ C=_240_ Y=_271_
+.subckt OR2X2 A=_0_[24] B=_0_[25] Y=_272_
+.subckt OAI21X1 A=_0_[26] B=_272_ C=_0_[27] Y=_273_
+.subckt NAND2X1 A=_271_ B=_273_ Y=_274_
+.subckt XNOR2X1 A=_252_ B=_263_ Y=_275_
+.subckt AOI22X1 A=_249_ B=_275_ C=_244_ D=_274_ Y=_276_
+.subckt AOI22X1 A=_263_ B=_231_ C=_270_ D=_276_ Y=_228_[3]
+.subckt NOR2X1 A=_241_ B=_231_ Y=_225_[0]
+.subckt NOR2X1 A=_238_ B=_231_ Y=_225_[1]
+.subckt NOR2X1 A=_248_ B=_231_ Y=_225_[2]
+.subckt NOR2X1 A=_263_ B=_231_ Y=_225_[3]
+.subckt INVX1 A=_271_ Y=_277_
+.subckt NAND2X1 A=_244_ B=_277_ Y=_278_
+.subckt AND2X2 A=_252_ B=_263_ Y=_279_
+.subckt AOI22X1 A=_257_ B=_264_ C=_249_ D=_279_ Y=_280_
+.subckt AOI21X1 A=_278_ B=_280_ C=_231_ Y=_227_
+.subckt NOR2X1 A=_233_ B=_231_ Y=_226_
+.subckt DFFPOSX1 CLK=b32_clk D=_226_ Q=counter_24b27.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_227_ Q=counter_24b27.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_225_[0] Q=_0_[24]
+.subckt DFFPOSX1 CLK=b32_clk D=_225_[1] Q=_0_[25]
+.subckt DFFPOSX1 CLK=b32_clk D=_225_[2] Q=_0_[26]
+.subckt DFFPOSX1 CLK=b32_clk D=_225_[3] Q=_0_[27]
+.subckt DFFPOSX1 CLK=b32_clk D=_228_[0] Q=_0_[24]
+.subckt DFFPOSX1 CLK=b32_clk D=_228_[1] Q=_0_[25]
+.subckt DFFPOSX1 CLK=b32_clk D=_228_[2] Q=_0_[26]
+.subckt DFFPOSX1 CLK=b32_clk D=_228_[3] Q=_0_[27]
+.subckt INVX1 A=b32_enable Y=_285_
+.subckt NOR2X1 A=b32_reset B=_285_ Y=_286_
+.subckt INVX1 A=_286_ Y=_287_
+.subckt OAI21X1 A=b32_reset B=_285_ C=_0_[28] Y=_288_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_289_
+.subckt INVX1 A=b32_mode[0] Y=_290_
+.subckt INVX1 A=b32_mode[1] Y=_291_
+.subckt OAI21X1 A=_290_ B=_291_ C=_0_[28] Y=_292_
+.subckt OAI21X1 A=b32_D[28] B=_289_ C=_292_ Y=_293_
+.subckt OAI21X1 A=_287_ B=_293_ C=_288_ Y=_284_[0]
+.subckt INVX1 A=_0_[29] Y=_294_
+.subckt INVX1 A=_289_ Y=_295_
+.subckt NOR2X1 A=_0_[28] B=_0_[29] Y=_296_
+.subckt INVX1 A=_0_[28] Y=_297_
+.subckt NOR2X1 A=_297_ B=_294_ Y=_298_
+.subckt OR2X2 A=_298_ B=_296_ Y=_299_
+.subckt NOR2X1 A=b32_mode[1] B=_290_ Y=_300_
+.subckt AOI22X1 A=b32_D[29] B=_295_ C=_300_ D=_299_ Y=_301_
+.subckt NOR2X1 A=_296_ B=_298_ Y=_302_
+.subckt AOI21X1 A=_302_ B=_290_ C=_287_ Y=_303_
+.subckt AOI22X1 A=_294_ B=_287_ C=_303_ D=_301_ Y=_284_[1]
+.subckt INVX1 A=_0_[30] Y=_304_
+.subckt NOR2X1 A=b32_mode[0] B=_291_ Y=_305_
+.subckt NAND3X1 A=_0_[28] B=_0_[29] C=_0_[30] Y=_306_
+.subckt INVX1 A=_306_ Y=_307_
+.subckt AOI21X1 A=_0_[28] B=_0_[29] C=_0_[30] Y=_308_
+.subckt OR2X2 A=_307_ B=_308_ Y=_309_
+.subckt INVX1 A=b32_D[30] Y=_310_
+.subckt OAI21X1 A=_310_ B=_289_ C=_286_ Y=_311_
+.subckt AOI21X1 A=_309_ B=_305_ C=_311_ Y=_312_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_313_
+.subckt NOR2X1 A=_308_ B=_307_ Y=_314_
+.subckt NAND2X1 A=_304_ B=_296_ Y=_315_
+.subckt OAI21X1 A=_0_[28] B=_0_[29] C=_0_[30] Y=_316_
+.subckt NAND2X1 A=_316_ B=_315_ Y=_317_
+.subckt AOI22X1 A=_317_ B=_300_ C=_313_ D=_314_ Y=_318_
+.subckt AOI22X1 A=_304_ B=_287_ C=_318_ D=_312_ Y=_284_[2]
+.subckt INVX1 A=_0_[31] Y=_319_
+.subckt NOR2X1 A=_319_ B=_306_ Y=_320_
+.subckt INVX1 A=_320_ Y=_321_
+.subckt INVX1 A=_313_ Y=_322_
+.subckt AOI21X1 A=_319_ B=_306_ C=_322_ Y=_323_
+.subckt INVX1 A=b32_D[31] Y=_324_
+.subckt OAI21X1 A=_324_ B=_289_ C=_286_ Y=_325_
+.subckt AOI21X1 A=_321_ B=_323_ C=_325_ Y=_326_
+.subckt NAND3X1 A=_304_ B=_319_ C=_296_ Y=_327_
+.subckt OR2X2 A=_0_[28] B=_0_[29] Y=_328_
+.subckt OAI21X1 A=_0_[30] B=_328_ C=_0_[31] Y=_329_
+.subckt NAND2X1 A=_327_ B=_329_ Y=_330_
+.subckt XNOR2X1 A=_308_ B=_319_ Y=_331_
+.subckt AOI22X1 A=_305_ B=_331_ C=_300_ D=_330_ Y=_332_
+.subckt AOI22X1 A=_319_ B=_287_ C=_326_ D=_332_ Y=_284_[3]
+.subckt NOR2X1 A=_297_ B=_287_ Y=_281_[0]
+.subckt NOR2X1 A=_294_ B=_287_ Y=_281_[1]
+.subckt NOR2X1 A=_304_ B=_287_ Y=_281_[2]
+.subckt NOR2X1 A=_319_ B=_287_ Y=_281_[3]
+.subckt INVX1 A=_327_ Y=_333_
+.subckt NAND2X1 A=_300_ B=_333_ Y=_334_
+.subckt AND2X2 A=_308_ B=_319_ Y=_335_
+.subckt AOI22X1 A=_313_ B=_320_ C=_305_ D=_335_ Y=_336_
+.subckt AOI21X1 A=_334_ B=_336_ C=_287_ Y=_283_
+.subckt NOR2X1 A=_289_ B=_287_ Y=_282_
+.subckt DFFPOSX1 CLK=b32_clk D=_282_ Q=counter_28b31.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_283_ Q=counter_28b31.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_281_[0] Q=_0_[28]
+.subckt DFFPOSX1 CLK=b32_clk D=_281_[1] Q=_0_[29]
+.subckt DFFPOSX1 CLK=b32_clk D=_281_[2] Q=_0_[30]
+.subckt DFFPOSX1 CLK=b32_clk D=_281_[3] Q=_0_[31]
+.subckt DFFPOSX1 CLK=b32_clk D=_284_[0] Q=_0_[28]
+.subckt DFFPOSX1 CLK=b32_clk D=_284_[1] Q=_0_[29]
+.subckt DFFPOSX1 CLK=b32_clk D=_284_[2] Q=_0_[30]
+.subckt DFFPOSX1 CLK=b32_clk D=_284_[3] Q=_0_[31]
+.subckt INVX1 A=b32_enable Y=_341_
+.subckt NOR2X1 A=b32_reset B=_341_ Y=_342_
+.subckt INVX1 A=_342_ Y=_343_
+.subckt OAI21X1 A=b32_reset B=_341_ C=_0_[4] Y=_344_
+.subckt NAND2X1 A=b32_mode[0] B=b32_mode[1] Y=_345_
+.subckt INVX1 A=b32_mode[0] Y=_346_
+.subckt INVX1 A=b32_mode[1] Y=_347_
+.subckt OAI21X1 A=_346_ B=_347_ C=_0_[4] Y=_348_
+.subckt OAI21X1 A=b32_D[4] B=_345_ C=_348_ Y=_349_
+.subckt OAI21X1 A=_343_ B=_349_ C=_344_ Y=_340_[0]
+.subckt INVX1 A=_0_[5] Y=_350_
+.subckt INVX1 A=_345_ Y=_351_
+.subckt NOR2X1 A=_0_[4] B=_0_[5] Y=_352_
+.subckt INVX1 A=_0_[4] Y=_353_
+.subckt NOR2X1 A=_353_ B=_350_ Y=_354_
+.subckt OR2X2 A=_354_ B=_352_ Y=_355_
+.subckt NOR2X1 A=b32_mode[1] B=_346_ Y=_356_
+.subckt AOI22X1 A=b32_D[5] B=_351_ C=_356_ D=_355_ Y=_357_
+.subckt NOR2X1 A=_352_ B=_354_ Y=_358_
+.subckt AOI21X1 A=_358_ B=_346_ C=_343_ Y=_359_
+.subckt AOI22X1 A=_350_ B=_343_ C=_359_ D=_357_ Y=_340_[1]
+.subckt INVX1 A=_0_[6] Y=_360_
+.subckt NOR2X1 A=b32_mode[0] B=_347_ Y=_361_
+.subckt NAND3X1 A=_0_[4] B=_0_[5] C=_0_[6] Y=_362_
+.subckt INVX1 A=_362_ Y=_363_
+.subckt AOI21X1 A=_0_[4] B=_0_[5] C=_0_[6] Y=_364_
+.subckt OR2X2 A=_363_ B=_364_ Y=_365_
+.subckt INVX1 A=b32_D[6] Y=_366_
+.subckt OAI21X1 A=_366_ B=_345_ C=_342_ Y=_367_
+.subckt AOI21X1 A=_365_ B=_361_ C=_367_ Y=_368_
+.subckt NOR2X1 A=b32_mode[0] B=b32_mode[1] Y=_369_
+.subckt NOR2X1 A=_364_ B=_363_ Y=_370_
+.subckt NAND2X1 A=_360_ B=_352_ Y=_371_
+.subckt OAI21X1 A=_0_[4] B=_0_[5] C=_0_[6] Y=_372_
+.subckt NAND2X1 A=_372_ B=_371_ Y=_373_
+.subckt AOI22X1 A=_373_ B=_356_ C=_369_ D=_370_ Y=_374_
+.subckt AOI22X1 A=_360_ B=_343_ C=_374_ D=_368_ Y=_340_[2]
+.subckt INVX1 A=_0_[7] Y=_375_
+.subckt NOR2X1 A=_375_ B=_362_ Y=_376_
+.subckt INVX1 A=_376_ Y=_377_
+.subckt INVX1 A=_369_ Y=_378_
+.subckt AOI21X1 A=_375_ B=_362_ C=_378_ Y=_379_
+.subckt INVX1 A=b32_D[7] Y=_380_
+.subckt OAI21X1 A=_380_ B=_345_ C=_342_ Y=_381_
+.subckt AOI21X1 A=_377_ B=_379_ C=_381_ Y=_382_
+.subckt NAND3X1 A=_360_ B=_375_ C=_352_ Y=_383_
+.subckt OR2X2 A=_0_[4] B=_0_[5] Y=_384_
+.subckt OAI21X1 A=_0_[6] B=_384_ C=_0_[7] Y=_385_
+.subckt NAND2X1 A=_383_ B=_385_ Y=_386_
+.subckt XNOR2X1 A=_364_ B=_375_ Y=_387_
+.subckt AOI22X1 A=_361_ B=_387_ C=_356_ D=_386_ Y=_388_
+.subckt AOI22X1 A=_375_ B=_343_ C=_382_ D=_388_ Y=_340_[3]
+.subckt NOR2X1 A=_353_ B=_343_ Y=_337_[0]
+.subckt NOR2X1 A=_350_ B=_343_ Y=_337_[1]
+.subckt NOR2X1 A=_360_ B=_343_ Y=_337_[2]
+.subckt NOR2X1 A=_375_ B=_343_ Y=_337_[3]
+.subckt INVX1 A=_383_ Y=_389_
+.subckt NAND2X1 A=_356_ B=_389_ Y=_390_
+.subckt AND2X2 A=_364_ B=_375_ Y=_391_
+.subckt AOI22X1 A=_369_ B=_376_ C=_361_ D=_391_ Y=_392_
+.subckt AOI21X1 A=_390_ B=_392_ C=_343_ Y=_339_
+.subckt NOR2X1 A=_345_ B=_343_ Y=_338_
+.subckt DFFPOSX1 CLK=b32_clk D=_338_ Q=counter_4b7.b4_load
+.subckt DFFPOSX1 CLK=b32_clk D=_339_ Q=counter_4b7.b4_rco
+.subckt DFFPOSX1 CLK=b32_clk D=_337_[0] Q=_0_[4]
+.subckt DFFPOSX1 CLK=b32_clk D=_337_[1] Q=_0_[5]
+.subckt DFFPOSX1 CLK=b32_clk D=_337_[2] Q=_0_[6]
+.subckt DFFPOSX1 CLK=b32_clk D=_337_[3] Q=_0_[7]
+.subckt DFFPOSX1 CLK=b32_clk D=_340_[0] Q=_0_[4]
+.subckt DFFPOSX1 CLK=b32_clk D=_340_[1] Q=_0_[5]
+.subckt DFFPOSX1 CLK=b32_clk D=_340_[2] Q=_0_[6]
 .end
