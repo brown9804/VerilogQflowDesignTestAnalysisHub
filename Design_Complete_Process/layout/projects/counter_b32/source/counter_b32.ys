@@ -1,0 +1,22 @@
+
+read_liberty -lib -ignore_miss_dir -setattr blackbox /usr/share/qflow/tech/osu035/osu035_stdcells.lib
+read_verilog  counter_b32.v
+
+# High-level synthesis
+synth -top counter_b32
+# Map register flops
+dfflibmap -liberty /usr/share/qflow/tech/osu035/osu035_stdcells.lib
+opt
+
+# Map combinatorial cells, standard script
+abc -exe /usr/lib/qflow/bin/yosys-abc -liberty /usr/share/qflow/tech/osu035/osu035_stdcells.lib -script +strash;scorr;ifraig;retime,{D};strash;dch,-f;map,-M,1,{D}
+flatten
+
+clean -purge
+# Output buffering
+iopadmap -outpad BUFX2 A:Y -bits
+# Cleanup
+opt
+clean
+rename -enumerate
+write_blif  -buf BUFX2 A Y counter_b32_mapped.blif
