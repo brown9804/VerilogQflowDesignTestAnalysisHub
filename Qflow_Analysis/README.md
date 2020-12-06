@@ -47,7 +47,7 @@ Layout viewer
 
 ~~~~
 <inside specific project> make qflow
-<inside specific project> make stat
+<inside specific project> make sta
 <inside specific project> magic
 ~~~~
 
