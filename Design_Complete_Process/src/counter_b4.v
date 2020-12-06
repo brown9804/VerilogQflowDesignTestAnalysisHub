@@ -134,42 +134,42 @@ always @(*) begin
 end
 
 
-// // // /////////////////////
-// // // // MODE 
-// // // /// RCO HALF
-// // //// Uncomment to activate
-// // //////////////////////
-// always @(negedge b4_clk) begin
-//    case(b4_mode)
+// // /////////////////////
+// // // MODE 
+// // /// RCO HALF
+// //// Uncomment to activate
+// //////////////////////
+always @(negedge b4_clk) begin
+   case(b4_mode)
 
-//    2'b00: begin 
-//      if (b4_rco == 1) begin 
-//       b4_rco <= 0;
-//      end 
-//    end // end charge mode
+   2'b00: begin 
+     if (b4_rco == 1) begin 
+      b4_rco <= 0;
+     end 
+   end // end charge mode
 
-//    2'b01: begin 
-//      if (b4_rco == 1) begin 
-//       b4_rco <= 0;
-//      end 
-//    end // end charge mode
+   2'b01: begin 
+     if (b4_rco == 1) begin 
+      b4_rco <= 0;
+     end 
+   end // end charge mode
 
-//    2'b10: begin 
-//      if (b4_rco == 1) begin 
-//       b4_rco <= 0;
-//      end 
-//    end // end charge mode
+   2'b10: begin 
+     if (b4_rco == 1) begin 
+      b4_rco <= 0;
+     end 
+   end // end charge mode
 
 
-//    2'b11: begin 
-//       b4_rco <= 0;
-//      end   
+   2'b11: begin 
+      b4_rco <= 0;
+     end   
 
-//   default: begin
-//     b4_rco <= b4_rco;
-//   end
-// endcase
-// end 
+  default: begin
+    b4_rco <= b4_rco;
+  end
+endcase
+end 
 
 endmodule
 
