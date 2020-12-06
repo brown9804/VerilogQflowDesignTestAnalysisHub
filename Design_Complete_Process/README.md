@@ -18,7 +18,7 @@ to guarantee the correct operation of the designs.
 ~~~~~
 
 #### C. Desing - counter 32 bits [RCO complete cycle]
-Read ./src/counter_b4.v and comment the always (@ negedge clk). Then:
+Read `./src/counter_b4.v` and comment the always (@ negedge clk). Then:
 
 ~~~~~
 <folder path>$ make 32b
@@ -26,7 +26,7 @@ Read ./src/counter_b4.v and comment the always (@ negedge clk). Then:
 
 #### D. Qflow Analysis 
 
-Go to ./layout ad read the README.md.
+Go to `./layout` and read the README.md.
 
 ### Important:
 Read the makefile because it's using a path to access Gtkwave on OSX, so delete the relative 
