@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sun Dec  6 03:36:55 2020
+[*]
+[dumpfile] "(null)"
+[savefile] "/Users/belindabrown/Downloads/Designs_Verification/Design_Complete_Process/vcd_config/counter_32b_half_rco_frequency.gtkw"
+[timestart] 15595500
+[size] 1280 800
+[pos] -1 -1
+*-15.708265 2870000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 193
+[signals_width] 159
+[sst_expanded] 1
+[sst_vpaned_height] 228
+@200
+-COUNTER 32 BITS
+@201
+-HALF RCO
+@200
+-INPUTS
+@28
+TestBench.clk
+TestBench.reset
+TestBench.enable
+@200
+-
+@28
+TestBench.mode[1:0]
+@200
+-
+@22
+TestBench.D[31:0]
+@200
+-
+-OUTPUTS
+@22
+TestBench.load[7:0]
+TestBench.rco[7:0]
+TestBench.Q[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

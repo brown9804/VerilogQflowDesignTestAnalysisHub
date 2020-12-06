@@ -60,7 +60,7 @@ always @(posedge b4_clk) begin
       mem <= mem + 1;
       b4_load <= 0;
       //  * //
-      if (mem == (2**4 - 1)) begin // next stage
+      if (mem == (2**4 - 1)) begin // next stage when is 15  FLAG because goes to 0
         b4_rco <= 1;
       end // b4_rco == 1
 
@@ -75,7 +75,7 @@ always @(posedge b4_clk) begin
       mem <= mem - 1;
       b4_load <= 0;
         //  * //
-      if (mem == (2**4 - 1))begin // next stage
+      if (mem == 4'b0000)begin // next stage when is 0 FLAG becase -1 F
         b4_rco <= 1;
       end // b4_rco == 1
 
@@ -134,9 +134,9 @@ always @(*) begin
 end
 
 
-// // /////////////////////
-// // // MODE 
-// // /// RCO HALF
+// // // /////////////////////
+// // // // MODE 
+// // // /// RCO HALF
 // // //// Uncomment to activate
 // // //////////////////////
 // always @(negedge b4_clk) begin
