@@ -34,6 +34,6 @@ Aspects analyzed:
 
 *. Place and route.
 
-### 5. Desing Complete Process
+### 5. Desing_Complete_Process [Verilog] [Qflow] [Electric] [Spice]
 Complete process of the design of a 4 bit and 32 bits counters in order 
 to guarantee the correct operation of the designs.
