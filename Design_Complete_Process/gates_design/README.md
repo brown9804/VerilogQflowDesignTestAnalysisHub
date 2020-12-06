@@ -16,24 +16,24 @@ Linux VM.
 ~~~~~
 
 Considerations: 
-NMOS width min 3 so PMOS 2*3 = 6.
-Double click on component to see properties. 
-Connections from NMOS or PMOS to nActive or pActive, and right click to confirm conecction.
-Try to maintain the same size of components related.
-Comments with Explore/Create
-Click on MISC and SPICE Code, control + I. Tools/Simulation/WriteSpiceDeck 
+- NMOS width min 3 so PMOS 2*3 = 6.
+- Double click on component to see properties. 
+- Connections from NMOS or PMOS to nActive or pActive, and right click to confirm conecction.
+- Try to maintain the same size of components related.
+- Comments with Explore/Create
+- Click on MISC and SPICE Code, control + I. Tools/Simulation/WriteSpiceDeck 
 
 2. Install Spice 
 
 
 ### Instructions 
 
-*: To run:
+* To run:
 ~~~~~
 <user>~: electric
 ~~~~~
 
-*: Check cables:
+* Check cables:
 
 ~~~~~
 Click on F5
