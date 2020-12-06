@@ -60,7 +60,7 @@ always @(posedge b4_clk) begin
       mem <= mem + 1;
       b4_load <= 0;
       //  * //
-      if (mem == (2**4 - 1) || (mem >= 13)) begin // next stage
+      if (mem == (2**4 - 1)) begin // next stage
         b4_rco <= 1;
       end // b4_rco == 1
 
@@ -91,7 +91,7 @@ always @(posedge b4_clk) begin
       mem <= mem - 3;
       b4_load <= 0;
       //  * //
-      if (mem == (2**4 - 1))begin // next stage
+      if (mem <= 2)begin // 
         b4_rco <= 1;
       end // b4_rco == 1
 
@@ -105,9 +105,19 @@ always @(posedge b4_clk) begin
     2'b11: begin 
       mem <= b4_D;
       b4_load <= 1; // charging
-      b4_rco <= 0;
-    end // end mode 11 last mode 
-
+      ///////////////////////
+    // //   MODE 11
+    // //   RCO HALF
+    // //  UnComment this part 
+    //   //////////////////////////
+      b4_rco <= 0; 
+      // /////////////////////////
+      //// MODE 11
+      //// RCO HALF
+      //// Comment this part 
+      //////////////////////////
+      // b4_rco <= 1; 
+    end
     //////////////////////////// * ////////////////////
     default: begin // b4_mode != 00,01,10,11
       mem <= mem;
@@ -124,24 +134,41 @@ always @(*) begin
 end
 
 
-/////////////////////////
-// MODE 11
-// RCO HALF
-// Uncomment to activate
-//////////////////////////
+// // /////////////////////
+// // // MODE 
+// // /// RCO HALF
+// // //// Uncomment to activate
+// // //////////////////////
 // always @(negedge b4_clk) begin
 //    case(b4_mode)
 
-//    2'b11: begin 
-//      b4_rco <= b4_rco - 1;
+//    2'b00: begin 
+//      if (b4_rco == 1) begin 
+//       b4_rco <= 0;
+//      end 
 //    end // end charge mode
+
+//    2'b01: begin 
+//      if (b4_rco == 1) begin 
+//       b4_rco <= 0;
+//      end 
+//    end // end charge mode
+
+//    2'b10: begin 
+//      if (b4_rco == 1) begin 
+//       b4_rco <= 0;
+//      end 
+//    end // end charge mode
+
+
+//    2'b11: begin 
+//       b4_rco <= 0;
+//      end   
 
 //   default: begin
 //     b4_rco <= b4_rco;
 //   end
-
 // endcase
-
 // end 
 
 endmodule

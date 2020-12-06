@@ -24,14 +24,14 @@ input wire b32_clk,
 input wire b32_reset,
 input wire [1:0] b32_mode, // choose from 00, 01, 10, 11
 input wire [31:0] b32_D,
-output reg b32_load,
-output reg b32_rco, //  2^nbits - 1 = #
+output reg [7:0] b32_load,
+output reg [7:0] b32_rco, //  2^nbits - 1 = #
 output reg [31:0] b32_Q
 );
 
 wire [31:0] mem_temp;
-wire b32_load_temp;
-wire b32_rco_temp;
+wire [7:0] b32_load_temp;
+wire [7:0] b32_rco_temp;
 
 counter_b4 counter_0b3(/*AUTOINST*/
 // inputs
@@ -41,8 +41,8 @@ counter_b4 counter_0b3(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[3:0]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[0]),
+.b4_rco      ( b32_rco_temp[0]),
 .b4_Q        ( mem_temp[3:0])
 );
 
@@ -54,8 +54,8 @@ counter_b4 counter_4b7(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[7:4]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[1]),
+.b4_rco      ( b32_rco_temp[1]),
 .b4_Q        ( mem_temp[7:4])
 );
 
@@ -68,8 +68,8 @@ counter_b4 counter_8b11(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[11:8]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[2]),
+.b4_rco      ( b32_rco_temp[2]),
 .b4_Q        ( mem_temp[11:8])
 );
 
@@ -82,8 +82,8 @@ counter_b4 counter_12b15(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[15:12]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[3]),
+.b4_rco      ( b32_rco_temp[3]),
 .b4_Q        ( mem_temp[15:12])
 );
 
@@ -97,8 +97,8 @@ counter_b4 counter_16b19(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[19:16]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[4]),
+.b4_rco      ( b32_rco_temp[4]),
 .b4_Q        ( mem_temp[19:16])
 );
 
@@ -111,8 +111,8 @@ counter_b4 counter_20b23(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[23:20]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[5]),
+.b4_rco      ( b32_rco_temp[5]),
 .b4_Q        ( mem_temp[23:20])
 );
 
@@ -124,8 +124,8 @@ counter_b4 counter_24b27(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[27:24]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[6]),
+.b4_rco      ( b32_rco_temp[6]),
 .b4_Q        ( mem_temp[27:24])
 );
 
@@ -138,8 +138,8 @@ counter_b4 counter_28b31(/*AUTOINST*/
 .b4_mode     ( b32_mode), // choose from 00, 01, 10, 11
 .b4_D        ( b32_D[31:28]),
   // outputs
-.b4_load     ( b32_load_temp),
-.b4_rco      ( b32_rco_temp),
+.b4_load     ( b32_load_temp[7]),
+.b4_rco      ( b32_rco_temp[7]),
 .b4_Q        ( mem_temp[31:28])
 
 );

@@ -46,12 +46,12 @@ wire  reset;
 wire [1:0] mode; // choose from 00, 01, 10, 11
 wire [31:0] D;
 
-wire  load;
-wire  rco; //  2^nbits - 1 = #
+wire [7:0] load;
+wire [7:0] rco; //  2^nbits - 1 = #
 wire [31:0] Q;
 
-wire  load_syn;
-wire  rco_syn; //  2^nbits - 1 = #
+wire [7:0] load_syn;
+wire [7:0] rco_syn; //  2^nbits - 1 = #
 wire [31:0] Q_syn;
 
 
@@ -68,8 +68,8 @@ wire [31:0] Q_syn;
 counter_b32 counter_b32_beh(/*AUTOINST*/
   // outputs
 .b32_Q        ( Q[31:0]),
-.b32_load     ( load),
-.b32_rco      ( rco),
+.b32_load     ( load[7:0]),
+.b32_rco      ( rco[7:0]),
 // inputs
 .b32_clk         ( clk),
 .b32_reset       ( reset),
@@ -82,8 +82,8 @@ counter_b32 counter_b32_beh(/*AUTOINST*/
 counter_b32_syn counter_b32_synt(/*AUTOINST*/
   // outputs
 .b32_Q        ( Q_syn[31:0]),
-.b32_load     ( load_syn),
-.b32_rco      ( rco_syn),
+.b32_load     ( load_syn[7:0]),
+.b32_rco      ( rco_syn[7:0]),
 // inputs
 .b32_clk         ( clk),
 .b32_reset       ( reset),
@@ -104,12 +104,12 @@ t_counter_b32 t_counter_b32(/*AUTOINST*/
 
 // inputs
 .b32_Q        ( Q[31:0]),
-.b32_load     ( load),
-.b32_rco      ( rco),
+.b32_load     ( load[7:0]),
+.b32_rco      ( rco[7:0]),
 
 .b32_Q_syn        ( Q_syn[31:0]),
-.b32_load_syn     ( load_syn),
-.b32_rco_syn      ( rco_syn)
+.b32_load_syn     ( load_syn[7:0]),
+.b32_rco_syn      ( rco_syn[7:0])
 );
 
 endmodule

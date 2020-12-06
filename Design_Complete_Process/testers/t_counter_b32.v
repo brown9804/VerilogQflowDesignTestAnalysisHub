@@ -16,12 +16,12 @@
 
 module t_counter_b32(
 //inputs
-input wire b32_load,
-input wire b32_rco, //  2^nbits - 1 = #
+input wire [7:0] b32_load,
+input wire [7:0] b32_rco, //  2^nbits - 1 = #
 input wire [31:0] b32_Q,
 
-input wire b32_load_syn,
-input wire b32_rco_syn, //  2^nbits - 1 = #
+input wire [7:0] b32_load_syn,
+input wire [7:0] b32_rco_syn, //  2^nbits - 1 = #
 input wire [31:0] b32_Q_syn,
 
 //outputs
