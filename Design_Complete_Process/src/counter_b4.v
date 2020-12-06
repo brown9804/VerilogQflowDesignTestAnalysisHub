@@ -105,11 +105,6 @@ always @(posedge b4_clk) begin
     2'b11: begin 
       mem <= b4_D;
       b4_load <= 1; // charging
-      ///////////////////////
-    // //   MODE 11
-    // //   RCO HALF
-    // //  UnComment this part 
-    //   //////////////////////////
       b4_rco <= 0; 
     end
     //////////////////////////// * ////////////////////

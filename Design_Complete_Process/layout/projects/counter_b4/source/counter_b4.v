@@ -105,11 +105,6 @@ always @(posedge b4_clk) begin
     2'b11: begin 
       mem <= b4_D;
       b4_load <= 1; // charging
-      ///////////////////////
-    // //   MODE 11
-    // //   RCO HALF
-    // //  UnComment this part 
-    //   //////////////////////////
       b4_rco <= 0; 
     end
     //////////////////////////// * ////////////////////
@@ -128,42 +123,6 @@ always @(*) begin
 end
 
 
-// // /////////////////////
-// // // MODE 
-// // /// RCO HALF
-// //// Uncomment to activate
-// //////////////////////
-always @(negedge b4_clk) begin
-   case(b4_mode)
-
-   2'b00: begin 
-     if (b4_rco == 1) begin 
-      b4_rco <= 0;
-     end 
-   end // end charge mode
-
-   2'b01: begin 
-     if (b4_rco == 1) begin 
-      b4_rco <= 0;
-     end 
-   end // end charge mode
-
-   2'b10: begin 
-     if (b4_rco == 1) begin 
-      b4_rco <= 0;
-     end 
-   end // end charge mode
-
-
-   2'b11: begin 
-      b4_rco <= 0;
-     end   
-
-  default: begin
-    b4_rco <= b4_rco;
-  end
-endcase
-end 
 
 endmodule
 
