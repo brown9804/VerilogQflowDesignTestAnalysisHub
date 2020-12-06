@@ -14,7 +14,6 @@
 #				TARGETS
 #******************************************************************************
 
-#******************************************************************************
 HERE = ./
 A_SRC = ./source/
 
@@ -32,7 +31,7 @@ sta:
 ############ CLEAN FOR ALL
 .PHONY: clean 
 clean:
-	rm -rf $(A_SRC)*.par $(A_SRC)*.sh $(A_SRC)*.ys $(HERE)*.sh $(HERE)*.log ./layout/* ./synthesis/* $(A_SRC)*.blif
+	rm -rf $(A_SRC)*.par $(A_SRC)*.sh  $(HERE)*.sh $(HERE)*.log ./layout/* ./synthesis/* $(A_SRC)*.blif
 
 
 #******************************************************************************
