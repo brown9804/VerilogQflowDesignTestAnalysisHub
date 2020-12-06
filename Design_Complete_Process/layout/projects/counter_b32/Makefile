@@ -31,7 +31,7 @@ sta:
 
 
 #******************************************************************************
-############ CLEAN FOR ALL
+######-------       CLEAN FOR ALL
 .PHONY: clean 
 clean:
 	rm -rf $(B32_SRC)*.par $(B32_SRC)*.sh  $(HERE)*.sh $(HERE)*.log ./layout/* ./synthesis/* $(B32_SRC)*.blif
