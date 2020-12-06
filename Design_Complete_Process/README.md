@@ -8,20 +8,20 @@ to guarantee the correct operation of the designs.
 
 #### A. Desing - counter 4 bits 
 ~~~~~
-<folder path>$ make 4b
+<folder path>$ make
 ~~~~~
 
 #### B. Desing - counter 32 bits [RCO half cycle]
 
 ~~~~~
-<folder path>$ make 32b
+<folder path>$ make 32
 ~~~~~
 
 #### C. Desing - counter 32 bits [RCO complete cycle]
 Read `./src/counter_b4.v` and comment the always (@ negedge clk). Then:
 
 ~~~~~
-<folder path>$ make 32b
+<folder path>$ make 32
 ~~~~~
 
 #### D. Qflow Analysis 
