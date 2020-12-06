@@ -84,14 +84,14 @@ Now inside `qflow_vars.sh` set:
 Run the commands inside ` qflow_exec.sh ` one by one:
 
 ~~~~~
-/usr/lib/qflow/scripts/synthesize.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-/usr/lib/qflow/scripts/placement.sh -d /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-# /usr/lib/qflow/scripts/vesta.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-/usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-# /usr/lib/qflow/scripts/placement.sh -f -d /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
-# /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification//Design_Complete_Process/layout/counter_b4 counter_b4 
+/usr/lib/qflow/scripts/synthesize.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+/usr/lib/qflow/scripts/placement.sh -d /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+# /usr/lib/qflow/scripts/vesta.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+/usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+# /usr/lib/qflow/scripts/placement.sh -f -d /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
+# /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
 ~~~~~
 
 And magic using `osu050` instead of `osu035`.
