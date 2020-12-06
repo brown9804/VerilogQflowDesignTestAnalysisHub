@@ -95,7 +95,7 @@ For counter 4 bits:
 # /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b4 counter_b4 
 ~~~~~
 
-For counter 32 bits:
+For counter 32 bits with osu035:
 
 ~~~~
 /usr/lib/qflow/scripts/synthesize.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
@@ -108,5 +108,17 @@ For counter 32 bits:
 # /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
 ~~~~
 
+For counter 32 bits with osu050:
+
+~~~~
+/usr/lib/qflow/scripts/synthesize.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+/usr/lib/qflow/scripts/placement.sh -d /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+# /usr/lib/qflow/scripts/vesta.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+#/usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+# /usr/lib/qflow/scripts/placement.sh -f -d /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+# /usr/lib/qflow/scripts/router.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32
+# /usr/lib/qflow/scripts/cleanup.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32
+# /usr/lib/qflow/scripts/display.sh /home/belindabrown/Desktop/Designs_Verification/Design_Complete_Process/layout/projects/counter_b32 counter_b32 
+~~~~
 
 And magic using `osu050` instead of `osu035`.
