@@ -14,7 +14,7 @@
 // Count down.
 // Count three at a time down.
 // Parallel charging.
-`include "./src/counter_b4.v"
+`include "./counter_b4.v"
 
 
 
