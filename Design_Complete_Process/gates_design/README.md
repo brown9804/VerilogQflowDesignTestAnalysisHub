@@ -7,7 +7,7 @@ Linux VM.
 #### December, 2020
 
 ### Dependencies
-#### 1. Install Electric VSLI 9.07, two download options:
+#### 1. Install Electric VLSI 9.07, two download options:
  - By https://www.staticfreesoft.com/productsFree.html
  - Enter your console:
  
