@@ -25,9 +25,13 @@ Considerations:
 
 #### 2. Install Spice 
 
+- See: http://web.engr.oregonstate.edu/~traylor/ece391/smith_NGSPICE_USERGUIDE_ECE391.pdf
+
 
 ### Instructions 
 
+#### ELECTRIC VSLI
+ 
 * To run:
 ~~~~~
 <user>~: electric
@@ -38,3 +42,7 @@ Considerations:
 ~~~~~
 Click on F5
 ~~~~~
+
+#### SPICE
+
+
