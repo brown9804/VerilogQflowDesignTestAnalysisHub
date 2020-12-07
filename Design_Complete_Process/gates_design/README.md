@@ -56,7 +56,7 @@ Click on F5
 <user>~:  ngspice 
 ~~~~
 
-2. Run the file that you want for example:
+2. Run the file that you want, for example:
 
 ~~~~
 ngspice 1 -> source /home/belindabrown/Desktop/NOR3.spi
