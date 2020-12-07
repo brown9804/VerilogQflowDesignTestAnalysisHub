@@ -24,15 +24,16 @@ Considerations:
 - Click on MISC and SPICE Code, control + I. Tools/Simulation/WriteSpiceDeck 
 
 #### 2. Install Spice 
+There is several options, in which:
 
 - See: http://web.engr.oregonstate.edu/~traylor/ece391/smith_NGSPICE_USERGUIDE_ECE391.pdf
 - Enter your in console:
-
 ~~~~~
 <user>~: sudo apt-get update -y
 <user>~: sudo apt-get install -y ngspice
 ~~~~~
 
+- Install LTSpice:  https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html
 
 ### Instructions 
 
