@@ -9,7 +9,7 @@ Linux VM.
 ### Dependencies
 #### 1. Install Electric VLSI 9.07, two download options:
  - By https://www.staticfreesoft.com/productsFree.html
- - Enter your console:
+ - Enter in your console:
  
 ~~~~~
 <user>~: sudo apt-get install electric 
@@ -26,6 +26,12 @@ Considerations:
 #### 2. Install Spice 
 
 - See: http://web.engr.oregonstate.edu/~traylor/ece391/smith_NGSPICE_USERGUIDE_ECE391.pdf
+- Enter your in console:
+
+~~~~~
+<user>~: sudo apt-get update -y
+<user>~: sudo apt-get install -y ngspice
+~~~~~
 
 
 ### Instructions 
