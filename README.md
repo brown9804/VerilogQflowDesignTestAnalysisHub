@@ -24,15 +24,15 @@ consumption of three different adders.
 ### 4. Qflow_Analysis [Qflow]
 Aspects analyzed: 
 
-*. Frequency.
+* Frequency.
 
-*. Area.
+* Area.
 
-*. Number and type of gates.
+* Number and type of gates.
 
-*. Path delays.
+* Path delays.
 
-*. Place and route.
+* Place and route.
 
 ### 5. Desing_Complete_Process [Verilog] [Qflow] [Electric] [Spice]
 Complete process of the design of a 4 bit and 32 bits counters in order 
