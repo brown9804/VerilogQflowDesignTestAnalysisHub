@@ -1,15 +1,20 @@
 # Verilog and Qflow Design Verification
 
-Costa Rica
-
-Belinda Brown, belindabrownr04@gmail.com
+University of Costa Rica 
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2015-04-14
 
-This repository contains various projects focused on the verification, timing analysis, and power analysis of designs using Verilog and Qflow. All projects were conducted at the University of Costa Rica in August 2020.
+------------------------------------------
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
+> This repository contains various projects focused on the verification, timing analysis, and power analysis of designs using Verilog and Qflow. All projects were conducted at the University of Costa Rica in August 2020.
 
 ## Projects
 
